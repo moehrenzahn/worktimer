@@ -11,13 +11,17 @@ jsonLog = open(dir_path + "/work.json", 'r')
 json = json.load(jsonLog)
 jsonLog.close()
 
+# sort json
+# print(json[dict.itervalues().next()]['date'])
+# sorted(json, key=lambda day: day['date'])
 
 exportString = ""
 for day in json :
 
 	starttime = json[day]["start"]
 	dayDate = datetime.strptime(day, '%Y-%m-%d')
-	dayString = dayDate.strftime("%d.%m.%Y")
+	# dayString = dayDate.strftime("%d.%m.%Y")
+	dayString = dayDate.strftime("%Y-%m-%d")
 	if "end" in json[day] :
 		endtime = json[day]["end"]
 

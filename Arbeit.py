@@ -2,6 +2,7 @@
 
 import subprocess
 import os
+import sys
 import webbrowser
 import datetime
 from datetime import datetime
@@ -26,18 +27,18 @@ if timerRunning :
 
 	print "Checking for Timer"
 	applescript = """
-	display dialog "Lauft noch ein Timer?" with title "Beende Arbeitsprogramme" buttons {"Nein", "Toggl"} default button 1
-	if button returned of result = "Nein" then
+	display dialog "Willst du wirklich Feierabend machen? Lauft eventuell noch ein Timer?" with title "Beende Arbeitsprogramme" buttons {"Abbrechen", "Feierabend"} default button 1
+	if button returned of result = "Abbrechen" then
 	return 1
-	else if button returned of result = "Tracker" then
+	else if button returned of result = "Feierabend" then
 	return 2
 	end if
 	"""
 
 	timer = subprocess.Popen("osascript -e '{0}'".format(applescript), shell=True, stdout=subprocess.PIPE)
 	timer = timer.stdout.read().rstrip()
-	if timer == "2":
-		webbrowser.open("https://timetracker.nr")
+	if timer == "1":
+		sys.exit()
 
 
 	os.system("""
@@ -59,6 +60,7 @@ logTime = datetime.now().strftime("%H:%M")
 
 
 if logDate in jsonContents :
+	jsonContents[logDate]["date"] = logDate
 	jsonContents[logDate][logType] = logTime
 else :
 	jsonContents[logDate] = {logType : logTime}

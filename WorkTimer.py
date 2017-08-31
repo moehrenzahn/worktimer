@@ -95,6 +95,8 @@ print "<html><span style='font-size:3pt'>&nbsp;</span></html>"
 if pauseRunning :
 	print "<html><span style='font-size:11pt'>Pause beenden</span></html>"
 else :
-	print "<html><span style='font-size:11pt'>Pause starten</span></html>"
+	if timerRunning :
+		print "<html><span style='font-size:11pt'>Pause starten</span></html>"
 print "<html><span style='font-size:11pt'>Timer starten/beenden</span></html>"
 print "<html><span style='font-size:11pt'>Log anzeigen</span></html>"
+print "<html><span style='font-size:11pt'>Exportieren</span></html>"

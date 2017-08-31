@@ -1,7 +1,6 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 if [[ $TEXTBAR_TEXT == *"Timer starten/beenden" ]] ; then
-	python $DIR/Auf\ Arbeit.py;
-	open $DIR/work.json;
+	python $DIR/Arbeit.py;
 fi;
 if [[ $TEXTBAR_TEXT == *"Pause starten" ]] ; then
     python $DIR/Pause.py;
@@ -11,4 +10,8 @@ if [[ $TEXTBAR_TEXT == *"Pause beenden" ]] ; then
 fi;
 if [[ $TEXTBAR_TEXT == *"Log anzeigen" ]] ; then
 	open $DIR/work.json;
+fi;
+if [[ $TEXTBAR_TEXT == *"Exportieren" ]] ; then
+    python $DIR/ExportForTimetracker.json;
+    open $DIR/exportLog.txt
 fi;

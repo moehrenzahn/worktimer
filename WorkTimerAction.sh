@@ -1,5 +1,8 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-if [[ $TEXTBAR_TEXT == *"Timer starten/beenden" ]] ; then
+if [[ $TEXTBAR_TEXT == *"Timer starten" ]] ; then
+	python $DIR/Arbeit.py;
+fi;
+if [[ $TEXTBAR_TEXT == *"Timer beenden" ]] ; then
 	python $DIR/Arbeit.py;
 fi;
 if [[ $TEXTBAR_TEXT == *"Pause starten" ]] ; then

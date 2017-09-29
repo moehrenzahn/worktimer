@@ -58,7 +58,6 @@ print "Logging"
 logDate = datetime.now().strftime("%Y-%m-%d")
 logTime = datetime.now().strftime("%H:%M")
 
-
 if logDate in jsonContents :
 	jsonContents[logDate]["date"] = logDate
 	jsonContents[logDate][logType] = logTime

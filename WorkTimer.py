@@ -33,7 +33,7 @@ for day in json:
     starttime = datetime.strptime(json[day]["start"], '%H:%M')
     if "halbtags" in json[day]:
         soll = timedelta(minutes=240)
-    else if "zusatz" in json[day]:
+    elif "zusatz" in json[day]:
         soll = timedelta(minutes=0)
     else:
         soll = timedelta(minutes=480)

@@ -1,18 +1,22 @@
+from datetime import datetime
+
+
 class State:
     def __init__(
         self,
         timer,
-        pause,
-        startTime,
-        remainingTime,
-        currentTime,
-        pauseTime,
-        overtime
+        overtime,
+        today=None
     ):
-        self.timer = timer
-        self.pause = pause
-        self.startTime = startTime
-        self.remainingTime = remainingTime
-        self.currentTime = currentTime
-        self.pauseTime = pauseTime
+        self.isTimer = timer
         self.overtime = overtime
+        if today is not None:
+            self.pause = today.pauseTime
+            self.start = datetime.combine(today.date, today.start)
+            self.goal = today.goal
+            self.remainingWork = today.remainingWork
+            self.currentWork = today.currentWork
+            if today.pauses:
+                self.isPause = today.pauses[-1].isRunning
+            else:
+                self.isPause = 0

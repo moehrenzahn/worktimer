@@ -1,45 +1,45 @@
-from datetime import datetime
+from datetime import datetime, date
 from datetime import timedelta
+import data
 
 
 class Day:
-
-    def __init__(self, day):
-        self.date = datetime.strptime(day["date"], '%Y-%m-%d').date()
-        self.start = self.start(day)
-        self.goal = self.goal(day)
+    def __init__(self, day, dateString):
+        if "date" in day:
+            dateString = day["date"]
+        else:
+            dateString = dateString
+        self.date = datetime.strptime(dateString, '%Y-%m-%d').date()
+        self.start = self.setStart(day)
+        self.goal = self.setGoal(day)
+        self.pauses = self.setPauses(day)
+        self.pauseTime = timedelta(0)
+        for pause in self.pauses:
+            self.pauseTime += pause.duration
 
         if "end" in day:
-            self.end = self.end(day)
+            self.end = self.setEnd(day)
+            delta = datetime.combine(date.min, self.end) - datetime.combine(date.min, self.start)
+            self.overtime = delta - self.pauseTime - self.goal
 
-        delta = self.end - self.start
-        self.overtime = delta - self.pause - self.goal
-
-    def start(day):
-        start = datetime.strptime(day["start"], '%H:%M')
+    def setStart(self, day):
+        start = datetime.strptime(day["start"], '%H:%M').time()
         return start
 
-    def pause(day):
+    def setPauses(self, day):
+        pauses = []
         if "pause" in day:
-            pause = timedelta(minutes=0)
             for item in day["pause"]:
-                if "start" in item and "end" in item:
-                    pauseStart = datetime.strptime(item["start"], '%H:%M')
-                    pauseEnd = datetime.strptime(item["end"], '%H:%M')
-                    pause += pauseEnd - pauseStart
-        else:
-            pause = timedelta(minutes=30)
-        return pause
+                pauses.append(data.Pause(item))
+        return pauses
 
-    def goal(day):
-        if "halbtags" in day:
-            goal = timedelta(minutes=240)
-        elif "zusatz" in day:
+    def setGoal(self, day):
+        if "zusatz" in day:
             goal = timedelta(minutes=0)
         else:
             goal = timedelta(minutes=480)
         return goal
 
-    def end(day):
-        end = datetime.strptime(day["end"], '%H:%M')
+    def setEnd(self, day):
+        end = datetime.strptime(day["end"], '%H:%M').time()
         return end

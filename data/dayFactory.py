@@ -11,3 +11,12 @@ def newDay():
     }
     newDay = data.Today(day, dateString)
     return newDay
+
+
+def newPause():
+    timeString = datetime.now().strftime("%H:%M")
+    pauseItem = {
+        "start": timeString,
+    }
+    newPause = data.Pause(pauseItem)
+    return newPause

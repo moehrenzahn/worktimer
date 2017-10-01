@@ -51,9 +51,7 @@ if logType == "end" :
           osascript -e 'display notification "Pause" with title "Pause beendet"'
           """)
 if logType == "start" :
-	os.system("""
-          osascript -e 'display notification "Pause" with title "Pause begonnen"'
-          """)
+	
 
 print "Logging Break"
 jsonLog = open(logging, 'w')

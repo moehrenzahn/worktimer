@@ -2,10 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from datetime import datetime
-
 import config
 import storage
+import actions
 import output
 import data
 
@@ -32,17 +31,39 @@ if not args:
     output.status(state)
 elif sys.argv[1] == 'timer':
     if timer and state.isPause:
-        print("Please stop pause before ending timer")
+        output.notification(
+            "Timer not stopped",
+            "Please end pause before ending timer"
+        )
         exit(2)
     if timer:
-        days.getDay(datetime.now().date()).end = datetime.now().time()
-        storage.save(days)
+        actions.timerStop(days)
+        output.notification(
+            "Work timer stopped",
+            "Remember to stop any time tracking"
+        )
     else:
-        today = data.newDay()
-        days.days.append(today)
-        storage.save(days)
+        actions.timerStart(days)
+        output.notification(
+            "Work timer started",
+            "You will have to work for %s." % days.today.goal
+        )
 elif sys.argv[1] == 'pause':
-    print "toggling pause"
+    if not timer:
+        output.notification("Not paused", "Please start timer before pausing")
+        exit(2)
+    if state.isPause:
+        actions.pauseStop(days)
+        output.notification(
+            "Break ended",
+            "Full break time: %s." % days.today.pauses[-1].duration
+        )
+    else:
+        actions.pauseStart(days)
+        output.notification(
+            "Break started",
+            "Started break at %s." % days.today.pauses[-1].start
+        )
 else:
     print "WorkTimer by Max Melzer (moehrenzahn.de)"
     print "Usage: run main.py to display current stats."

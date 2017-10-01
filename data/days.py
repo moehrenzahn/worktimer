@@ -27,12 +27,11 @@ class Days:
         if day.date == datetime.now().date():
             self.today = data.Today(dayElement, date)
 
-    def getDay(self, date):
+    def getDay(self, searchDate):
         for day in reversed(self.days):
-            if day.date == date:
+            if day.date == searchDate:
                 return day
-        print("Day not found")
-        exit(2)
+        raise ValueError('Day with date %s does not exist' % date.strftime("%Y-%m-%d"))
 
     def toJSON(self):
         return json.dumps(

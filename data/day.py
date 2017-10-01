@@ -3,12 +3,10 @@ from datetime import timedelta
 import data
 
 
-class Day:
-    def __init__(self, day, dateString):
+class Day():
+    def __init__(self, day, dateString=""):
         if "date" in day:
             dateString = day["date"]
-        else:
-            dateString = dateString
         self.date = datetime.strptime(dateString, '%Y-%m-%d').date()
         self.start = self.setStart(day)
         self.goal = self.setGoal(day)
@@ -28,8 +26,8 @@ class Day:
 
     def setPauses(self, day):
         pauses = []
-        if "pause" in day:
-            for item in day["pause"]:
+        if "pauses" in day:
+            for item in day["pauses"]:
                 pauses.append(data.Pause(item))
         return pauses
 

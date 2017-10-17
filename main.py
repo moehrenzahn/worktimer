@@ -6,37 +6,23 @@ import config
 import storage
 import actions
 import output
-import data
+import importer
 
 
 json = storage.load(config.log_path)
-days = data.Days(json)
-
-if hasattr(days, "today") and not hasattr(days.today, "end"):
-    timer = 1
-    state = data.State(
-        timer,
-        days.overtime,
-        days.today
-    )
-else:
-    timer = 0
-    state = data.State(
-        timer,
-        days.overtime
-    )
+days = importer.getDays(json)
 
 args = sys.argv[1:]
 if not args:
-    output.status(state)
+    output.status(days)
 elif sys.argv[1] == 'timer':
-    if timer and state.isPause:
+    if days.isTimer() and days.isPause():
         output.notification(
             "Timer not stopped",
             "Please end pause before ending timer"
         )
         exit(2)
-    if timer:
+    if days.isTimer():
         actions.timerStop(days)
         output.notification(
             "Work timer stopped",
@@ -46,23 +32,23 @@ elif sys.argv[1] == 'timer':
         actions.timerStart(days)
         output.notification(
             "Work timer started",
-            "You will have to work for %s." % days.today.goal
+            "You will have to work for %s." % days.getToday().goal
         )
 elif sys.argv[1] == 'pause':
-    if not timer:
+    if not days.isTimer():
         output.notification("Not paused", "Please start timer before pausing")
         exit(2)
-    if state.isPause:
+    if days.isPause():
         actions.pauseStop(days)
         output.notification(
             "Break ended",
-            "Full break time: %s." % days.today.pauses[-1].duration
+            "Full break time: %s." % days.getToday().getPausetime()
         )
     else:
         actions.pauseStart(days)
         output.notification(
             "Break started",
-            "Started break at %s." % days.today.pauses[-1].start
+            "Started break at %s." % days.getToday().pauses[-1].start
         )
 else:
     print "WorkTimer by Max Melzer (moehrenzahn.de)"

@@ -1,21 +1,19 @@
 import storage
 import data
-import output
 from datetime import datetime
 
 
 def timerStart(days):
-    today = data.newDay()
-    days.today = today
-    days.days.append(today)
+    if not days.getToday():
+        today = data.newDay()
+        days.days.append(today)
+    days.getToday().work.append(data.newWork())
     storage.save(days)
 
 
 def timerStop(days):
-    try:
-        currentDay = days.getDay(datetime.now().date())
-        currentDay.end = datetime.now().time()
-        storage.save(days)
-    except ValueError as error:
-        output.notification("Timer not stopped", error)
-        exit(2)
+    today = days.getToday()
+    for work in today.work:
+        if work.isRunning():
+            work.end = datetime.now().time()
+    storage.save(days)

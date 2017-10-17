@@ -2,28 +2,27 @@
 from data import formatter
 
 
-def status(state):
-    if state.isTimer:
-        if state.isPause:
-            print "Pause: " + formatter.format_delta(state.isPause)
+def status(days):
+    today = days.getToday()
+    if days.isTimer():
+        if days.isPause():
+            print "Pause: " + formatter.format_delta(days.isPause())
         else:
-            print formatter.format_delta(state.remainingWork)
-        print "Arbeitszeit " + formatter.format_delta(state.currentWork)
-        print "Noch " + formatter.format_delta(state.remainingWork)
-        if not state.isPause:
-            print "Pause: " + formatter.format_delta(state.pause)
-        print "Beginn: " + state.start.strftime("%H:%M") + " Uhr"
-        print "Ende: " + (
-            state.start + state.pause + state.goal
-        ).strftime("%H:%M") + " Uhr"
+            print formatter.format_delta(today.getRemainingWork())
+        print "Work time " + formatter.format_delta(today.getCurrentWork())
+        print "Remaining " + formatter.format_delta(today.getRemainingWork())
+        if not days.isPause():
+            print "Pause: " + formatter.format_delta(today.getPausetime())
+        print "Start: " + today.getStartTime().strftime("%H:%M") + " Uhr"
+        print "End: " + (today.getEndtime()).strftime("%H:%M") + " Uhr"
         print "<html><span style='font-size:3pt'>&nbsp;</span></html>"
     else:
-        print "Frei"
+        print "Free"
 
-    print "Akt. Überstunden: " + formatter.format_delta(state.overtime)
+    print "Current Overtime: " + formatter.format_delta(days.getOvertime())
     print "<html><span style='font-size:3pt'>&nbsp;</span></html>"
-    if state.isTimer:
-        if state.isPause:
+    if days.isTimer():
+        if days.isPause():
             print "<html><span style='font-size:11pt'>Pause beenden</span></html>"
         else:
             print "<html><span style='font-size:11pt'>Pause starten</span></html>"

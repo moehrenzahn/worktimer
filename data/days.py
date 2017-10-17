@@ -7,31 +7,16 @@ import json
 
 
 class Days:
-    def __init__(self, json):
-        self.json = json
-        self.overtime = timedelta(minutes=0)
-        self.days = []
-        for day in self.json:
-            if type(day) is dict:
-                dayElement = day
-            else:
-                dayElement = json[day]
-            self.processDay(dayElement, day)
-
-    def processDay(self, dayElement, date):
-        day = data.Day(dayElement, date)
-        if hasattr(day, "overtime"):
-            self.overtime += day.overtime
-        self.days.append(day)
-        # process current day
-        if day.date == datetime.now().date():
-            self.today = data.Today(dayElement, date)
+    def __init__(self, days):
+        self.days = days
 
     def getDay(self, searchDate):
         for day in reversed(self.days):
             if day.date == searchDate:
                 return day
-        raise ValueError('Day with date %s does not exist' % date.strftime("%Y-%m-%d"))
+        raise ValueError(
+            'Day with date %s does not exist' % date.strftime("%Y-%m-%d")
+        )
 
     def toJSON(self):
         return json.dumps(
@@ -40,6 +25,15 @@ class Days:
             sort_keys=True,
             indent=4
         )
+
+    def getOvertime(self):
+        overtime = timedelta(minutes=0)
+        for day in self.days:
+            overtime += day.getOvertime()
+        return overtime
+
+    def getToday(self):
+        return self.getDay(datetime.now().date())
 
     def json_default(self, value):
         if isinstance(value, date):
@@ -50,3 +44,15 @@ class Days:
             return data.format_delta(value)
         else:
             return value.__dict__
+
+    def isTimer(self):
+        for day in self.days:
+            if day.isRunning():
+                return 1
+        return 0
+
+    def isPause(self):
+        for day in self.days:
+            if day.isPause():
+                return 1
+        return 0

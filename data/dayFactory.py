@@ -7,7 +7,10 @@ def newDay():
     timeString = datetime.now().strftime("%H:%M")
     day = {
         "date": dateString,
-        "start": timeString
+        "work":
+        {
+            "start": timeString
+        }
     }
     newDay = data.Today(day, dateString)
     return newDay
@@ -20,3 +23,8 @@ def newPause():
     }
     newPause = data.Pause(pauseItem)
     return newPause
+
+
+def newWork():
+    timeString = datetime.now().strftime("%H:%M")
+    return data.Work(timeString)

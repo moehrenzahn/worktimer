@@ -8,7 +8,7 @@ class Day():
         """
         date: string "YYYY-MM-DD"
         goal: string "HH:MM"
-        workArray: [Work] 
+        workArray: [Work]
         """
         self.date = date
         goal = datetime.strptime(goal, "%H:%M")

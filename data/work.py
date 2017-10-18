@@ -9,7 +9,7 @@ class Work:
             self.end = datetime.strptime(end, '%H:%M').time()
 
     def getDuration(self):
-        if self.end:
+        if hasattr(self, 'end'):
             subtractEnd = self.end
         else:
             subtractEnd = datetime.now().time()

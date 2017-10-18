@@ -6,17 +6,13 @@ import elements
 def status(days):
     if days.isTimer():
         today = days.getToday()
-        if days.isPause():
-            print "Pause: " + formatter.format_delta(days.isPause())
-        else:
-            print formatter.format_delta(today.getRemainingWork())
+        print formatter.format_delta(today.getRemainingWork())
         print "Work time " + formatter.format_delta(today.getCurrentWork())
         print "Remaining " + formatter.format_delta(today.getRemainingWork())
-        if not days.isPause():
-            print "Pause: " + formatter.format_delta(today.getPausetime())
+        print "Pause: " + formatter.format_delta(today.getPausetime())
         print "Start: " + today.getStartTime().strftime("%H:%M") + " Uhr"
         print "End: " + (today.getEndtime()).strftime("%H:%M") + " Uhr"
-        print "<html><span style='font-size:3pt'>&nbsp;</span></html>"
+        print elements.spacer()
     else:
         print "Free"
 

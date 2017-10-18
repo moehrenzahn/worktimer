@@ -5,6 +5,11 @@ import data
 
 class Day():
     def __init__(self, date, goal, workArray):
+        """
+        date: string "YYYY-MM-DD"
+        goal: string "HH:MM"
+        workArray: [Work] 
+        """
         self.date = date
         goal = datetime.strptime(goal, "%H:%M")
         self.goal = timedelta(hours=goal.hour, minutes=goal.minute)

@@ -4,6 +4,10 @@ from datetime import datetime, date
 class Work:
 
     def __init__(self, start, end=0):
+        """
+        start: string "HH:MM"
+        end: string "HH:MM" (optional)
+        """
         self.start = datetime.strptime(start, '%H:%M').time()
         if end:
             self.end = datetime.strptime(end, '%H:%M').time()

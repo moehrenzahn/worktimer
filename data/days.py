@@ -8,6 +8,9 @@ import json
 
 class Days:
     def __init__(self, days):
+        """
+        days: [Day]]
+        """
         self.days = days
 
     def getDay(self, searchDate):

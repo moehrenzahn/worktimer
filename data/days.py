@@ -15,7 +15,7 @@ class Days:
             if day.date == searchDate:
                 return day
         raise ValueError(
-            'Day with date %s does not exist' % date.strftime("%Y-%m-%d")
+            'Day with date %s does not exist' % date.strftime(searchDate, "%Y-%m-%d")
         )
 
     def toJSON(self):

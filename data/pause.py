@@ -2,14 +2,10 @@ from datetime import datetime, date
 
 
 class Pause:
-
-    def __init__(self, pauseItem):
-        if "start" not in pauseItem:
-            print("Pause must have a start item")
-            exit(2)
-        self.start = datetime.strptime(pauseItem["start"], '%H:%M').time()
-        if "end" in pauseItem:
-            self.end = datetime.strptime(pauseItem["end"], '%H:%M').time()
+    def __init__(self, start, end=0):
+        self.start = start
+        if end:
+            self.end = end
 
     def getDuration(self):
         if self.end:

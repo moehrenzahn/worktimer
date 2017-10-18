@@ -35,6 +35,5 @@ class LegacyDaysFactory:
         elif 'start' in dayElement:
             workArray.append(data.Work(dayElement['start']))
         if len(workArray) == 0:
-            print('Error: No work block in date!')
-            exit(2)
+            raise ValueError('Day without work block found')
         return workArray

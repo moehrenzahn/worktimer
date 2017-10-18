@@ -26,8 +26,7 @@ class DaysFactory:
     def initWorkBlocks(self, dayElement):
         workBlocks = []
         if 'work' not in dayElement:
-            print('Critical Error: Day without work block found!')
-            exit(2)
+            raise ValueError('Day without work block found')
         for item in dayElement['work']:
             if 'end' in item:
                 workBlocks.append(data.Work(item['start'], item['end']))

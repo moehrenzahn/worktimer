@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 from data import formatter
-from data import days
+import elements
+
 
 def status(days):
-    today = days.getToday()
     if days.isTimer():
+        today = days.getToday()
         if days.isPause():
             print "Pause: " + formatter.format_delta(days.isPause())
         else:
@@ -20,14 +21,14 @@ def status(days):
         print "Free"
 
     print "Current Overtime: " + formatter.format_delta(days.getOvertime())
-    print "<html><span style='font-size:3pt'>&nbsp;</span></html>"
+    print elements.spacer()
     if days.isTimer():
         if days.isPause():
-            print "<html><span style='font-size:11pt'>Pause beenden</span></html>"
+            print elements.button("Pause beenden")
         else:
-            print "<html><span style='font-size:11pt'>Pause starten</span></html>"
-            print "<html><span style='font-size:11pt'>Timer beenden</span></html>"
+            print elements.button("Pause starten")
+            print elements.button("Timer beenden")
     else:
-        print "<html><span style='font-size:11pt'>Timer starten</span></html>"
-    print "<html><span style='font-size:11pt'>Log anzeigen</span></html>"
-    print "<html><span style='font-size:11pt'>Exportieren</span></html>"
+        print elements.button("Timer starten")
+    print elements.button("Log anzeigen")
+    print elements.button("Exportieren")

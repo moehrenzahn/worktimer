@@ -4,22 +4,23 @@ import data
 
 
 class Day():
-    def __init__(self, date, goal, work):
+    def __init__(self, date, goal, workArray):
         self.date = date
-        self.goal = goal
-        self.work = work
+        goal =  datetime.strptime(goal,"%H:%M") 
+        self.goal = timedelta(hours=goal.hour, minutes=goal.minute)
+        self.workArray = workArray
 
     def calculatePauses(self):
         pauses = []
-        for (i, workBlock) in self.work:
+        for (i, workBlock) in enumerate(self.workArray):
             if i > 0:
-                start = self.work[i - 1].end
-                end = self.work[i].start
+                start = self.workArray[i - 1].end
+                end = self.workArray[i].start
                 pauses.append(data.Pause(start, end))
         return pauses
 
     def isRunning(self):
-        for work in self.work:
+        for work in self.workArray:
             if work.isRunning:
                 return 0
         return 1
@@ -32,7 +33,7 @@ class Day():
 
     def getOvertime(self):
         overtime = timedelta(0)
-        for work in self.work:
+        for work in self.workArray:
             if hasattr(work, 'end'):
                 delta = datetime.combine(
                     date.min, work.end
@@ -51,7 +52,7 @@ class Day():
 
     def getCurrentWork(self):
         time = timedelta(0)
-        for work in self.work:
+        for work in self.workArray:
             time += work.getDuration()
         return time - self.getPausetime()
 

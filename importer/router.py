@@ -3,10 +3,19 @@ import importer
 
 # Check if a given json string is in legacy format
 def getDays(json):
-    if 'start' in json[0]:
-        return importer.LegacyDaysFactory(json)
-    elif 'work' in json[0]:
-        return importer.DaysFactory(json)        
+
+    # could be an array or dict
+    if isinstance(json, list): 
+        element = json[0]
+    elif isinstance(json, dict):
+        element = json.itervalues().next()
+
+
+    if 'start' in element:
+        factory = importer.LegacyDaysFactory(json)
+    elif 'work' in element:
+        factory =  importer.DaysFactory(json)        
     else:
         print 'Critical Error: Could not determine type of json file'
         exit(2)
+    return factory.create()

@@ -10,6 +10,9 @@ class DaysFactory:
             day = self.processDay(dayElement)
             self.days.append(day)
 
+    def create(self):
+        return data.Days(self.days)
+
     def processDay(self, dayElement):
         date = datetime.strptime(dayElement['date'], '%Y-%m-%d').date()
         goal = dayElement['goal']

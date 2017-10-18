@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from data import formatter
-
+from data import days
 
 def status(days):
     today = days.getToday()

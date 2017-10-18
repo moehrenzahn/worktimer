@@ -11,6 +11,9 @@ class LegacyDaysFactory:
             dayElement = json[day]
             self.processDay(dayElement, date)
 
+    def create(self):
+        return data.Days(self.days)
+
     def processDay(self, dayElement, date):
         if 'halbtags' in dayElement:
             goal = '4:00'
@@ -18,20 +21,20 @@ class LegacyDaysFactory:
             goal = '0:00'
         else:
             goal = '8:00'
-        work = self.initWorkBlocks(dayElement)
+        workArray = self.initWorkBlocks(dayElement)
         if date == datetime.now().date():
-            day = data.Today(date, goal, work)
+            day = data.Today(date, goal, workArray)
         else:
-            day = data.Day(date, goal, work)
+            day = data.Day(date, goal, workArray)
         self.days.append(day)
 
     def initWorkBlocks(self, dayElement):
-        work = []
+        workArray = []
         if 'start' in dayElement and 'end' in dayElement:
-            work.append(data.Work(dayElement['start'], dayElement['end']))
+            workArray.append(data.Work(dayElement['start'], dayElement['end']))
         elif 'start' in dayElement:
-            work.append(data.Work(dayElement['start']))
-        if len(work) == 0:
+            workArray.append(data.Work(dayElement['start']))
+        if len(workArray) == 0:
             print('Error: No work block in date!')
             exit(2)
-        return work
+        return workArray

@@ -24,7 +24,6 @@ if not timerRunning :
 	print "No Timer running!"
 	exit()
 
-
 logDate = datetime.now().strftime("%Y-%m-%d")
 logTime = datetime.now().strftime("%H:%M")
 
@@ -43,15 +42,14 @@ else :
 	logType = "start"
 	jsonContents[logDate]["pause"].append( {logType : logTime} )
 	
-	
-
-
 if logType == "end" :
 	os.system("""
           osascript -e 'display notification "Pause" with title "Pause beendet"'
           """)
 if logType == "start" :
-	
+	os.system("""
+          osascript -e 'display notification "Pause" with title "Pause gestartet"'
+          """)
 
 print "Logging Break"
 jsonLog = open(logging, 'w')

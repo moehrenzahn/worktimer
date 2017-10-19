@@ -1,14 +1,18 @@
 from datetime import datetime, date
 
 
-class Pause:
+class Block:
     def __init__(self, start, end=0):
+        """
+        start: time
+        end: time (optional)
+        """
         self.start = start
         if end:
             self.end = end
 
     def getDuration(self):
-        if self.end:
+        if hasattr(self, 'end'):
             subtractEnd = self.end
         else:
             subtractEnd = datetime.now().time()

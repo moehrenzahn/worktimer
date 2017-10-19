@@ -6,13 +6,12 @@ import data
 class Day():
     def __init__(self, date, goal, workArray):
         """
-        date: string "YYYY-MM-DD"
-        goal: string "HH:MM"
+        date: date
+        goal: timedelta
         workArray: [Work]
         """
         self.date = date
-        goal = datetime.strptime(goal, "%H:%M")
-        self.goal = timedelta(hours=goal.hour, minutes=goal.minute)
+        self.goal = goal
         self.workArray = workArray
 
     def calculatePauses(self):
@@ -21,7 +20,7 @@ class Day():
             if i > 0:
                 start = self.workArray[i - 1].end
                 end = self.workArray[i].start
-                pauses.append(data.Pause(start, end))
+                pauses.append(data.block.Pause(start, end))
         return pauses
 
     def isRunning(self):
@@ -44,10 +43,17 @@ class Day():
         return overtime
 
     def getStartTime(self):
-        return datetime.combine(self.date, self.work[0].start)
+        return self.getFirstWorkStart()
 
     def getEndTime(self):
         return self.date + self.getRemainingWork()
+
+    def getFirstWorkStart(self):
+        startTimes = []
+        for work in self.workArray:
+            startTimes.append(work.start)
+        startTimes.sort()
+        return startTimes[0]
 
     def getCurrentWork(self):
         time = timedelta(0)

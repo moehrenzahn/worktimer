@@ -21,10 +21,10 @@ def newPause():
     pauseItem = {
         "start": timeString,
     }
-    newPause = data.Pause(pauseItem)
+    newPause = data.block.Pause(pauseItem)
     return newPause
 
 
 def newWork():
     timeString = datetime.now().strftime("%H:%M")
-    return data.Work(timeString)
+    return data.block.Work(timeString)

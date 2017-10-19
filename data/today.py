@@ -10,7 +10,3 @@ class Today(Day):
         workArray: [Work]
         """
         Day.__init__(self, date, goal, workArray)
-
-    def getEndtime(self):
-        """ Endtime calculation is different for current day. """
-        return self.start + self.getPausetime() + self.goal

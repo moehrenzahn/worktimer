@@ -1,5 +1,6 @@
 import data
 from datetime import datetime
+from datetime import timedelta
 
 
 class LegacyDaysFactory:
@@ -16,11 +17,12 @@ class LegacyDaysFactory:
 
     def processDay(self, dayElement, date):
         if 'halbtags' in dayElement:
-            goal = '4:00'
+            goal = datetime.strptime('04:00', "%H:%M")
         elif 'zusatz' in dayElement:
-            goal = '0:00'
+            goal = datetime.strptime('00:00', "%H:%M")
         else:
-            goal = '8:00'
+            goal = datetime.strptime('08:00', "%H:%M")
+        goal = timedelta(hours=goal.hour, minutes=goal.minute)
         workArray = self.initWorkBlocks(dayElement)
         if date == datetime.now().date():
             day = data.Today(date, goal, workArray)
@@ -31,9 +33,12 @@ class LegacyDaysFactory:
     def initWorkBlocks(self, dayElement):
         workArray = []
         if 'start' in dayElement and 'end' in dayElement:
-            workArray.append(data.Work(dayElement['start'], dayElement['end']))
+            start = datetime.strptime(dayElement['start'], "%H:%M").time()
+            end = datetime.strptime(dayElement['end'], "%H:%M").time()
+            workArray.append(data.block.Work(start, end))
         elif 'start' in dayElement:
-            workArray.append(data.Work(dayElement['start']))
+            start = datetime.strptime(dayElement['start'], "%H:%M").time()
+            workArray.append(data.block.Work(start))
         if len(workArray) == 0:
             raise ValueError('Day without work block found')
         return workArray

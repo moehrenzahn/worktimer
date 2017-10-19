@@ -1,5 +1,6 @@
 import data
 from datetime import datetime
+from datetime import timedelta
 
 
 class DaysFactory:
@@ -15,7 +16,9 @@ class DaysFactory:
 
     def processDay(self, dayElement):
         date = datetime.strptime(dayElement['date'], '%Y-%m-%d').date()
-        goal = dayElement['goal']
+        goal = datetime.strptime(dayElement['goal'], "%H:%M")
+        # goal describes not a time, but a timedelta
+        goal = timedelta(hours=goal.hour, minutes=goal.minute)
         work = self.initWorkBlocks(dayElement)
         if date == datetime.now().date():
             day = data.Today(date, goal, work)
@@ -28,8 +31,10 @@ class DaysFactory:
         if 'work' not in dayElement:
             raise ValueError('Day without work block found')
         for item in dayElement['work']:
+            start = datetime.strptime(item['start'], "%H:%M").time()
             if 'end' in item:
-                workBlocks.append(data.Work(item['start'], item['end']))
+                end = datetime.strptime(item['end'], "%H:%M").time()
+                workBlocks.append(data.block.Work(start, end))
             else:
-                workBlocks.append(data.Work(item['start']))
+                workBlocks.append(data.block.Work(start))
         return workBlocks

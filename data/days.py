@@ -14,7 +14,7 @@ class Days:
         self.days = days
 
     def getDay(self, searchDate):
-        for day in reversed(self.days):
+        for day in self.days:
             if day.date == searchDate:
                 return day
         raise ValueError(

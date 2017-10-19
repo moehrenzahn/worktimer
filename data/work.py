@@ -2,15 +2,14 @@ from datetime import datetime, date
 
 
 class Work:
-
     def __init__(self, start, end=0):
         """
-        start: string "HH:MM"
-        end: string "HH:MM" (optional)
+        start: time
+        end: time (optional)
         """
-        self.start = datetime.strptime(start, '%H:%M').time()
+        self.start = start
         if end:
-            self.end = datetime.strptime(end, '%H:%M').time()
+            self.end = end
 
     def getDuration(self):
         if hasattr(self, 'end'):

@@ -11,7 +11,7 @@ def status(days):
         print "Remaining " + formatter.format_delta(today.getRemainingWork())
         print "Pause: " + formatter.format_delta(today.getPausetime())
         print "Start: " + today.getStartTime().strftime("%H:%M") + " Uhr"
-        print "End: " + (today.getEndtime()).strftime("%H:%M") + " Uhr"
+        print "End: " + (today.getEndTime()).strftime("%H:%M") + " Uhr"
         print elements.spacer()
     else:
         print "Free"
@@ -19,11 +19,7 @@ def status(days):
     print "Current Overtime: " + formatter.format_delta(days.getOvertime())
     print elements.spacer()
     if days.isTimer():
-        if days.isPause():
-            print elements.button("Pause beenden")
-        else:
-            print elements.button("Pause starten")
-            print elements.button("Timer beenden")
+        print elements.button("Timer beenden")
     else:
         print elements.button("Timer starten")
     print elements.button("Log anzeigen")

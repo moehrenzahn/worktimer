@@ -19,8 +19,7 @@ class DaysTestCase(unittest.TestCase):
         work3 = data.block.Work(
             datetime.strptime('12:30', '%H:%M').time()
         )
-        goal = datetime.strptime('08:00', "%H:%M")
-        goal = timedelta(hours=goal.hour, minutes=goal.minute)
+        goal = timedelta(hours=8)
         workArray1 = [
             work1,
             work2
@@ -41,6 +40,13 @@ class DaysTestCase(unittest.TestCase):
         self.assertEqual(isTimer, 0)
         isTimer = self.testDays2.isTimer()
         self.assertEqual(isTimer, 1)
+
+    def test_overtime(self):
+        overtime = self.testDays1.getOvertime()
+        self.assertEqual(
+            overtime,
+            timedelta(hours=1)
+        )
 
 
 if __name__ == '__main__':

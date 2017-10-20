@@ -7,6 +7,8 @@ import storage
 import actions
 import output
 import importer
+import data
+from datetime import datetime
 
 
 json = storage.load(config.log_path)
@@ -16,12 +18,6 @@ args = sys.argv[1:]
 if not args:
     output.status(days)
 elif sys.argv[1] == 'timer':
-    if days.isTimer() and days.isPause():
-        output.notification(
-            "Timer not stopped",
-            "Please end pause before ending timer"
-        )
-        exit(2)
     if days.isTimer():
         actions.timerStop(days)
         output.notification(
@@ -32,23 +28,20 @@ elif sys.argv[1] == 'timer':
         actions.timerStart(days)
         output.notification(
             "Work timer started",
-            "You will have to work for %s." % days.getToday().goal
+            "You will have to work until %s" % data.formatter.format_time(days.getToday().getEndTime())
         )
 elif sys.argv[1] == 'pause':
-    if not days.isTimer():
-        output.notification("Not paused", "Please start timer before pausing")
-        exit(2)
     if days.isPause():
         actions.pauseStop(days)
         output.notification(
             "Break ended",
-            "Full break time: %s." % days.getToday().getPausetime()
+            "Full break time: %s" % data.formatter.format_time(days.getToday().getPausetime())
         )
     else:
         actions.pauseStart(days)
         output.notification(
             "Break started",
-            "Started break at %s." % days.getToday().pauses[-1].start
+            "Started break at %s" % data.formatter.format_time(days.getToday().getLastWork().end)
         )
 else:
     print "WorkTimer by Max Melzer (moehrenzahn.de)"

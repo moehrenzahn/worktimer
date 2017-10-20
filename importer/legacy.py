@@ -23,22 +23,40 @@ class LegacyDaysFactory:
         else:
             goal = datetime.strptime('08:00', "%H:%M")
         goal = timedelta(hours=goal.hour, minutes=goal.minute)
-        workArray = self.initWorkBlocks(dayElement)
-        if date == datetime.now().date():
-            day = data.Today(date, goal, workArray)
+
+        if 'pause' in dayElement:
+            work = self.initWorkBlocksWithPauses(dayElement)
         else:
-            day = data.Day(date, goal, workArray)
+            work = self.initWorkBlocks(dayElement)
+        if len(work) == 0:
+            raise ValueError('Day without work block found')
+
+        if date == datetime.now().date():
+            day = data.Today(date, goal, work)
+        else:
+            day = data.Day(date, goal, work)
         self.days.append(day)
 
     def initWorkBlocks(self, dayElement):
-        workArray = []
-        if 'start' in dayElement and 'end' in dayElement:
+        if 'end' in dayElement:
             start = datetime.strptime(dayElement['start'], "%H:%M").time()
             end = datetime.strptime(dayElement['end'], "%H:%M").time()
-            workArray.append(data.block.Work(start, end))
-        elif 'start' in dayElement:
+            work = [data.block.Work(start, end)]
+        else:
             start = datetime.strptime(dayElement['start'], "%H:%M").time()
-            workArray.append(data.block.Work(start))
-        if len(workArray) == 0:
-            raise ValueError('Day without work block found')
-        return workArray
+            work = [data.block.Work(start, end)]
+        return work
+
+    def initWorkBlocksWithPauses(self, dayElement):
+        work = []
+        start = datetime.strptime(dayElement['start'], "%H:%M").time()
+        for pause in dayElement['pause']:
+            end = datetime.strptime(pause['start'], "%H:%M").time()
+            work.append(data.block.Work(start, end))
+            start = datetime.strptime(pause['end'], "%H:%M").time()
+        if 'end' in dayElement:
+            end = datetime.strptime(dayElement['end'], "%H:%M").time()
+            work.append(data.block.Work(start, end))
+        else:
+            work.append(data.block.Work(start))
+        return work

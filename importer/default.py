@@ -21,7 +21,10 @@ class DaysFactory:
         goal = timedelta(hours=goal.hour, minutes=goal.minute)
         work = self.initWorkBlocks(dayElement)
         if date == datetime.now().date():
-            day = data.Today(date, goal, work)
+            if 'paused' in dayElement:
+                day = data.Today(date, goal, work, dayElement['paused'])
+            else:
+                day = data.Today(date, goal, work)
         else:
             day = data.Day(date, goal, work)
         return day

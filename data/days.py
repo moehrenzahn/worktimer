@@ -36,7 +36,11 @@ class Days:
         return overtime
 
     def getToday(self):
-        return self.getDay(datetime.now().date())
+        day = self.getDay(datetime.now().date())
+        if isinstance(day, data.Today):
+            return day
+        else:
+            raise ValueError("Today does not exist")
 
     def json_default(self, value):
         if isinstance(value, date):
@@ -48,14 +52,12 @@ class Days:
         else:
             return value.__dict__
 
+    def isPause(self):
+        today = self.getToday()
+        return today.paused
+
     def isTimer(self):
         for day in self.days:
             if day.isRunning():
-                return 1
-        return 0
-
-    def isPause(self):
-        for day in self.days:
-            if day.isPause():
                 return 1
         return 0

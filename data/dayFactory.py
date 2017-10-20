@@ -3,28 +3,15 @@ import data
 
 
 def newDay():
-    dateString = datetime.now().strftime("%Y-%m-%d")
-    timeString = datetime.now().strftime("%H:%M")
-    day = {
-        "date": dateString,
-        "work":
-        {
-            "start": timeString
-        }
-    }
-    newDay = data.Today(day, dateString)
-    return newDay
-
+    return data.Today(
+        datetime.now().date(),
+        datetime.timedelta(hours=8),
+        [data.newWork()]
+    )
 
 def newPause():
-    timeString = datetime.now().strftime("%H:%M")
-    pauseItem = {
-        "start": timeString,
-    }
-    newPause = data.block.Pause(pauseItem)
-    return newPause
+    return data.block.Pause(datetime.now().time())
 
 
 def newWork():
-    timeString = datetime.now().strftime("%H:%M")
-    return data.block.Work(timeString)
+    return data.block.Work(datetime.now().time())

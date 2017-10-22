@@ -30,7 +30,7 @@ def main():
             print "Usage: run worktimer.py to display current timer stats."
             print "   Use param 'timer' to start or stop timer"
             print "   Use param 'pause' to start or stop pause"
-            print "   åUse param 'log' to open the log file in default editor"
+            print "   Use param 'log' to open the log file in default editor"
             exit(2)
     except ValueError as e:
         output.notification('Critical Error', str(e))

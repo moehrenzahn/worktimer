@@ -1,13 +1,14 @@
+import os
 import json
 
 
 def load(file):
-    try:
-        data = open(file, 'r')
-        jsonData = json.load(data)
-        data.close()
-        return jsonData
-    except ValueError as e:
-        print "Parsing Error"
-        print e
-        exit(2)
+    # make sure file exists
+    open(file, 'a')
+    # return empty array if file is empty
+    if os.stat(file).st_size == 0:
+        return []
+    data = open(file, 'r')
+    jsonData = json.load(data)
+    data.close()
+    return jsonData

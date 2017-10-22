@@ -4,9 +4,18 @@ import elements
 
 
 def status(days):
+    __info(days)
+    print elements.spacer()
+    __actions(days)
+
+
+def __info(days):
     if days.isTimer():
         today = days.getToday()
-        print formatter.format_delta(today.getRemainingWork())
+        if days.isPause():
+            print "Pause: " + formatter.format_delta(today.getPausetime())
+        else:
+            print formatter.format_delta(today.getRemainingWork())
         print "Work Time " + formatter.format_delta(today.getCurrentWork())
         print "Remaining " + formatter.format_delta(today.getRemainingWork())
         print "Pause: " + formatter.format_delta(today.getPausetime())
@@ -15,15 +24,15 @@ def status(days):
         print elements.spacer()
     else:
         print "Free"
-
     print "Current Overtime: " + formatter.format_delta(days.getOvertime())
-    print elements.spacer()
-    if days.isTimer():
+
+
+def __actions(days):
+    if days.isPause():
+        print elements.button("Stop Pause")
+    elif days.isTimer():
         print elements.button("Stop Timer")
-        if days.isPause():
-            print elements.button("Stop Pause")
-        else:
-            print elements.button("Stop Pause")
+        print elements.button("Start Pause")
     else:
         print elements.button("Start Timer")
     print elements.spacer()

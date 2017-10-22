@@ -58,10 +58,14 @@ class Days:
 
     def isPause(self):
         today = self.getToday()
-        return today.paused
+        if today:
+            return today.paused
+        return 0
 
     def isTimer(self):
-        for day in self.days:
-            if day.isRunning():
-                return 1
+        if self.isPause():
+            return 1
+        today = self.getToday()
+        if today:
+            return today.isRunning()
         return 0

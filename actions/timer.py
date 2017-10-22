@@ -22,10 +22,12 @@ def timer(days):
 
 
 def timerStart(days):
-    if not days.getToday():
+    today = days.getToday()
+    if not today:
         today = data.newDay()
         days.days.append(today)
-    days.getToday().work.append(data.newWork())
+    else:
+        today.work.append(data.newWork())
     storage.save(days)
 
 

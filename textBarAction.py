@@ -25,7 +25,7 @@ if 'pause' in action:
     days = importer.getDays(json)
     actions.pause(days)
 if 'log' in action:
-    subprocess.call(["open", config.log_path])
+    actions.log.openLog()
 if 'export' in action:
     data.export()
     subprocess.call(["open", config.export_path])

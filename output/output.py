@@ -24,7 +24,7 @@ def __info(days):
         print elements.spacer()
     else:
         print "Free"
-    print "Current Overtime: " + formatter.format_delta(days.getOvertime())
+    print "Total Overtime: " + formatter.format_delta(days.getOvertime())
 
 
 def __actions(days):
@@ -36,5 +36,5 @@ def __actions(days):
     else:
         print elements.button("Start Timer")
     print elements.spacer()
-    print elements.button("Show Log")
+    print elements.button("Open Log")
     print elements.button("Export")

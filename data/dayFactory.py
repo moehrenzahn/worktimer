@@ -11,9 +11,5 @@ def newDay():
     )
 
 
-def newPause():
-    return data.block.Pause(datetime.now().time())
-
-
 def newWork():
     return data.block.Work(datetime.now().time())

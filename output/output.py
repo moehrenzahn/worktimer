@@ -16,8 +16,8 @@ def __info(days):
             print "Pause: " + formatter.format_delta(today.getPausetime())
         else:
             print formatter.format_delta(today.getRemainingWork())
-        print "Work Time " + formatter.format_delta(today.getCurrentWork())
-        print "Remaining " + formatter.format_delta(today.getRemainingWork())
+        print "Worked " + formatter.format_delta(today.getCurrentWork())
+        print "Remaining: " + formatter.format_delta(today.getRemainingWork())
         print "Pause: " + formatter.format_delta(today.getPausetime())
         print "Start: " + today.getStartTime().strftime("%H:%M")
         print "End: " + (today.getEndTime()).strftime("%H:%M")

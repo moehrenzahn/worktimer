@@ -24,7 +24,7 @@ def main():
         elif sys.argv[1] == 'pause':
             actions.pause(days)
         elif sys.argv[1] == 'log':
-            actions.log(days)
+            actions.log.openLog(days)
         else:
             print "WorkTimer " + __version__ + " by Max Melzer (moehrenzahn.de)"
             print "Usage: run worktimer.py to display current timer stats."

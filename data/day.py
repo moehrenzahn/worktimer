@@ -32,12 +32,12 @@ class Day():
     # estimation
     def isPause(self):
         pauses = self.calculatePauses()
-        lastPauseLenght = pauses[-1].getDuration()
-        remaining = self.getRemainingWork()
-        if lastPauseLenght < timedelta(hours=1) and remaining > timedelta(hours=1):
-            return 1
-        else:
-            return 0
+        if pauses:
+            lastPauseLenght = pauses[-1].getDuration()
+            remaining = self.getRemainingWork()
+            if lastPauseLenght < timedelta(hours=1) and remaining > timedelta(hours=1):
+                return 1
+        return 0
 
     def getOvertime(self):
         overtime = timedelta(0)

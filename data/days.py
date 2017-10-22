@@ -36,11 +36,15 @@ class Days:
         return overtime
 
     def getToday(self):
-        day = self.getDay(datetime.now().date())
+        try:
+            day = self.getDay(datetime.now().date())
+        except ValueError:
+            day = 0
+        # check if day is of type Today
         if isinstance(day, data.Today):
             return day
         else:
-            raise ValueError("Today does not exist")
+            return 0
 
     def json_default(self, value):
         if isinstance(value, date):

@@ -1,2 +1,3 @@
 work.json
-exportLog.txt
+export.txt
+**/*.pyc

@@ -1,6 +1,24 @@
 import storage
 import data
+import actions
+import output
 from datetime import datetime
+
+
+def timer(days):
+    if days.isTimer():
+        actions.timerStop(days)
+        output.notification(
+            "Work timer stopped",
+            "Remember to stop any time tracking"
+        )
+    else:
+        actions.timerStart(days)
+        untilTime = data.formatter.format_time(days.getToday().getEndTime())
+        output.notification(
+            "Work timer started",
+            "You will have to work until %s" % untilTime
+        )
 
 
 def timerStart(days):

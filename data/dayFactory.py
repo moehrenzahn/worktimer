@@ -1,13 +1,15 @@
 from datetime import datetime
+from datetime import timedelta
 import data
 
 
 def newDay():
     return data.Today(
         datetime.now().date(),
-        datetime.timedelta(hours=8),
+        timedelta(hours=8),
         [data.newWork()]
     )
+
 
 def newPause():
     return data.block.Pause(datetime.now().time())

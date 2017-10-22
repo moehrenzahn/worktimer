@@ -35,5 +35,5 @@ def timerStop(days):
     today = days.getToday()
     for work in today.work:
         if work.isRunning():
-            work.end = datetime.now().time()
+            work.stop = datetime.now().time()
     storage.save(days)

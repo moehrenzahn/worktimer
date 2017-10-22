@@ -7,9 +7,12 @@ class DaysFactory:
     def __init__(self, json):
         self.json = json
         self.days = []
-        for dayElement in self.json:
-            day = self.processDay(dayElement)
-            self.days.append(day)
+        for day in self.json:
+            dayElement = json[day]
+            if day != dayElement['date']:
+                raise ValueError('Date mismatch at %s' % day)
+            newDay = self.processDay(dayElement)
+            self.days.append(newDay)
 
     def create(self):
         return data.Days(self.days)
@@ -35,9 +38,9 @@ class DaysFactory:
             raise ValueError('Day without work block found')
         for item in dayElement['work']:
             start = datetime.strptime(item['start'], "%H:%M").time()
-            if 'end' in item:
-                end = datetime.strptime(item['end'], "%H:%M").time()
-                workBlocks.append(data.block.Work(start, end))
+            if 'stop' in item:
+                stop = datetime.strptime(item['stop'], "%H:%M").time()
+                workBlocks.append(data.block.Work(start, stop))
             else:
                 workBlocks.append(data.block.Work(start))
         return workBlocks

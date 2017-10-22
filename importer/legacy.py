@@ -40,23 +40,23 @@ class LegacyDaysFactory:
     def initWorkBlocks(self, dayElement):
         if 'end' in dayElement:
             start = datetime.strptime(dayElement['start'], "%H:%M").time()
-            end = datetime.strptime(dayElement['end'], "%H:%M").time()
-            work = [data.block.Work(start, end)]
+            stop = datetime.strptime(dayElement['end'], "%H:%M").time()
+            work = [data.block.Work(start, stop)]
         else:
             start = datetime.strptime(dayElement['start'], "%H:%M").time()
-            work = [data.block.Work(start, end)]
+            work = [data.block.Work(start, stop)]
         return work
 
     def initWorkBlocksWithPauses(self, dayElement):
         work = []
         start = datetime.strptime(dayElement['start'], "%H:%M").time()
         for pause in dayElement['pause']:
-            end = datetime.strptime(pause['start'], "%H:%M").time()
-            work.append(data.block.Work(start, end))
+            stop = datetime.strptime(pause['start'], "%H:%M").time()
+            work.append(data.block.Work(start, stop))
             start = datetime.strptime(pause['end'], "%H:%M").time()
         if 'end' in dayElement:
-            end = datetime.strptime(dayElement['end'], "%H:%M").time()
-            work.append(data.block.Work(start, end))
+            stop = datetime.strptime(dayElement['end'], "%H:%M").time()
+            work.append(data.block.Work(start, stop))
         else:
             work.append(data.block.Work(start))
         return work

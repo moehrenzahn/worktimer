@@ -1,5 +1,4 @@
-from datetime import datetime, date
-from datetime import timedelta
+from datetime import datetime, date, timedelta
 import data
 
 
@@ -18,9 +17,9 @@ class Day():
         pauses = []
         for (i, workBlock) in enumerate(self.work):
             if i > 0:
-                start = self.work[i - 1].end
-                end = self.work[i].start
-                pauses.append(data.block.Pause(start, end))
+                start = self.work[i - 1].stop
+                stop = self.work[i].start
+                pauses.append(data.block.Pause(start, stop))
         return pauses
 
     def isRunning(self):
@@ -42,9 +41,9 @@ class Day():
     def getOvertime(self):
         overtime = timedelta(0)
         for work in self.work:
-            if hasattr(work, 'end'):
+            if hasattr(work, 'stop'):
                 delta = datetime.combine(
-                    date.min, work.end
+                    date.min, work.stop
                 ) - datetime.combine(
                     date.min, work.start
                 )

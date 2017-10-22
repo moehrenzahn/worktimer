@@ -2,28 +2,28 @@ from datetime import datetime, date
 
 
 class Work:
-    def __init__(self, start, end=0):
+    def __init__(self, start, stop=0):
         """
         start: time
-        end: time (optional)
+        stop: time (optional)
         """
         self.start = start
-        if end:
-            self.end = end
+        if stop:
+            self.stop = stop
 
     def getDuration(self):
-        if hasattr(self, 'end'):
-            subtractEnd = self.end
+        if hasattr(self, 'stop'):
+            subtract = self.stop
         else:
-            subtractEnd = datetime.now().time()
+            subtract = datetime.now().time()
         return datetime.combine(
-            date.min, subtractEnd
+            date.min, subtract
         ) - datetime.combine(
             date.min, self.start
         )
 
     def isRunning(self):
-        if hasattr(self, 'end'):
+        if hasattr(self, 'stop'):
             return 0
         else:
             return 1

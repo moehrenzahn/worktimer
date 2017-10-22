@@ -2,9 +2,9 @@ from block import Block
 
 
 class Pause(Block):
-    def __init__(self, start, end=0):
+    def __init__(self, start, stop=0):
         """
         start: time
-        end: time (optional)
+        stop: time (optional)
         """
-        Block.__init__(self, start, end)
+        Block.__init__(self, start, stop)

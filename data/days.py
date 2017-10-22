@@ -3,7 +3,6 @@ from datetime import date
 from datetime import time
 from datetime import datetime
 from datetime import timedelta
-import json
 
 
 class Days:
@@ -19,14 +18,6 @@ class Days:
                 return day
         raise ValueError(
             'Day with date %s does not exist' % date.strftime(searchDate, "%Y-%m-%d")
-        )
-
-    def toJSON(self):
-        return json.dumps(
-            self.days,
-            default=lambda o: self.json_default(o),
-            sort_keys=True,
-            indent=4
         )
 
     def getOvertime(self):
@@ -45,16 +36,6 @@ class Days:
             return day
         else:
             return 0
-
-    def json_default(self, value):
-        if isinstance(value, date):
-            return value.strftime("%Y-%m-%d")
-        if isinstance(value, time):
-            return value.strftime("%H:%M")
-        if isinstance(value, timedelta):
-            return data.format_delta(value)
-        else:
-            return value.__dict__
 
     def isPause(self):
         today = self.getToday()

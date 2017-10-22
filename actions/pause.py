@@ -15,16 +15,16 @@ def pause(days):
         )
     else:
         actions.pauseStart(days)
-        endTime = data.formatter.format_time(days.getToday().getLastWork().end)
+        stopTime = data.formatter.format_time(days.getToday().getLastWork().stop)
         output.notification(
             "Break started",
-            "Started break at %s" % endTime
+            "Started break at %s" % stopTime
         )
 
 
 def pauseStart(days):
     today = days.getToday()
-    today.getLastWork().end = datetime.now().time()
+    today.getLastWork().stop = datetime.now().time()
     today.paused = 1
     storage.save(days)
 

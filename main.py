@@ -10,10 +10,11 @@ import importer
 
 
 try:
+    json = storage.load(config.log_path)
+    days = importer.getDays(json)
+
     args = sys.argv[1:]
     if not args:
-        json = storage.load(config.log_path)
-        days = importer.getDays(json)
         output.status(days)
     elif sys.argv[1] == 'timer':
         actions.timer(days)
@@ -26,5 +27,5 @@ try:
         print "       Use param 'pause' to start or stop pause"
         exit(2)
 except ValueError as e:
-    output.notify('Critical Error:', e)
+    output.notification('Critical Error', str(e))
     exit(2)

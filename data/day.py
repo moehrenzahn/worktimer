@@ -20,6 +20,9 @@ class Day():
                 start = self.work[i - 1].stop
                 stop = self.work[i].start
                 pauses.append(data.block.Pause(start, stop))
+        lastWork = self.getLastWork()
+        if hasattr(lastWork, 'stop'):
+            pauses.append(data.block.Pause(lastWork.stop))
         return pauses
 
     def isRunning(self):
@@ -88,7 +91,7 @@ class Day():
 
     def getRemainingWork(self):
         pauseTime = self.getPausetime()
-        # calculate for 30 minutes pause if none is taken yet
+        # calculate for 30 minutes pause if none taken yet
         if pauseTime == timedelta(0):
             pauseTime = timedelta(minutes=30)
         return (self.goal + pauseTime) - self.getCurrentWork()

@@ -16,11 +16,12 @@ class Block:
             subtract = self.stop
         else:
             subtract = datetime.now().time()
-        return datetime.combine(
+        duration = datetime.combine(
             date.min, subtract
         ) - datetime.combine(
             date.min, self.start
         )
+        return duration
 
     def isRunning(self):
         if hasattr(self, 'stop'):

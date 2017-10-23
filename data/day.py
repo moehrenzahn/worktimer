@@ -94,7 +94,7 @@ class Day():
         # calculate for 30 minutes pause if none taken yet
         if pauseTime == timedelta(0):
             pauseTime = timedelta(minutes=30)
-        return (self.goal + pauseTime) - self.getCurrentWork()
+        return (self.goal) - self.getCurrentWork()
 
     def getPausetime(self):
         time = timedelta(0)

@@ -1,4 +1,5 @@
 from day import Day
+from datetime import timedelta
 
 
 class Today(Day):
@@ -21,3 +22,11 @@ class Today(Day):
             return self.paused
         else:
             return Day.isPause(self)
+
+    def getOvertime(self):
+        if self.isRunning():
+            # don't coun't currently running day when calculating overtime
+            overtime = timedelta(0)
+        else:
+            overtime = Day.getOvertime(self)
+        return overtime

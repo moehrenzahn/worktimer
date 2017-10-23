@@ -2,6 +2,7 @@ import storage
 import data
 import actions
 import output
+import config
 from datetime import datetime
 
 
@@ -37,3 +38,5 @@ def timerStop(days):
         if work.isRunning():
             work.stop = datetime.now().time()
     storage.save(days)
+    if config.imessage:
+        output.message(config.imessage_address, config.imessage_text)

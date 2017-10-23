@@ -44,7 +44,7 @@ class LegacyDaysFactory:
             work = [data.block.Work(start, stop)]
         else:
             start = datetime.strptime(dayElement['start'], "%H:%M").time()
-            work = [data.block.Work(start, stop)]
+            work = [data.block.Work(start)]
         return work
 
     def initWorkBlocksWithPauses(self, dayElement):

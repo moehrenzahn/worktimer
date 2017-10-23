@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 from data import formatter
+import config
 import elements
 
 
 def status(days):
     __info(days)
-    print elements.spacer()
-    __actions(days)
+    if config.textbar:
+        print elements.spacer()
+        __actions(days)
 
 
 def __info(days):
@@ -21,7 +23,8 @@ def __info(days):
         print "Pause: " + formatter.format_delta(today.getPausetime())
         print "Start: " + today.getStartTime().strftime("%H:%M")
         print "End: " + (today.getEndTime()).strftime("%H:%M")
-        print elements.spacer()
+        if config.textbar:
+            print elements.spacer()
     else:
         print "Free"
     print "Total Overtime: " + formatter.format_delta(days.getOvertime())

@@ -33,6 +33,7 @@ def main():
             print "   Use param 'timer' to start or stop timer"
             print "   Use param 'pause' to start or stop pause"
             print "   Use param 'log' to open the log file in default editor"
+            print "   Use param 'export' to export the log in a human-readable format"
             exit(2)
     except ValueError as e:
         output.notification('Critical Error', str(e))

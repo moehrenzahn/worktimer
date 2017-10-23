@@ -4,5 +4,6 @@
     "notifications": true,
     "imessage": false,
     "imessage_address": "",
-    "imessage_text": ""
+    "imessage_text": "",
+    "textbar": false
 }

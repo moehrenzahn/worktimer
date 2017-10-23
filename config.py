@@ -34,6 +34,8 @@ notifications = getConfigValue('notifications')
 imessage = getConfigValue('imessage')
 imessage_address = getConfigValue('imessage_address')
 imessage_text = getConfigValue('imessage_text')
+# TextBar mode (http://richsomerfield.com/apps/textbar/)
+textbar = getConfigValue('textbar')
 
 log_path = dir_path + "/" + log
 export_path = dir_path + '/' + export

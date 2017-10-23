@@ -2,5 +2,5 @@ import subprocess
 import config
 
 
-def openLog():
+def log():
     subprocess.call(["open", config.log_path])

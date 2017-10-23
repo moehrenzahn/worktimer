@@ -5,16 +5,13 @@
 # https://github.com/richie5um/TextBar
 
 import os
-import subprocess
 import actions
 import config
 import storage
-import data
 import importer
 
 index = os.getenv('TEXTBAR_INDEX', '')
 action = os.getenv('TEXTBAR_TEXT', '').lower()
-
 
 if 'timer' in action:
     json = storage.load(config.log_path)
@@ -25,7 +22,6 @@ if 'pause' in action:
     days = importer.getDays(json)
     actions.pause(days)
 if 'log' in action:
-    actions.log.openLog()
+    actions.log()
 if 'export' in action:
-    data.export()
-    subprocess.call(["open", config.export_path])
+    actions.export(days)

@@ -13,13 +13,12 @@ import importer
 index = os.getenv('TEXTBAR_INDEX', '')
 action = os.getenv('TEXTBAR_TEXT', '').lower()
 
+json = storage.load(config.log_path)
+days = importer.getDays(json)
+
 if 'timer' in action:
-    json = storage.load(config.log_path)
-    days = importer.getDays(json)
     actions.timer(days)
 if 'pause' in action:
-    json = storage.load(config.log_path)
-    days = importer.getDays(json)
     actions.pause(days)
 if 'log' in action:
     actions.log()

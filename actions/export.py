@@ -9,7 +9,9 @@ def export(days):
     newLine = '\n'
     exportString = ''
 
-    for day in days.days:
+    sortedDays = sorted(days.days, key=lambda x: x.date)
+
+    for day in sortedDays:
         exportString += day.date.strftime("%Y-%m-%d") + tab
         for work in day.work:
             exportString += formatter.format_time(work.start)
@@ -22,6 +24,8 @@ def export(days):
 
 
 def __save(s):
+    # make sure file exists
+    open(config.export_path, 'a')
     file = open(config.export_path, 'w')
     file.write(s)
     file.close()

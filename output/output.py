@@ -34,8 +34,8 @@ def __actions(days):
     if days.isPause():
         print elements.button("Stop Pause")
     elif days.isTimer():
-        print elements.button("Stop Timer")
         print elements.button("Start Pause")
+        print elements.button("Stop Timer")
     else:
         print elements.button("Start Timer")
     print elements.spacer()

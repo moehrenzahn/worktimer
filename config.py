@@ -27,7 +27,7 @@ userConfig = readConfig(dir_path + '/config.json')
 # File name of main json data store
 log = getConfigValue('log') + ".json"
 # File name of txt for exporting
-export = getConfigValue('export') + ".json"
+export = getConfigValue('export') + ".txt"
 # Print notices to macOS notification center as well as shell
 notifications = getConfigValue('notifications')
 # Send an iMessage to a contact when ending a timer

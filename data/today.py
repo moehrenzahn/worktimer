@@ -24,7 +24,7 @@ class Today(Day):
             return Day.isPause(self)
 
     def getOvertime(self):
-        if self.isRunning():
+        if self.isRunning() or self.isPause():
             # don't coun't currently running day when calculating overtime
             overtime = timedelta(0)
         else:

@@ -8,7 +8,7 @@ import actions
 import output
 import importer
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 
 def main():
@@ -32,11 +32,15 @@ def main():
                 actions.add(sys.argv[2], days)
             else:
                 print "No file to import given."
+        elif sys.argv[1] == 'sync':
+            actions.syncDown()
+            actions.syncUp()
         else:
             print "WorkTimer " + __version__ + " by Max Melzer (moehrenzahn.de)"
             print "Usage: run worktimer.py to display current timer stats."
             print "   Use param 'timer' to start or stop timer"
             print "   Use param 'pause' to start or stop pause"
+            print "   Use param 'sync' to attempt synchronisation with remote repository"
             print "   Use param 'log' to open the log file in default editor"
             print "   Use param 'export' to export the log in a human-readable format"
             print "   Use param 'import [file]' to import a json log into your existing database"

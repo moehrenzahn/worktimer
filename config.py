@@ -28,6 +28,10 @@ userConfig = readConfig(dir_path + '/config.json')
 log = getConfigValue('log') + ".json"
 # File name of txt for exporting
 export = getConfigValue('export') + ".txt"
+# Repository to sync worktimes to
+syncRepoUrl = getConfigValue('sync_repo_url')
+syncRepoBranch = getConfigValue('sync_repo_branch')
+autoSync = getConfigValue("sync_automatically")
 # Print notices to macOS notification center as well as shell
 notifications = getConfigValue('notifications')
 # Send an iMessage to a contact when ending a timer

@@ -1,7 +1,10 @@
 {
-    "log": "work",
+    "log": "database/work",
     "export": "work",
     "notifications": true,
+    "sync_repo_url": "",
+    "sync_repo_branch": "master",
+    "sync_automatically": false,
     "imessage": false,
     "imessage_address": "",
     "imessage_text": "",

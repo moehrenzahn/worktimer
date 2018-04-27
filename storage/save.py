@@ -15,9 +15,10 @@ def save(days):
         default=lambda o: jsonDefault(o),
         indent=4
     )
-    file = open(config.log_path, 'w')
-    file.write(data)
-    file.close()
+    if data:
+        file = open(config.log_path, 'w')
+        file.write(data)
+        file.close()
 
 
 def jsonDefault(value):

@@ -31,7 +31,7 @@ def syncDown():
 
 def init():
     if not config.syncRepoUrl:
-        print "No sync_reop_url set. Aborting."
+        print "No sync_repo_url set. Aborting."
         exit(2)
     parts = config.log_path.split('/')
     filename = parts.pop()
@@ -51,15 +51,25 @@ def hasRepo(path):
 
 
 def createRepo(path, file, repo, branch):
-    commands = [
-        'cd ' + path,
-        'git init',
-        'git add ' + file,
-        'git commit -m "Create WorkTimer data repository" >> /dev/null',
-        'git remote add origin ' + repo + ' >> /dev/null',
-        'git push -u origin ' + branch + ' >> /dev/null',
-    ]
-    doCommands(commands)
+    try: 
+        print 'Cloning repository ...'
+        commands = [
+            'cd ' + path,
+            'pwd',
+            'git clone ' + repo + ' ' + path,
+        ]
+        doCommands(commands)
+    except:
+        print 'Creating new repository ...'
+        commands = [
+            'cd ' + path,
+            'git init',
+            'git add ' + file,
+            'git commit -m "Create WorkTimer data repository" >> /dev/null',
+            'git remote add origin ' + repo + ' >> /dev/null',
+            'git push -u origin ' + branch + ' >> /dev/null',
+        ]
+        doCommands(commands)
 
 
 def doCommands(commands):

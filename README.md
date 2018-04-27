@@ -48,6 +48,10 @@ Create a new file in the worktimer root directory named `config.json`. In this f
 
 On macOS, you can configure WorkTimer to send a custom iMessage to someone whenever you stop a timer. You could use this feature to nofify your spouse that you'll be home soon. :)
 
+## Syncronization (experimental)
+
+To sync your work times between machines, you will need a Git repository to store your json file and add it's path to your config file. If there is a problem with the repository, WorkTimer will output the Git info to the console. Please have a backup in case anything bad happens.
+
 ## Usage with TextBar
 
 Configure `python ~/worktimer/worktimer.py` as script and `python ~/worktimer/textBarAction.py` as action script in the TextBar preferences. A refresh rate of 15 seconds is recommended.
@@ -73,4 +77,4 @@ Total Overtime: -5:21
 <html><span style='font-size:11pt'>Export</span></html>
 ```
 
-*Copyright 2017 Max Melzer. Published under MIT License. See `LICENCSE` file for details.*
+*Copyright 2017 Max Melzer. Published under MIT License. See `LICENSE` file for details.*

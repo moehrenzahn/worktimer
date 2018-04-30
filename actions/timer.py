@@ -47,5 +47,4 @@ def timerStop(days):
             work.stop = datetime.now().time()
     storage.save(days)
     if config.imessage:
-        test = 1
-        # output.message(config.imessage_address, config.imessage_text)
+        output.message(config.imessage_address, config.imessage_text)

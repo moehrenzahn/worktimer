@@ -3,3 +3,4 @@ export.txt
 work.txt
 *.pyc
 config.json
+database

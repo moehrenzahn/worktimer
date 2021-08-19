@@ -1,4 +1,4 @@
-from block import Block
+from data.block import Block
 
 
 class Pause(Block):

@@ -1,10 +1,11 @@
-from block import Block
+from data.block import Block
 
 
 class Work(Block):
-    def __init__(self, start, end=0):
+    def __init__(self, start, category="", stop=0):
         """
         start: time
-        end: time (optional)
+        category: string (optional)
+        stop: time (optional)
         """
-        Block.__init__(self, start, end)
+        Block.__init__(self, start, category, stop)

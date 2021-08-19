@@ -1,6 +1,6 @@
 import os
 import json
-
+import io
 
 def load(file):
     # make sure file exists
@@ -9,7 +9,6 @@ def load(file):
     if os.stat(file).st_size == 0:
         os.remove(file)
         return []
-    data = open(file, 'r')
-    jsonData = json.load(data)
-    data.close()
+    with io.open(file, 'r') as data:
+        jsonData = json.load(data)
     return jsonData

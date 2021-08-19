@@ -11,7 +11,7 @@ def getDays(json):
         if isinstance(json, list):
             element = json[0]
         elif isinstance(json, dict):
-            element = json.itervalues().next()
+            element = json[next(iter(json))]
         if 'start' in element:
             factory = importer.LegacyDaysFactory(json)
         elif 'work' in element:

@@ -1,4 +1,4 @@
-from day import Day
+from data.day import Day
 from datetime import timedelta
 
 

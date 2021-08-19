@@ -8,5 +8,8 @@
     "imessage": false,
     "imessage_address": "",
     "imessage_text": "",
-    "textbar": false
+    "textbar": false,
+    "default_category": false,
+    "hours_per_day": 8,
+    "categories": {}
 }

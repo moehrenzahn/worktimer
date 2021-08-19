@@ -101,3 +101,6 @@ class Day():
         for pause in self.calculatePauses():
             time += pause.getDuration()
         return time
+
+    def getLastCategory(self):
+        return self.work[-1].category

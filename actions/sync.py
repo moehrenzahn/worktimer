@@ -31,7 +31,7 @@ def syncDown():
 
 def init():
     if not config.syncRepoUrl:
-        print "No sync_repo_url set. Aborting."
+        print("No sync_repo_url set. Aborting.")
         exit(2)
     parts = config.log_path.split('/')
     filename = parts.pop()
@@ -52,7 +52,7 @@ def hasRepo(path):
 
 def createRepo(path, file, repo, branch):
     try: 
-        print 'Cloning repository ...'
+        print('Cloning repository ...')
         commands = [
             'cd ' + path,
             'pwd',
@@ -60,7 +60,7 @@ def createRepo(path, file, repo, branch):
         ]
         doCommands(commands)
     except:
-        print 'Creating new repository ...'
+        print('Creating new repository ...')
         commands = [
             'cd ' + path,
             'git init',
@@ -76,4 +76,4 @@ def doCommands(commands):
     try:
         subprocess.call(' && '.join(commands), shell=True)
     except:
-        print "Could not sync with remote repository."
+        print("Could not sync with remote repository.")

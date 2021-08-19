@@ -1,7 +1,7 @@
 from datetime import datetime
 from datetime import time
 from datetime import timedelta
-
+import config
 
 def format_delta(td):
     if type(td) is not timedelta:
@@ -21,3 +21,9 @@ def format_time(t):
     if type(t) is time:
         t = datetime(2000, 1, 1, t.hour, t.minute)
     return datetime.strftime(t, "%H:%M")
+
+def format_category(category):
+    if category in config.categories:
+        return config.categories[category]
+    else:
+        return ''

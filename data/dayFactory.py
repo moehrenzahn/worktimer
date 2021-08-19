@@ -3,13 +3,16 @@ from datetime import timedelta
 import data
 
 
-def newDay():
+def newDay(category=""):
     return data.Today(
         datetime.now().date(),
         timedelta(hours=8),
-        [data.newWork()]
+        [data.newWork(category)]
     )
 
 
-def newWork():
-    return data.block.Work(datetime.now().time())
+def newWork(category=""):
+    return data.block.Work(
+        datetime.now().time(),
+        category
+    )

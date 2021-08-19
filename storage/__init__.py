@@ -1,2 +1,2 @@
-from load import *
-from save import *
+from storage.load import *
+from storage.save import *

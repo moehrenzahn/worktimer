@@ -24,13 +24,23 @@ def pause(days):
 
 def pauseStart(days):
     today = days.getToday()
-    today.getLastWork().stop = datetime.now().time()
+    for work in today.work:
+        work.stop = datetime.now().time()
     today.paused = 1
     storage.save(days)
 
 
 def pauseStop(days):
     today = days.getToday()
-    today.work.append(data.block.Work(datetime.now().time()))
+    now = datetime.now().time()
+    if today.getLastWork().stop.hour == now.hour and today.getLastWork().stop.minute == now.minute:
+        # If the break was 0 minutes, we cancel it.
+        del today.getLastWork().stop
+    else:
+        today.work.append(
+            data.block.Work(
+                now,
+                today.getLastWork().category
+        ))
     today.paused = 0
     storage.save(days)

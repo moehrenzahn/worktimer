@@ -2,12 +2,14 @@ from datetime import datetime, date
 
 
 class Block:
-    def __init__(self, start, stop=0):
+    def __init__(self, start, category="", stop=0):
         """
         start: time
+        category: string (optional)
         stop: time (optional)
         """
         self.start = start
+        self.category = category
         if stop:
             self.stop = stop
 

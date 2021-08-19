@@ -8,7 +8,7 @@ WorkTimer optionally integrates with macOS Notification Center, Message.app, and
 
 ## Requirements
 
-- Python 2.7.10 or newer
+- Python 3
 - Optional:
     + macOS with configured Messages app
     + [TextBar](http://richsomerfield.com/apps/textbar/)
@@ -22,7 +22,7 @@ git clone https://github.com/moehrenzahn/worktimer.git
 cd worktimer
 ```
 
-You can start a new timer with `python worktimer.py timer`. Then, monitor your progress with `python worktimer.py`. Use `python worktimer.py pause` to start a break or `python worktimer.py timer` to stop the timer.
+You can start a new timer with `python worktimer.py timer [category]`. Then, monitor your progress with `python worktimer.py`. Use `python worktimer.py pause` to start and stop a break or `python worktimer.py timer` to stop a running timer.
 
 Get a list of all avaliable command line options with `python worktimer.py --help`.
 
@@ -39,7 +39,6 @@ End: 16:20
 Total Overtime: 1:21
 ```
 
-
 ## Configuration
 
 Create a new file in the worktimer root directory named `config.json`. In this file you can override any setting found in `config_default.json` by mimicing the default json structure.
@@ -50,7 +49,9 @@ On macOS, you can configure WorkTimer to send a custom iMessage to someone whene
 
 ## Syncronization (experimental)
 
-To sync your work times between machines, you will need a Git repository to store your json file and add it's path to your config file. If there is a problem with the repository, WorkTimer will output the Git info to the console. Please have a backup in case anything bad happens.
+To sync your work times between machines, you will need a Git repository to store your json file and add it's path to your config file. If there is a problem with the repository, WorkTimer will output the Git info to the console.
+
+When using automatic synching, don't start a session on two machines in parallel; and please have a backup in case anything bad happens.
 
 ## Usage with TextBar
 

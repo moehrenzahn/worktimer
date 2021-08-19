@@ -6,8 +6,8 @@ import config
 from datetime import datetime
 
 
-def timer(days):
-    if days.isTimer():
+def timer(days, category=""):
+    if days.isTimer() and not category:
         actions.timerStop(days)
         output.notification(
             "Work timer stopped",
@@ -22,22 +22,39 @@ def timer(days):
     else:
         if config.autoSync:
             actions.syncDown()
-        actions.timerStart(days)
-        untilTime = data.formatter.format_time(days.getToday().getEndTime())
-        output.notification(
-            "Work timer started",
-            "You will have to work until %s" % untilTime
-        )
+        actions.timerStart(days, category)
 
 
-def timerStart(days):
+def timerStart(days, category=""):
+    if not category:
+        category = config.default_category
+    
     today = days.getToday()
+    lastWork = today.work[-1]
+    if lastWork.isRunning():
+        # A timer is running
+        if lastWork.category == category:
+            output.notification(
+                "Work timer running",
+                "You already have a timer running for %s." % output.formatter.format_category(category)
+            )
+            return
+        else:
+            # Stop the last work block in another category
+            lastWork.stop = datetime.now().time()
+    
     if not today:
-        today = data.newDay()
+        today = data.newDay(category)
         days.days.append(today)
     else:
-        today.work.append(data.newWork())
+        today.work.append(data.newWork(category))
     storage.save(days)
+
+    untilTime = data.formatter.format_time(days.getToday().getEndTime())
+    output.notification(
+        "Work timer started for %s" % output.formatter.format_category(category),
+        "You will have to work until %s" % untilTime
+    )
 
 
 def timerStop(days):

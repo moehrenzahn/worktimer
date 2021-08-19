@@ -1,8 +1,8 @@
+import io
 import config
 import json
 from datetime import date, timedelta, time
 import data
-
 
 def save(days):
     data = {}
@@ -16,7 +16,7 @@ def save(days):
         indent=4
     )
     if data:
-        file = open(config.log_path, 'w')
+        file = io.open(config.log_path, 'w', encoding='utf8')
         file.write(data)
         file.close()
 

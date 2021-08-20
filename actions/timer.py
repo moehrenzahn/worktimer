@@ -30,19 +30,20 @@ def timerStart(days, category=""):
         category = config.default_category
     
     today = days.getToday()
-    lastWork = today.work[-1]
-    if lastWork.isRunning():
-        # A timer is running
-        if lastWork.category == category:
-            output.notification(
-                "Work timer running",
-                "You already have a timer running for %s." % output.formatter.format_category(category)
-            )
-            return
-        else:
-            # Stop the last work block in another category
-            lastWork.stop = datetime.now().time()
-    
+    if today:
+        lastWork = today.getLastWork()
+        if lastWork.isRunning():
+            # A timer is running
+            if lastWork.category == category:
+                output.notification(
+                    "Work timer running",
+                    "You already have a timer running for %s." % output.formatter.format_category(category)
+                )
+                return
+            else:
+                # Stop the last work block in another category
+                lastWork.stop = datetime.now().time()
+        
     if not today:
         today = data.newDay(category)
         days.days.append(today)

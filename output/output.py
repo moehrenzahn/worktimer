@@ -18,6 +18,8 @@ def __info(days):
         else:
             print("%s %s" % (formatter.format_delta(today.getRemainingWork()), formatter.format_category(today.getLastCategory())))
 
+        if config.textbar:
+            print('---')
         print("Worked %s" % formatter.format_delta(today.getCurrentWork()))
         print("Remaining: %s" % formatter.format_delta(today.getRemainingWork()))
         print("Pause: %s" % formatter.format_delta(today.getPausetime()))
@@ -32,20 +34,28 @@ def __info(days):
 
 def __actions(days):
     if days.isPause():
-        print(elements.button("☕️ Stop Pause"))
+        print(elements.button("☕️ Stop Pause", 'pause'))
     elif days.isTimer():
-        print(elements.button("☕️ Start Pause"))
-        print(elements.button("⏰ Stop Timer"))
+        print(elements.button("☕️ Start Pause", 'pause'))
+        print(elements.button("⏰ Stop Timer", 'timer'))
     else:
-        print(elements.button("⏰ Start Timer"))
+        print(elements.button("⏰ Start Timer", 'timer'))
     print(elements.spacer())
     if not days.isPause():
+        menuItems = []
         if days.isTimer():
-            print("Switch Category:")
+            menuTitle = 'Switch Category'
         else:
-            print("Start Category:")
+            menuTitle = "Start Category"
         for key, description in config.categories.items():
-            print(elements.button("⏰ %s Timer" % formatter.format_category(key)))
+            menuItems.append(
+                elements.button(
+                    "⏰ %s" % description,
+                    'timer ' + key
+                )
+            )
+
+        print(elements.menu(menuTitle, menuItems))
         print(elements.spacer())
-    print(elements.button("Open Log"))
-    print(elements.button("Export"))
+    print(elements.button('Open Log', 'log'))
+    print(elements.button('Export', 'export'))

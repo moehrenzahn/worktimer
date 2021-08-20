@@ -4,14 +4,14 @@
 
 *By Max Melzer ([moehrenzahn.de](https://moehrenzahn.de/))*
 
-WorkTimer optionally integrates with macOS Notification Center, Message.app, and the [TextBar app by Rich Somerfield](http://richsomerfield.com/apps/textbar/)
+WorkTimer optionally integrates with macOS Notification Center, Message.app, and the [xBar app](https://github.com/matryer/xbar)
 
 ## Requirements
 
 - Python 3
 - Optional:
     + macOS with configured Messages app
-    + [TextBar](http://richsomerfield.com/apps/textbar/)
+    + [xBar](https://github.com/matryer/xbar)
 
 ## Installation and Usage
 
@@ -53,29 +53,10 @@ To sync your work times between machines, you will need a Git repository to stor
 
 When using automatic synching, don't start a session on two machines in parallel; and please have a backup in case anything bad happens.
 
-## Usage with TextBar
+## Usage with xBar
 
-Configure `python ~/worktimer/worktimer.py` as script and `python ~/worktimer/textBarAction.py` as action script in the TextBar preferences. A refresh rate of 15 seconds is recommended.
+Create an alias to `WorkTimer.py` in your plugin folder and name it `worktimer.30s.py`
 
-Make sure to set `textbar` to `true` in your `config.json` to make full use of TextBar:
+Make sure to set `textbar` to `true` in your `config.json` to make full use of xBar:
 
-```bash
-python worktimer.py
-6:08
-Worked 1:51
-Remaining: 6:08
-Pause: 0:15
-Start: 08:05
-End: 16:20
-Total Overtime: 1:21
-<html><span style='font-size:3pt'>&nbsp;</span></html>
-Total Overtime: -5:21
-<html><span style='font-size:3pt'>&nbsp;</span></html>
-<html><span style='font-size:11pt'>Stop Timer</span></html>
-<html><span style='font-size:11pt'>Start Pause</span></html>
-<html><span style='font-size:3pt'>&nbsp;</span></html>
-<html><span style='font-size:11pt'>Open Log</span></html>
-<html><span style='font-size:11pt'>Export</span></html>
-```
-
-*Copyright 2017 Max Melzer. Published under MIT License. See `LICENSE` file for details.*
+*Copyright 2017-2021 Max Melzer. Published under MIT License. See `LICENSE` file for details.*

@@ -7,4 +7,4 @@ class Pause(Block):
         start: time
         stop: time (optional)
         """
-        Block.__init__(self, start, stop)
+        Block.__init__(self, start, 'pause', stop)

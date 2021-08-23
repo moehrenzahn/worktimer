@@ -17,9 +17,13 @@ def __info(days):
             print("Pause: %s" % formatter.format_delta(today.getPausetime()))
         else:
             print("%s %s" % (formatter.format_delta(today.getRemainingWork()), formatter.format_category(today.getLastCategory())))
+    else:
+        print("Free")
+    
+    if config.textbar:
+        print('---')
 
-        if config.textbar:
-            print('---')
+    if days.isTimer():
         print("Worked %s" % formatter.format_delta(today.getCurrentWork()))
         print("Remaining: %s" % formatter.format_delta(today.getRemainingWork()))
         print("Pause: %s" % formatter.format_delta(today.getPausetime()))
@@ -27,8 +31,7 @@ def __info(days):
         print("End: %s" % (today.getEndTime()).strftime("%H:%M"))
         if config.textbar:
             print(elements.spacer())
-    else:
-        print("Free")
+    
     print("Total Overtime: %s" % formatter.format_delta(days.getOvertime()))
 
 

@@ -20,10 +20,10 @@ def format_time(t):
         t = (datetime.min + t).time()
     if type(t) is time:
         t = datetime(2000, 1, 1, t.hour, t.minute)
-    return datetime.strftime(t, "%H:%M")
+    return datetime.strftime(t, "%-H:%M")
 
 def format_category(category):
     if category in config.categories():
         return config.categories()[category]
     else:
-        return ''
+        return category.title().replace('_', ' ')

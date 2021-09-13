@@ -32,6 +32,9 @@ def autoSync():
 def notifications():
     return _getConfigValue('notifications')
 
+def hoursPerDay():
+    return _getConfigValue('hours_per_day')
+
 # Send an iMessage to a contact when ending a timer
 def imessage():
     return _getConfigValue('imessage')
@@ -51,6 +54,7 @@ def log_path():
     return dir_path + "/" + log()
 def export_path():
     return dir_path + '/' + export()
+
 
 def _getConfigValue(s):
     if s in overrides:

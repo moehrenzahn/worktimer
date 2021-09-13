@@ -44,13 +44,13 @@ Total Overtime: 1:21
 First, install test dependencies:
 
 ```bash
-pip install freezegun
+pip3 install freezegun
 ```
 
-Run basic unit tests using:
+Run the suite of unit and integration tests using:
 
 ```bash
-python -m unittest
+python3 -m unittest
 ```
 
 ## Configuration
@@ -71,6 +71,7 @@ When using automatic synching, don't start a session on two machines in parallel
 
 Create an alias to `WorkTimer.py` in your plugin folder and name it `worktimer.30s.py`
 
-Make sure to set `textbar` to `true` in your `config.json` to make full use of xBar:
+Make sure to set `textbar` to `true` in your `config.json` to make full use of xBar.
+
 
 *Copyright 2017-2021 Max Melzer. Published under MIT License. See `LICENSE` file for details.*

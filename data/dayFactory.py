@@ -1,12 +1,13 @@
 from datetime import datetime
 from datetime import timedelta
 import data
+import config
 
 
 def newDay(category=""):
     return data.Today(
         datetime.now().date(),
-        timedelta(hours=8),
+        timedelta(hours=config.hoursPerDay()),
         [data.newWork(category)]
     )
 

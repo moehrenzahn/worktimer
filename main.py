@@ -8,7 +8,7 @@ import output
 import importer
 
 
-__version__ = "2.1.0"
+__version__ = "2.2.0"
 
 
 def main():
@@ -19,13 +19,16 @@ def main():
             if argument.startswith('-'):
                 keyAndValue = argument.split('=')
                 key = keyAndValue[0].strip().lstrip('-')
-                value = keyAndValue[1].strip()
-                if value == 'false':
-                    config.overrides[key] = False
-                elif value == 'true':
-                    config.overrides[key] = True
-                else:
-                    config.overrides[key] = value
+                if key == 'help':
+                    commands.insert(0, 'help')
+                if len(keyAndValue) > 1:
+                    value = keyAndValue[1].strip()
+                    if value == 'false':
+                        config.overrides[key] = False
+                    elif value == 'true':
+                        config.overrides[key] = True
+                    else:
+                        config.overrides[key] = value
             else:
                 commands.append(argument.strip())
         
@@ -55,6 +58,7 @@ def main():
             actions.syncUp()
         else:
             print("WorkTimer " + __version__ + " by Max Melzer (moehrenzahn.de)")
+            print("")
             print("Usage: run worktimer.py to display current timer stats.")
             print("   Use param 'timer [category]' to start or stop timer")
             print("   Use param 'pause' to start or stop pause")
@@ -62,6 +66,11 @@ def main():
             print("   Use param 'log' to open the log file in default editor")
             print("   Use param 'export' to export the log in a human-readable format")
             print("   Use param 'import [file]' to import a json log into your existing database")
+            print("")
+            print("Options (see config_default.json) for complete list:")
+            print("   --hours_per_day=8")
+            print("   --log=path/to/your/work/log")
+            print("   --sync_automatically=false")
             return 2
         return 0
     except ValueError as e:

@@ -7,6 +7,12 @@ from datetime import datetime
 
 
 def timer(days, category=""):
+    if days.isPause():
+        output.notification(
+            "Timer is Paused",
+            "Please end pause before starting or stopping the timer"
+        )
+        return
     if days.isTimer() and not category:
         actions.timerStop(days)
         output.notification(

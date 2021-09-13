@@ -1,8 +1,8 @@
 import unittest
 from datetime import datetime
 from datetime import timedelta
+from freezegun import freeze_time
 import data
-
 
 class DayTestCase(unittest.TestCase):
     def setUp(self):
@@ -32,9 +32,12 @@ class DayTestCase(unittest.TestCase):
         self.assertEqual(currentWork, timedelta(hours=8, minutes=30))
 
     def test_pauseTime(self):
-        pauseTime = self.testDay.getPausetime()
-        # needs a mock for time.now()
-        # self.assertEqual(pauseTime, timedelta(minutes=30))
+        with freeze_time('2017-01-01 17:00'):
+            pauseTime = self.testDay.getPausetime()
+            self.assertEqual(pauseTime, timedelta(minutes=30))
+        with freeze_time('2017-01-01 17:30'):
+            pauseTime = self.testDay.getPausetime()
+            self.assertEqual(pauseTime, timedelta(minutes=60))
 
     def test_isRunning(self):
         date = datetime.strptime('2017-01-01', '%Y-%m-%d').date()

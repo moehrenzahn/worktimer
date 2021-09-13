@@ -1,8 +1,8 @@
 import unittest
 from datetime import datetime
 from datetime import timedelta
+from freezegun import freeze_time
 import data
-
 
 class BlockTestCase(unittest.TestCase):
     def setUp(self):
@@ -14,24 +14,15 @@ class BlockTestCase(unittest.TestCase):
     def test_duration(self):
         duration = self.testBlock1.getDuration()
         self.assertEqual(duration, timedelta(hours=4))
-        duration = self.testBlock2.getDuration()
-        # This needs a mock for datetime.now().time()
-        #
-        # self.assertEqual(
-        #     duration,
-        #     datetime.combine(
-        #         date.min, datetime.now().time()
-        #     ) - datetime.combine(
-        #         date.min, datetime.strptime('08:00', '%H:%M').time()
-        #     )
-        # )
+        with freeze_time('2017-01-01 10:00'):
+            duration = self.testBlock2.getDuration()
+            self.assertEqual(duration, timedelta(hours=2))
 
     def test_running(self):
         isRunning1 = self.testBlock1.isRunning()
         isRunning2 = self.testBlock2.isRunning()
         self.assertEqual(isRunning1, 0)
         self.assertEqual(isRunning2, 1)
-
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,12 +1,18 @@
 import unittest
 from datetime import datetime
 from datetime import timedelta
+from freezegun import freeze_time
 import data
 
 class DaysTestCase(unittest.TestCase):
+    
+    # The current date as far as the test is concernded 
+    todayDateStr = '2017-01-02'
+
     def setUp(self):
+        
         date1 = datetime.strptime('2017-01-01', '%Y-%m-%d').date()
-        date2 = datetime.strptime('2017-01-02', '%Y-%m-%d').date()
+        date2 = datetime.strptime(self.todayDateStr, '%Y-%m-%d').date()
         work1 = data.block.Work(
             datetime.strptime('08:00', '%H:%M').time(),
             '',
@@ -30,26 +36,26 @@ class DaysTestCase(unittest.TestCase):
             work3
         ]
         testDay1 = data.Day(date1, goal, workArray1)
-        testDay2 = data.Day(date2, goal, workArray1)
-        testDay3 = data.Day(date2, goal, workArray2)
+        testDay2 = data.Today(date2, goal, workArray1)
+        testDay3 = data.Today(date2, goal, workArray2)
 
         self.testDays1 = data.Days([testDay1, testDay2])
         self.testDays2 = data.Days([testDay1, testDay3])
 
     def test_isTimer(self):
-        isTimer = self.testDays1.isTimer()
-        self.assertEqual(isTimer, 0)
-        # This needs a mock for datetime.now().time()
-        # isTimer = self.testDays2.isTimer()
-        # self.assertEqual(isTimer, 0)
+        with freeze_time(self.todayDateStr):
+            isTimer = self.testDays1.isTimer()
+            self.assertEqual(isTimer, 0)
+            isTimer = self.testDays2.isTimer()
+            self.assertEqual(isTimer, 1)
 
     def test_overtime(self):
-        overtime = self.testDays1.getOvertime()
-        self.assertEqual(
-            overtime,
-            timedelta(hours=1)
-        )
-
+        with freeze_time(self.todayDateStr):
+            overtime = self.testDays1.getOvertime()
+            self.assertEqual(
+                overtime,
+                timedelta(hours=1)
+            )
 
 if __name__ == '__main__':
     unittest.main()

@@ -10,8 +10,8 @@ WorkTimer optionally integrates with macOS Notification Center, Message.app, and
 
 - Python 3
 - Optional:
-    + macOS with configured Messages app
-    + [xBar](https://github.com/matryer/xbar)
+    - macOS with configured Messages app
+    - [xBar](https://github.com/matryer/xbar)
 
 ## Installation and Usage
 
@@ -40,6 +40,12 @@ Total Overtime: 1:21
 ```
 
 ## Testing
+
+First, install test dependencies:
+
+```bash
+pip install freezegun
+```
 
 Run basic unit tests using:
 

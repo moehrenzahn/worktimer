@@ -23,7 +23,7 @@ def format_time(t):
     return datetime.strftime(t, "%H:%M")
 
 def format_category(category):
-    if category in config.categories:
-        return config.categories[category]
+    if category in config.categories():
+        return config.categories()[category]
     else:
         return ''

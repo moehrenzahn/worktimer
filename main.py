@@ -6,8 +6,7 @@ import storage
 import actions
 import output
 import importer
-import os
-import locale
+
 
 __version__ = "2.1.0"
 
@@ -15,29 +14,43 @@ __version__ = "2.1.0"
 def main():
     
     try:
-        json = storage.load(config.log_path)
+        commands = []
+        for argument in sys.argv[1:]:
+            if argument.startswith('-'):
+                keyAndValue = argument.split('=')
+                key = keyAndValue[0].strip().lstrip('-')
+                value = keyAndValue[1].strip()
+                if value == 'false':
+                    config.overrides[key] = False
+                elif value == 'true':
+                    config.overrides[key] = True
+                else:
+                    config.overrides[key] = value
+            else:
+                commands.append(argument.strip())
+        
+        json = storage.load(config.log_path())
         days = importer.getDays(json)
 
-        args = sys.argv[1:]
-        if not args:
+        if not commands:
             output.status(days)
-        elif sys.argv[1] == 'timer':
-            if len(sys.argv) > 2:
-                actions.timer(days, sys.argv[2])
+        elif commands[0] == 'timer':
+            if len(commands) > 1:
+                actions.timer(days, commands[1])
             else:
                 actions.timer(days)
-        elif sys.argv[1] == 'pause':
+        elif commands[0] == 'pause':
             actions.pause(days)
-        elif sys.argv[1] == 'log':
+        elif commands[0] == 'log':
             actions.log()
-        elif sys.argv[1] == 'export':
+        elif commands[0] == 'export':
             actions.export(days)
-        elif sys.argv[1] == 'import':
-            if len(sys.argv) > 2:
-                actions.add(sys.argv[2], days)
+        elif commands[0] == 'import':
+            if len(commands) > 1:
+                actions.add(commands[1], days)
             else:
                 print("No file to import given.")
-        elif sys.argv[1] == 'sync':
+        elif commands[0] == 'sync':
             actions.syncDown()
             actions.syncUp()
         else:
@@ -49,7 +62,8 @@ def main():
             print("   Use param 'log' to open the log file in default editor")
             print("   Use param 'export' to export the log in a human-readable format")
             print("   Use param 'import [file]' to import a json log into your existing database")
-            exit(2)
+            return 2
+        return 0
     except ValueError as e:
         output.notification('Critical Error', str(e))
-        exit(2)
+        return 1

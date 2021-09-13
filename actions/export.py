@@ -20,12 +20,12 @@ def export(days):
             exportString += newLine + tab + tab + tab
         exportString += newLine
     __save(exportString)
-    subprocess.call(["open", config.export_path])
+    subprocess.call(["open", config.export_path()])
 
 
 def __save(s):
     # make sure file exists
-    open(config.export_path, 'a')
-    file = open(config.export_path, 'w')
+    open(config.export_path(), 'a')
+    file = open(config.export_path(), 'w')
     file.write(s)
     file.close()

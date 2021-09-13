@@ -4,7 +4,7 @@ import os
 
 def notification(head, text):
     print(head + ": " + text)
-    if config.notifications:
+    if config.notifications():
         script = "osascript -e \'display notification \"%s\" with title \"%s\"\'" % (text, head)
         result = os.system(script)
         if result > 0:

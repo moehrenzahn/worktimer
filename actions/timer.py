@@ -13,21 +13,21 @@ def timer(days, category=""):
             "Work timer stopped",
             "Remember to stop any time tracking"
         )
-        if config.autoSync:
+        if config.autoSync():
             actions.syncUp()
             output.notification(
                 "Synchronisation",
                 "Work log synced with remote repo"
             )
     else:
-        if config.autoSync:
+        if config.autoSync():
             actions.syncDown()
         actions.timerStart(days, category)
 
 
 def timerStart(days, category=""):
     if not category:
-        category = config.default_category
+        category = config.default_category()
     
     today = days.getToday()
     if today:
@@ -64,5 +64,5 @@ def timerStop(days):
         if work.isRunning():
             work.stop = datetime.now().time()
     storage.save(days)
-    if config.imessage:
-        output.message(config.imessage_address, config.imessage_text)
+    if config.imessage():
+        output.message(config.imessage_address(), config.imessage_text())

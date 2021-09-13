@@ -5,7 +5,7 @@ import output.elements as elements
 
 def status(days):
     __info(days)
-    if config.textbar:
+    if config.textbar():
         print(elements.spacer())
         __actions(days)
 
@@ -20,7 +20,7 @@ def __info(days):
     else:
         print("Free")
     
-    if config.textbar:
+    if config.textbar():
         print('---')
 
     if days.isTimer():
@@ -29,7 +29,7 @@ def __info(days):
         print("Pause: %s" % formatter.format_delta(today.getPausetime()))
         print("Start: %s" % today.getStartTime().strftime("%H:%M"))
         print("End: %s" % (today.getEndTime()).strftime("%H:%M"))
-        if config.textbar:
+        if config.textbar():
             print(elements.spacer())
     
     print("Total Overtime: %s" % formatter.format_delta(days.getOvertime()))
@@ -50,7 +50,7 @@ def __actions(days):
             menuTitle = 'Switch Category'
         else:
             menuTitle = "Start Category"
-        for key, description in config.categories.items():
+        for key, description in config.categories().items():
             menuItems.append(
                 elements.button(
                     "⏰ %s" % description,

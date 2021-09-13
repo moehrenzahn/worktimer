@@ -3,8 +3,6 @@ import json
 import io
 
 def load(file):
-    # make sure file exists
-    open(file, 'a')
     # return empty array if file is empty
     if os.stat(file).st_size == 0:
         os.remove(file)

@@ -5,35 +5,35 @@ import os
 
 def syncUp():
     init()
-    parts = config.log_path.split('/')
+    parts = config.log_path().split('/')
     file = parts.pop()
     path = '/'.join(parts)
     commands = [
         'cd ' + path,
         'git add ' + file,
         'git commit -m "Update WorkTimer data" >> /dev/null',
-        'git push origin ' + config.syncRepoBranch + ' --quiet >> /dev/null',
+        'git push origin ' + config.syncRepoBranch() + ' --quiet >> /dev/null',
     ]
     doCommands(commands)
 
 
 def syncDown():
     init()
-    parts = config.log_path.split('/')
+    parts = config.log_path().split('/')
     parts.pop()
     path = '/'.join(parts)
     commands = [
         'cd ' + path,
-        'git pull origin ' + config.syncRepoBranch + ' --quiet >> /dev/null',
+        'git pull origin ' + config.syncRepoBranch() + ' --quiet >> /dev/null',
     ]
     doCommands(commands)
 
 
 def init():
-    if not config.syncRepoUrl:
+    if not config.syncRepoUrl():
         print("No sync_repo_url set. Aborting.")
         exit(2)
-    parts = config.log_path.split('/')
+    parts = config.log_path().split('/')
     filename = parts.pop()
     directory = '/'.join(parts)
 
@@ -41,8 +41,8 @@ def init():
         createRepo(
             directory,
             filename,
-            config.syncRepoUrl,
-            config.syncRepoBranch
+            config.syncRepoUrl(),
+            config.syncRepoBranch()
         )
 
 

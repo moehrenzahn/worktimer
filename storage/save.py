@@ -16,7 +16,7 @@ def save(days):
         indent=4
     )
     if data:
-        file = io.open(config.log_path, 'w', encoding='utf8')
+        file = io.open(config.log_path(), 'w', encoding='utf8')
         file.write(data)
         file.close()
 

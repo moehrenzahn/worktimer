@@ -8,8 +8,8 @@ class BlockTestCase(unittest.TestCase):
     def setUp(self):
         start = datetime.strptime('08:00', '%H:%M').time()
         stop = datetime.strptime('12:00', '%H:%M').time()
-        self.testBlock1 = data.block.Block(start, stop)
-        self.testBlock2 = data.block.Block(start)
+        self.testBlock1 = data.block.Block(start, "", stop)
+        self.testBlock2 = data.block.Block(start, "")
 
     def test_duration(self):
         duration = self.testBlock1.getDuration()

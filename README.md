@@ -39,6 +39,14 @@ End: 16:20
 Total Overtime: 1:21
 ```
 
+## Testing
+
+Run basic unit tests using:
+
+```bash
+python -m unittest
+```
+
 ## Configuration
 
 Create a new file in the worktimer root directory named `config.json`. In this file you can override any setting found in `config_default.json` by mimicing the default json structure.

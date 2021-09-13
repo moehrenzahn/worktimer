@@ -3,17 +3,18 @@ from datetime import datetime
 from datetime import timedelta
 import data
 
-
 class DaysTestCase(unittest.TestCase):
     def setUp(self):
         date1 = datetime.strptime('2017-01-01', '%Y-%m-%d').date()
         date2 = datetime.strptime('2017-01-02', '%Y-%m-%d').date()
         work1 = data.block.Work(
             datetime.strptime('08:00', '%H:%M').time(),
+            '',
             datetime.strptime('12:00', '%H:%M').time()
         )
         work2 = data.block.Work(
             datetime.strptime('12:30', '%H:%M').time(),
+            '',
             datetime.strptime('17:00', '%H:%M').time()
         )
         work3 = data.block.Work(

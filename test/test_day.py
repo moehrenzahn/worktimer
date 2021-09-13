@@ -12,10 +12,12 @@ class DayTestCase(unittest.TestCase):
         workArray = [
             data.block.Work(
                 datetime.strptime('08:00', '%H:%M').time(),
+                "cat",
                 datetime.strptime('12:00', '%H:%M').time()
             ),
             data.block.Work(
                 datetime.strptime('12:30', '%H:%M').time(),
+                "cat",
                 datetime.strptime('17:00', '%H:%M').time()
             )
         ]
@@ -39,7 +41,7 @@ class DayTestCase(unittest.TestCase):
         goal = datetime.strptime('08:00', "%H:%M")
         goal = timedelta(hours=goal.hour, minutes=goal.minute)
         workArray = [
-            data.block.Work('8:00', '12:00'),
+            data.block.Work('8:00', '', '12:00'),
             data.block.Work('12:30')
         ]
         runningDay = data.Day(date, goal, workArray)

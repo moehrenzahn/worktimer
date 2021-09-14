@@ -1,18 +1,14 @@
 import unittest
-from os import path, remove
-from shutil import copyfile
-from test.integration.helper import run
+from test.integration.helper import run, prepareSampleJson, cleanUpSampleJson
 
 
 class IntegrationTimerTestCase(unittest.TestCase):
 
     def setUp(self):
-        integrationPath = path.dirname(path.realpath(__file__))
-        copyfile(integrationPath + '/sample1.json', integrationPath + '/tmp_sample_1.json')
+        prepareSampleJson()
 
     def tearDown(self):
-        integrationPath = path.dirname(path.realpath(__file__))
-        remove(integrationPath + '/tmp_sample_1.json')
+        cleanUpSampleJson()
 
     def test_timer(self):
         # Stop ongoing timer to land at 0:00 overtime

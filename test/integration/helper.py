@@ -3,7 +3,8 @@ import io
 import main
 import storage
 import importer
-from os import path
+from os import path, remove
+from shutil import copyfile
 from unittest.mock import patch
 from freezegun import freeze_time
 from contextlib import redirect_stdout
@@ -13,7 +14,7 @@ from contextlib import redirect_stdout
 def run(command = None, date = '2021-01-02 8:00', subcommand = None) -> str:
     testargs = [
         'WorkTimer.py',
-        '--log=test/integration/tmp_sample_1',
+        '--log=test/data/tmp_sample_1',
         '--sync_automatically=false',
         '--default_category=default',
         '--notifications=false',
@@ -32,6 +33,20 @@ def run(command = None, date = '2021-01-02 8:00', subcommand = None) -> str:
 
     return f.getvalue()
 
-def getDays(file = 'tmp_sample_1') -> Days:
-    json = storage.load(path.dirname(path.realpath(__file__)) + '/' + file + '.json')
-    return importer.getDays(json)
+def prepareSampleJson():
+    copyfile(sampleFilePath('sample1.json'), sampleFilePath('tmp_sample_1.json'))
+
+def cleanUpSampleJson():
+    remove(sampleFilePath('tmp_sample_1.json'))
+
+
+def sampleFilePath(name):
+    integrationPath = path.dirname(path.realpath(__file__))
+    integrationPath = integrationPath.replace('integration', 'data')
+    return  integrationPath + '/' + name
+
+def getDays(file = 'tmp_sample_1', date = '2021-01-02 8:00') -> Days:
+    path = sampleFilePath(file + '.json')
+    with freeze_time(date):
+        json = storage.load(path)
+        return importer.getDays(json)

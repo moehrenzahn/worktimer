@@ -3,12 +3,13 @@ from datetime import date
 from datetime import time
 from datetime import datetime
 from datetime import timedelta
+from typing import List
 
 
 class Days:
-    def __init__(self, days):
+    def __init__(self, days: List[data.Day]):
         """
-        days: [Day]]
+        days: List[Day]]
         """
         self.days = days
 

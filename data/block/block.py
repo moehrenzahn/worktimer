@@ -1,4 +1,4 @@
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 
 
 class Block:
@@ -13,7 +13,7 @@ class Block:
         if stop:
             self.stop = stop
 
-    def getDuration(self):
+    def getDuration(self) -> timedelta:
         if hasattr(self, 'stop'):
             subtract = self.stop
         else:
@@ -25,7 +25,7 @@ class Block:
         )
         return duration
 
-    def isRunning(self):
+    def isRunning(self) -> int:
         if hasattr(self, 'stop'):
             return 0
         else:

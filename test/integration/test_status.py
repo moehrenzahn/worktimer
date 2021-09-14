@@ -1,18 +1,13 @@
 import unittest
-from os import path, remove
-from shutil import copyfile
-from test.integration.helper import run
-
+from test.integration.helper import run, prepareSampleJson, cleanUpSampleJson
 
 class IntegrationStatusTestCase(unittest.TestCase):
 
     def setUp(self):
-        integrationPath = path.dirname(path.realpath(__file__))
-        copyfile(integrationPath + '/sample1.json', integrationPath + '/tmp_sample_1.json')
+        prepareSampleJson()
 
     def tearDown(self):
-        integrationPath = path.dirname(path.realpath(__file__))
-        remove(integrationPath + '/tmp_sample_1.json')
+        cleanUpSampleJson()
 
     def test_timer(self):
         output = run(None, '2021-01-03 8:00')

@@ -8,18 +8,18 @@ from contextlib import redirect_stdout
 class ExcelExportTestCase(unittest.TestCase):
     
     def setUp(self):
-        copyfile(sampleFilePath('sample1.xlsx'), sampleFilePath('tmp_sample_1.xlsx'))
-        prepareSampleJson()
+        copyfile(sampleFilePath('sample1.xlsx'), sampleFilePath('tmp_sample.xlsx'))
+        prepareSampleJson('sample2')
 
     def tearDown(self):
-        remove(sampleFilePath('tmp_sample_1.xlsx'))
+        #remove(sampleFilePath('tmp_sample.xlsx'))
         cleanUpSampleJson()
 
     def testExport(self):
         days = getDays()
         f = io.StringIO()
         with redirect_stdout(f):
-            result = export(days, sampleFilePath('tmp_sample_1.xlsx'))
+            result = export(days, sampleFilePath('tmp_sample.xlsx'))
         self.assertTrue(result) # Module openpyxl must be installed. Install it via "pip install openpyxl"
 
 

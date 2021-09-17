@@ -7,17 +7,17 @@ from test.integration.helper import getDays, sampleFilePath, prepareSampleJson, 
 class OdsExportTestCase(unittest.TestCase):
     
     def setUp(self):
-        copyfile(sampleFilePath('sample1.ods'), sampleFilePath('tmp_sample_1.ods'))
+        copyfile(sampleFilePath('sample1.ods'), sampleFilePath('tmp_sample.ods'))
         prepareSampleJson()
 
     def tearDown(self):
-        remove(sampleFilePath('tmp_sample_1.ods'))
+        remove(sampleFilePath('tmp_sample.ods'))
         cleanUpSampleJson()
 
     @unittest.skip("Not implemented yet")
     def testExport(self):
         days = getDays()
-        result = export(days, sampleFilePath('tmp_sample_1.ods'))
+        result = export(days, sampleFilePath('tmp_sample.ods'))
         self.assertTrue(result) # Module pyexcel_ods must be installed. Install it via "pip install pyexcel_ods"
 
 

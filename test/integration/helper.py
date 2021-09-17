@@ -1,6 +1,7 @@
 from data.days import Days
 import io
 import main
+import json
 import storage
 import importer
 from os import path, remove
@@ -14,7 +15,7 @@ from contextlib import redirect_stdout
 def run(command = None, date = '2021-01-02 8:00', subcommand = None) -> str:
     testargs = [
         'WorkTimer.py',
-        '--log=test/data/tmp_sample_1',
+        '--log=test/data/tmp_sample',
         '--sync_automatically=false',
         '--default_category=default',
         '--notifications=false',
@@ -33,11 +34,11 @@ def run(command = None, date = '2021-01-02 8:00', subcommand = None) -> str:
 
     return f.getvalue()
 
-def prepareSampleJson():
-    copyfile(sampleFilePath('sample1.json'), sampleFilePath('tmp_sample_1.json'))
+def prepareSampleJson(name = 'sample1'):
+    copyfile(sampleFilePath(name + '.json'), sampleFilePath('tmp_sample.json'))
 
 def cleanUpSampleJson():
-    remove(sampleFilePath('tmp_sample_1.json'))
+    remove(sampleFilePath('tmp_sample.json'))
 
 
 def sampleFilePath(name):
@@ -45,7 +46,7 @@ def sampleFilePath(name):
     integrationPath = integrationPath.replace('integration', 'data')
     return  integrationPath + '/' + name
 
-def getDays(file = 'tmp_sample_1', date = '2021-01-02 8:00') -> Days:
+def getDays(file = 'tmp_sample', date = '2021-01-02 8:00') -> Days:
     path = sampleFilePath(file + '.json')
     with freeze_time(date):
         json = storage.load(path)

@@ -1,0 +1,707 @@
+{
+    "2021-01-02": {
+        "date": "2021-01-02",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "div",
+                "start": "08:22",
+                "stop": "12:15"
+            },
+            {
+                "category": "adm",
+                "start": "12:55",
+                "stop": "17:56"
+            }
+        ]
+    },
+    "2021-01-03": {
+        "date": "2021-01-03",
+        "goal": "0:00",
+        "work": [
+            {
+                "category": "dev",
+                "start": "08:00",
+                "stop": "10:00"
+            }
+        ]
+    },
+    "2021-01-19": {
+        "date": "2021-01-19",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "dev",
+                "start": "08:22",
+                "stop": "12:55"
+            },
+            {
+                "category": "dev",
+                "start": "13:15",
+                "stop": "17:15"
+            }
+        ]
+    },
+    "2021-01-20": {
+        "date": "2021-01-20",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "dev",
+                "start": "08:57",
+                "stop": "13:00"
+            },
+            {
+                "category": "dev",
+                "start": "13:26",
+                "stop": "16:55"
+            }
+        ]
+    },
+    "2021-01-23": {
+        "date": "2021-01-23",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "div",
+                "start": "07:59",
+                "stop": "13:30"
+            },
+            {
+                "category": "div",
+                "start": "13:53",
+                "stop": "16:39"
+            }
+        ]
+    },
+    "2021-01-24": {
+        "date": "2021-01-24",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "div",
+                "start": "08:27",
+                "stop": "14:01"
+            },
+            {
+                "category": "div",
+                "start": "14:25",
+                "stop": "17:05"
+            }
+        ]
+    },
+    "2021-01-25": {
+        "date": "2021-01-25",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "test",
+                "start": "08:55",
+                "stop": "12:34"
+            },
+            {
+                "category": "test",
+                "start": "13:51",
+                "stop": "17:46"
+            }
+        ]
+    },
+    "2021-01-26": {
+        "date": "2021-01-26",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "test",
+                "start": "08:30",
+                "stop": "12:16"
+            },
+            {
+                "category": "test",
+                "start": "12:43",
+                "stop": "17:36"
+            }
+        ]
+    },
+    "2021-01-27": {
+        "date": "2021-01-27",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "div",
+                "start": "09:40",
+                "stop": "12:35"
+            },
+            {
+                "category": "div",
+                "start": "13:02",
+                "stop": "17:34"
+            }
+        ]
+    },
+    "2021-01-30": {
+        "date": "2021-01-30",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "dev",
+                "start": "09:10",
+                "stop": "12:25"
+            },
+            {
+                "category": "dev",
+                "start": "12:43",
+                "stop": "17:55"
+            }
+        ]
+    },
+    "2021-01-31": {
+        "date": "2021-01-31",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "test",
+                "start": "09:09",
+                "stop": "11:57"
+            },
+            {
+                "category": "dev",
+                "start": "13:10",
+                "stop": "17:48"
+            }
+        ]
+    },
+    "2021-02-01": {
+        "date": "2021-02-01",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "dev",
+                "start": "08:48",
+                "stop": "12:41"
+            },
+            {
+                "category": "dev",
+                "start": "13:18",
+                "stop": "17:54"
+            }
+        ]
+    },
+    "2021-02-02": {
+        "date": "2021-02-02",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "div",
+                "start": "09:04",
+                "stop": "12:28"
+            },
+            {
+                "category": "adm",
+                "start": "13:24",
+                "stop": "18:22"
+            }
+        ]
+    },
+    "2021-02-03": {
+        "date": "2021-02-03",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "div",
+                "start": "08:43",
+                "stop": "12:25"
+            },
+            {
+                "category": "test",
+                "start": "12:39",
+                "stop": "14:04"
+            },
+            {
+                "category": "sup",
+                "start": "14:04",
+                "stop": "14:45"
+            },
+            {
+                "category": "test",
+                "start": "14:45",
+                "stop": "16:59"
+            }
+        ]
+    },
+    "2021-02-06": {
+        "date": "2021-02-06",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "test",
+                "start": "08:48",
+                "stop": "13:02"
+            },
+            {
+                "category": "test",
+                "start": "13:19",
+                "stop": "16:37"
+            },
+            {
+                "category": "sup",
+                "start": "16:37",
+                "stop": "17:20"
+            }
+        ]
+    },
+    "2021-02-07": {
+        "date": "2021-02-07",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "test",
+                "start": "08:58",
+                "stop": "09:12"
+            },
+            {
+                "category": "sup",
+                "start": "09:12",
+                "stop": "09:44"
+            },
+            {
+                "category": "test",
+                "start": "09:44",
+                "stop": "12:04"
+            },
+            {
+                "category": "div",
+                "start": "12:24",
+                "stop": "14:53"
+            },
+            {
+                "category": "sup",
+                "start": "14:53",
+                "stop": "17:41"
+            }
+        ]
+    },
+    "2021-02-08": {
+        "date": "2021-02-08",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "div",
+                "start": "08:10",
+                "stop": "12:30"
+            },
+            {
+                "category": "div",
+                "start": "12:58",
+                "stop": "17:21"
+            }
+        ]
+    },
+    "2021-02-09": {
+        "date": "2021-02-09",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "div",
+                "start": "10:59",
+                "stop": "13:37"
+            },
+            {
+                "category": "div",
+                "start": "13:50",
+                "stop": "17:23"
+            }
+        ]
+    },
+    "2021-02-10": {
+        "date": "2021-02-10",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "div",
+                "start": "11:18",
+                "stop": "13:02"
+            },
+            {
+                "category": "div",
+                "start": "13:27",
+                "stop": "17:11"
+            }
+        ]
+    },
+    "2021-02-13": {
+        "date": "2021-02-13",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "doc",
+                "start": "08:55",
+                "stop": "12:41"
+            },
+            {
+                "category": "doc",
+                "start": "13:05",
+                "stop": "18:39"
+            }
+        ]
+    },
+    "2021-02-14": {
+        "date": "2021-02-14",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "doc",
+                "start": "09:06",
+                "stop": "11:58"
+            },
+            {
+                "category": "doc",
+                "start": "12:35",
+                "stop": "18:15"
+            }
+        ]
+    },
+    "2021-02-15": {
+        "date": "2021-02-15",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "doc",
+                "start": "08:38",
+                "stop": "11:00"
+            },
+            {
+                "category": "dev",
+                "start": "11:00",
+                "stop": "12:57"
+            },
+            {
+                "category": "dev",
+                "start": "13:18",
+                "stop": "17:18"
+            }
+        ]
+    },
+    "2021-02-16": {
+        "date": "2021-02-16",
+        "goal": "8:00",
+        "work": [
+            {
+                "category": "div",
+                "start": "09:12",
+                "stop": "12:37"
+            },
+            {
+                "category": "div",
+                "start": "13:35",
+                "stop": "13:36"
+            },
+            {
+                "category": "dev",
+                "start": "13:36",
+                "stop": "15:32"
+            },
+            {
+                "category": "dev",
+                "start": "16:10",
+                "stop": "18:15"
+            }
+        ]
+    },
+    "2021-03-01": {
+        "date": "2021-03-01",
+        "goal": "8:00",
+        "paused": 0,
+        "work": [
+            {
+                "category": "div",
+                "start": "08:46",
+                "stop": "09:45"
+            },
+            {
+                "category": "dev",
+                "start": "09:45",
+                "stop": "10:33"
+            },
+            {
+                "category": "adm",
+                "start": "10:33",
+                "stop": "12:03"
+            },
+            {
+                "category": "doc",
+                "start": "12:03",
+                "stop": "12:34"
+            }
+        ]
+    },
+    "2021-04-01": {
+        "date": "2021-04-01",
+        "goal": "8:00",
+        "paused": 0,
+        "work": [
+            {
+                "category": "div",
+                "start": "08:46",
+                "stop": "09:45"
+            },
+            {
+                "category": "dev",
+                "start": "09:45",
+                "stop": "10:33"
+            },
+            {
+                "category": "adm",
+                "start": "10:33",
+                "stop": "12:03"
+            },
+            {
+                "category": "doc",
+                "start": "12:03",
+                "stop": "12:34"
+            }
+        ]
+    },
+    "2021-05-01": {
+        "date": "2021-05-01",
+        "goal": "8:00",
+        "paused": 0,
+        "work": [
+            {
+                "category": "div",
+                "start": "08:46",
+                "stop": "09:45"
+            },
+            {
+                "category": "dev",
+                "start": "09:45",
+                "stop": "10:33"
+            },
+            {
+                "category": "adm",
+                "start": "10:33",
+                "stop": "12:03"
+            },
+            {
+                "category": "doc",
+                "start": "12:03",
+                "stop": "12:34"
+            }
+        ]
+    },
+    "2021-06-01": {
+        "date": "2021-06-01",
+        "goal": "8:00",
+        "paused": 0,
+        "work": [
+            {
+                "category": "div",
+                "start": "08:46",
+                "stop": "09:45"
+            },
+            {
+                "category": "dev",
+                "start": "09:45",
+                "stop": "10:33"
+            },
+            {
+                "category": "adm",
+                "start": "10:33",
+                "stop": "12:03"
+            },
+            {
+                "category": "doc",
+                "start": "12:03",
+                "stop": "12:34"
+            }
+        ]
+    },
+    "2021-07-01": {
+        "date": "2021-07-01",
+        "goal": "8:00",
+        "paused": 0,
+        "work": [
+            {
+                "category": "div",
+                "start": "08:46",
+                "stop": "09:45"
+            },
+            {
+                "category": "dev",
+                "start": "09:45",
+                "stop": "10:33"
+            },
+            {
+                "category": "adm",
+                "start": "10:33",
+                "stop": "12:03"
+            },
+            {
+                "category": "doc",
+                "start": "12:03",
+                "stop": "12:34"
+            }
+        ]
+    },
+    "2021-08-01": {
+        "date": "2021-08-01",
+        "goal": "8:00",
+        "paused": 0,
+        "work": [
+            {
+                "category": "div",
+                "start": "08:46",
+                "stop": "09:45"
+            },
+            {
+                "category": "dev",
+                "start": "09:45",
+                "stop": "10:33"
+            },
+            {
+                "category": "adm",
+                "start": "10:33",
+                "stop": "12:03"
+            },
+            {
+                "category": "doc",
+                "start": "12:03",
+                "stop": "12:34"
+            }
+        ]
+    },
+    "2021-09-01": {
+        "date": "2021-09-01",
+        "goal": "8:00",
+        "paused": 0,
+        "work": [
+            {
+                "category": "div",
+                "start": "08:46",
+                "stop": "09:45"
+            },
+            {
+                "category": "dev",
+                "start": "09:45",
+                "stop": "10:33"
+            },
+            {
+                "category": "adm",
+                "start": "10:33",
+                "stop": "12:03"
+            },
+            {
+                "category": "doc",
+                "start": "12:03",
+                "stop": "12:34"
+            }
+        ]
+    },
+    "2021-10-01": {
+        "date": "2021-10-01",
+        "goal": "8:00",
+        "paused": 0,
+        "work": [
+            {
+                "category": "div",
+                "start": "08:46",
+                "stop": "09:45"
+            },
+            {
+                "category": "dev",
+                "start": "09:45",
+                "stop": "10:33"
+            },
+            {
+                "category": "adm",
+                "start": "10:33",
+                "stop": "12:03"
+            },
+            {
+                "category": "doc",
+                "start": "12:03",
+                "stop": "12:34"
+            }
+        ]
+    },
+    "2021-11-01": {
+        "date": "2021-11-01",
+        "goal": "8:00",
+        "paused": 0,
+        "work": [
+            {
+                "category": "div",
+                "start": "08:46",
+                "stop": "09:45"
+            },
+            {
+                "category": "dev",
+                "start": "09:45",
+                "stop": "10:33"
+            },
+            {
+                "category": "adm",
+                "start": "10:33",
+                "stop": "12:03"
+            },
+            {
+                "category": "doc",
+                "start": "12:03",
+                "stop": "12:34"
+            }
+        ]
+    },
+    "2021-12-01": {
+        "date": "2021-12-01",
+        "goal": "8:00",
+        "paused": 0,
+        "work": [
+            {
+                "category": "div",
+                "start": "08:46",
+                "stop": "09:45"
+            },
+            {
+                "category": "dev",
+                "start": "09:45",
+                "stop": "10:33"
+            },
+            {
+                "category": "adm",
+                "start": "10:33",
+                "stop": "12:03"
+            },
+            {
+                "category": "doc",
+                "start": "12:03",
+                "stop": "12:34"
+            }
+        ]
+    },
+    "2022-01-01": {
+        "date": "2022-01-01",
+        "goal": "8:00",
+        "paused": 0,
+        "work": [
+            {
+                "category": "div",
+                "start": "08:46",
+                "stop": "09:45"
+            },
+            {
+                "category": "dev",
+                "start": "09:45",
+                "stop": "10:33"
+            },
+            {
+                "category": "adm",
+                "start": "10:33",
+                "stop": "12:03"
+            },
+            {
+                "category": "doc",
+                "start": "12:03",
+                "stop": "12:34"
+            }
+        ]
+    }
+}

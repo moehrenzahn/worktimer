@@ -1,3 +1,4 @@
+import config
 from typing import OrderedDict
 from data import Days
 from output import notification
@@ -13,6 +14,9 @@ def export(days: Days, targetExcel: str) -> bool:
     newData = _collectNewDurationData(days)
     spreadsheet = pyxl.load_workbook(targetExcel)
     updatedSpreadsheet = _applyToSpreadsheet(newData, spreadsheet)
+    if not updatedSpreadsheet:
+        notification('Export Failed', 'Could not apply data to spreadsheet template.')
+        return False
     updatedSpreadsheet.save(targetExcel)
     
     notification('Export Done', 'Find the updated file at %s' % targetExcel)
@@ -37,7 +41,14 @@ def _collectNewDurationData(days: Days):
             newData[year][category][month] = duration
     return newData
 
+def _createNewYear(year, spreadsheet):
+    newSheet = spreadsheet.copy_worksheet(spreadsheet.active)
+    newSheet.title = year
+
 def _applyToSpreadsheet(newData, spreadsheet):
+    for year in newData:
+        if not year in spreadsheet:
+            _createNewYear(year, spreadsheet)
     for year in newData:
         for category in newData[year]:
             for month in newData[year][category]:
@@ -55,4 +66,4 @@ def _findRowAndColumnForCategoryAndMonth(spreadsheet, category, month):
         for cell in row:
             if cell.value == category:
                 return (cell.row, cell.column + int(month))
-    return False
+    return (False, False)

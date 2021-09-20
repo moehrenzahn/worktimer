@@ -11,5 +11,7 @@
     "textbar": false,
     "default_category": false,
     "hours_per_day": 8,
-    "categories": {}
+    "categories": {},
+    "xlsx_template": null,
+    "ods_template": null
 }

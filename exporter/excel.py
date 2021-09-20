@@ -1,26 +1,20 @@
-import config
 from typing import OrderedDict
 from data import Days
 from output import notification
 from math import floor
 
-def export(days: Days, targetExcel: str) -> bool:
+def export(days: Days, templateFile: str, targetFile: str) -> bool:
     try:
         pyxl = __import__('openpyxl')
     except:
-        notification('Export Failed', 'Module openpyxl is not installed.')
-        return False
+        raise ValueError('Module openpyxl is not installed.')
 
     newData = _collectNewDurationData(days)
-    spreadsheet = pyxl.load_workbook(targetExcel)
+    spreadsheet = pyxl.load_workbook(templateFile)
     updatedSpreadsheet = _applyToSpreadsheet(newData, spreadsheet)
     if not updatedSpreadsheet:
-        notification('Export Failed', 'Could not apply data to spreadsheet template.')
-        return False
-    updatedSpreadsheet.save(targetExcel)
-    
-    notification('Export Done', 'Find the updated file at %s' % targetExcel)
-    return True
+        raise ValueError('Could not apply data to spreadsheet template.')
+    updatedSpreadsheet.save(targetFile)
 
 def _collectNewDurationData(days: Days):
     newData = OrderedDict({})
@@ -54,7 +48,7 @@ def _applyToSpreadsheet(newData, spreadsheet):
             for month in newData[year][category]:
                 (row, column) = _findRowAndColumnForCategoryAndMonth(spreadsheet[year], category, month)
                 if not column or not row:
-                    notification('Export Failed', 'Could not find Column for category "%s" in Excel file' % category)
+                    raise ValueError('Could not find column for category "%s" in Excel file' % category)
                     return False
                 # Write value to cell
                 spreadsheet[year].cell(row=row,column=column).value = newData[year][category][month]

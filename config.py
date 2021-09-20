@@ -18,7 +18,7 @@ def log():
 
 # File name of txt for exporting
 def export():
-    return _getConfigValue('export') + ".txt"
+    return _getConfigValue('export')
 
 # Repository to sync worktimes to
 def syncRepoUrl():
@@ -54,6 +54,10 @@ def log_path():
     return dir_path + "/" + log()
 def export_path():
     return dir_path + '/' + export()
+def xlsx_template():
+    return _getConfigValue('xlsx_template')
+def ods_template():
+    return _getConfigValue('ods_template')
 
 
 def _getConfigValue(s):

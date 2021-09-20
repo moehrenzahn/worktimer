@@ -1,5 +1,5 @@
 import unittest
-from actions.exportOds import export
+from exporter.ods import export
 from os import remove
 from shutil import copyfile
 from test.integration.helper import getDays, sampleFilePath, prepareSampleJson, cleanUpSampleJson
@@ -17,7 +17,7 @@ class OdsExportTestCase(unittest.TestCase):
     @unittest.skip("Not implemented yet")
     def testExport(self):
         days = getDays()
-        result = export(days, sampleFilePath('tmp_sample.ods'))
+        result = export(days, sampleFilePath('tmp_sample.ods'), sampleFilePath('tmp_sample.ods'))
         self.assertTrue(result) # Module pyexcel_ods must be installed. Install it via "pip install pyexcel_ods"
 
 

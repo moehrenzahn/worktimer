@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+from output.notify import notification
 import sys
 import config
 import storage
@@ -47,7 +48,12 @@ def main():
         elif commands[0] == 'log':
             actions.log()
         elif commands[0] == 'export':
-            actions.export(days)
+                actions.export(days)
+        elif commands[0] == 'report':
+            if len(commands) > 1 and commands[1] == 'ods':
+                actions.report.export_ods(days)
+            else:
+                actions.report.export_excel(days)
         elif commands[0] == 'import':
             if len(commands) > 1:
                 actions.add(commands[1], days)
@@ -64,7 +70,10 @@ def main():
             print("   Use param 'pause' to start or stop pause")
             print("   Use param 'sync' to attempt synchronisation with remote repository")
             print("   Use param 'log' to open the log file in default editor")
-            print("   Use param 'export' to export the log in a human-readable format")
+            print("   Use param 'export' to export your log to a human-readable text file")
+            print("   Use param 'report' to create a work report spreadsheet")
+            print("      'report excel --xlsx_template='template.xlsx'' for Excel")
+            print("      'report ods --ods_template='template.ods'' for Open Document")
             print("   Use param 'import [file]' to import a json log into your existing database")
             print("")
             print("Options (see config_default.json) for complete list:")

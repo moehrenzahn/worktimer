@@ -1,6 +1,5 @@
-work.json
 export.txt
-work.txt
+work.*
 *.pyc
 config.json
 database

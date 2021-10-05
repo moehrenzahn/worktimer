@@ -73,5 +73,4 @@ Create an alias to `WorkTimer.py` in your plugin folder and name it `worktimer.3
 
 Make sure to set `textbar` to `true` in your `config.json` to make full use of xBar.
 
-
 *Copyright 2017-2021 Max Melzer. Published under MIT License. See `LICENSE` file for details.*

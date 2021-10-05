@@ -1,6 +1,5 @@
 #!/usr/bin/python
 
-from output.notify import notification
 import sys
 import config
 import storage
@@ -10,7 +9,6 @@ import importer
 
 
 __version__ = "2.2.0"
-
 
 def main():
     
@@ -50,7 +48,9 @@ def main():
         elif commands[0] == 'export':
                 actions.export(days)
         elif commands[0] == 'report':
-            if len(commands) > 1 and commands[1] == 'ods':
+            if len(commands) > 1 and commands[1] == 'text':
+                actions.export(days)
+            elif len(commands) > 1 and commands[1] == 'ods':
                 actions.report.export_ods(days)
             else:
                 actions.report.export_excel(days)

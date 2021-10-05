@@ -1,6 +1,7 @@
-from datetime import datetime, date, timedelta
+from datetime import datetime, date, time, timedelta
 import data
-
+from data.block.pause import Pause
+from data.block.work import Work
 
 class Day():
     def __init__(self, date, goal, work):
@@ -25,14 +26,14 @@ class Day():
             pauses.append(data.block.Pause(lastWork.stop))
         return pauses
 
-    def isRunning(self):
+    def isRunning(self) -> bool:
         for work in self.work:
             if work.isRunning():
                 return 1
         return 0
 
     # estimation
-    def isPause(self):
+    def isPause(self) -> bool:
         pauses = self.calculatePauses()
         if pauses:
             lastPauseLenght = pauses[-1].getDuration()
@@ -41,7 +42,7 @@ class Day():
                 return 1
         return 0
 
-    def getOvertime(self):
+    def getOvertime(self) -> timedelta:
         overtime = timedelta(0)
         for work in self.work:
             if hasattr(work, 'stop'):
@@ -54,10 +55,10 @@ class Day():
         overtime = overtime - self.goal
         return overtime
 
-    def getStartTime(self):
+    def getStartTime(self) -> timedelta:
         return self.__getFirstWorkStart()
 
-    def getEndTime(self):
+    def getEndTime(self) -> timedelta:
         startDate = datetime.combine(
             datetime.now(),
             self.getStartTime()
@@ -65,15 +66,14 @@ class Day():
         endTime = startDate + self.goal + self.getPausetime()
         return endTime
 
-    def __getFirstWorkStart(self):
+    def __getFirstWorkStart(self) -> datetime:
         startTimes = []
         for work in self.work:
             startTimes.append(work.start)
         startTimes.sort()
         return startTimes[0]
 
-    def getLastWork(self):
-        startTimes = []
+    def getLastWork(self) -> Work:
         startTimes = []
         for work in self.work:
             startTimes.append(work.start)
@@ -83,24 +83,24 @@ class Day():
                 return work
         raise TypeError('Last work block not found')
 
-    def getCurrentWork(self):
+    def getCurrentWork(self) -> timedelta:
         time = timedelta(0)
         for work in self.work:
             time += work.getDuration()
         return time
 
-    def getRemainingWork(self):
+    def getRemainingWork(self) -> timedelta:
         pauseTime = self.getPausetime()
         # calculate for 30 minutes pause if none taken yet
         if pauseTime == timedelta(0):
             pauseTime = timedelta(minutes=30)
         return (self.goal) - self.getCurrentWork()
 
-    def getPausetime(self):
+    def getPausetime(self) -> timedelta:
         time = timedelta(0)
         for pause in self.calculatePauses():
             time += pause.getDuration()
         return time
 
-    def getLastCategory(self):
-        return self.work[-1].category
+    def getLastCategory(self) -> str:
+        return self.getLastWork().category

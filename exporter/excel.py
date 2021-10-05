@@ -1,11 +1,11 @@
+import importlib
 from typing import OrderedDict
 from data import Days
-from output import notification
 from math import floor
 
 def export(days: Days, templateFile: str, targetFile: str) -> bool:
     try:
-        pyxl = __import__('openpyxl')
+        pyxl = importlib.import_module('openpyxl')
     except:
         raise ValueError('Module openpyxl is not installed.')
 
@@ -49,7 +49,6 @@ def _applyToSpreadsheet(newData, spreadsheet):
                 (row, column) = _findRowAndColumnForCategoryAndMonth(spreadsheet[year], category, month)
                 if not column or not row:
                     raise ValueError('Could not find column for category "%s" in Excel file' % category)
-                    return False
                 # Write value to cell
                 spreadsheet[year].cell(row=row,column=column).value = newData[year][category][month]
     return spreadsheet

@@ -6,22 +6,18 @@ from output import notification
 from math import floor
 
 def export(days: Days, targetOds: str) -> bool:
-    notification('Export Failed', 'Not implemented yet.')
-    return False
+    raise ValueError('Not implemented yet.')
 
     try:
         ods = __import__('pyexcel_ods')
     except:
-        notification('Export Failed', 'Module pyexcel_ods is not installed.')
-        return False
+        raise ValueError('Module pyexcel_ods is not installed.')
 
     newData = _collectNewDurationData(days)
     templateData = ods.get_data(targetOds)
     updatedTemplateData = _applyToTemplate(newData, templateData)
     ods.save_data(targetOds, updatedTemplateData)
     
-    notification('Export Done', 'Find the updated file at %s' % targetOds)
-    print('updatedTemplateData', updatedTemplateData)
     return True
 
 def _collectNewDurationData(days: Days):
@@ -48,14 +44,12 @@ def _applyToTemplate(newData, template):
         for category in newData[year]:
             column = _findColumnIndexForCategory(template[year], category)
             if not column:
-                notification('Export Failed', 'Could not find Column for category "%s"' % category)
-                return False
+                raise ValueError('Could not find Column for category "%s"' % category)
             for month in newData[year][category]:
                 print('month', month)
                 line = _findLineIndexForMonth(template[year], month)
                 if not line:
-                    notification('Export Failed', 'Could not find Column for default category "div"')
-                    return False
+                    raise ValueError('Could not find Column for default category')
 
                 while line >= len(template[year][column]):
                     template[year][column].append('')

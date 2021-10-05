@@ -1,22 +1,26 @@
 from data import formatter
 import config
+from data.days import Days
 import output.elements as elements
 
 
-def status(days):
+def status(days: Days):
     __info(days)
     if config.textbar():
         print(elements.spacer())
         __actions(days)
 
 
-def __info(days):
+def __info(days: Days):
     if days.isTimer():
         today = days.getToday()
         if days.isPause():
             print("Pause: %s" % formatter.format_delta(today.getPausetime()))
         else:
-            print("%s %s" % (formatter.format_delta(today.getRemainingWork()), formatter.format_category(today.getLastCategory())))
+            print("%s (%s %s)" % (formatter.format_delta(today.getRemainingWork()),
+                                formatter.format_category(today.getLastWork().category),
+                                formatter.format_delta(today.getLastWork().getDuration())
+            ))
     else:
         print("Free")
     
@@ -24,7 +28,20 @@ def __info(days):
         print('---')
 
     if days.isTimer():
-        print("Worked %s" % formatter.format_delta(today.getCurrentWork()))
+        if config.textbar():
+            print(elements.menu(
+                "Worked %s" % formatter.format_delta(today.getCurrentWork()),
+                map(
+                    lambda x: "%s %s" % (
+                        formatter.format_delta(x.getDuration()),
+                        formatter.format_category(x.category)
+                    ),
+                    today.work
+                )
+            ))
+        else:
+            print("Worked %s" % formatter.format_delta(today.getCurrentWork()))
+
         print("Remaining: %s" % formatter.format_delta(today.getRemainingWork()))
         print("Pause: %s" % formatter.format_delta(today.getPausetime()))
         print("Start: %s" % today.getStartTime().strftime("%H:%M"))
@@ -35,7 +52,7 @@ def __info(days):
     print("Total Overtime: %s" % formatter.format_delta(days.getOvertime()))
 
 
-def __actions(days):
+def __actions(days: Days):
     if days.isPause():
         print(elements.button("☕️ Stop Pause", 'pause'))
     elif days.isTimer():
@@ -61,4 +78,8 @@ def __actions(days):
         print(elements.menu(menuTitle, menuItems))
         print(elements.spacer())
     print(elements.button('Open Log', 'log'))
-    print(elements.button('Export', 'export'))
+    print(elements.menu('Create Report', [
+        elements.button('Excel', 'report excel'),
+        elements.button('OpenDocument', 'report ods'),
+        elements.button('Text', 'report text'),
+    ]))

@@ -3,7 +3,7 @@ import storage
 
 def _readConfig(f):
     try:
-        return storage.load(f)
+        return storage.json.load(f)
     except IOError:
         return []
 
@@ -12,9 +12,9 @@ defaultConfig = _readConfig(dir_path + '/config_default.json')
 userConfig = _readConfig(dir_path + '/config.json')
 overrides = {}
 
-# File name of main json data store
+# File name of main data store
 def log():
-    return _getConfigValue('log') + ".json"
+    return _getConfigValue('log') + ".yaml"
 
 # File name of txt for exporting
 def export():

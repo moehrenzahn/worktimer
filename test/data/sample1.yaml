@@ -1,0 +1,18 @@
+'2021-01-01':
+  date: '2021-01-01'
+  goal: '8:00'
+  work:
+  - category: div
+    start: '8:00'
+    stop: '12:00'
+  - category: test
+    start: '12:30'
+    stop: '15:30'
+'2021-01-02':
+  date: '2021-01-02'
+  goal: '8:00'
+  paused: 0
+  work:
+  - category: div
+    start: '7:00'
+

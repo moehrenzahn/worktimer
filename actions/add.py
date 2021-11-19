@@ -8,8 +8,8 @@ def add(file, days):
         file: string
         days: [Day]
     """
-    json = storage.load(file)
-    newDayList = importer.getDays(json).days
+    daysData = storage.yaml.load(file)
+    newDayList = importer.getDays(daysData).days
     oldDayList = days.days
     # check for duplicate days
     for oldDay in oldDayList:
@@ -18,4 +18,4 @@ def add(file, days):
                 oldDay.work = oldDay.work + newDay.work
                 newDayList.remove(newDay)
     newDays = data.Days(oldDayList + newDayList)
-    storage.save(newDays)
+    storage.yaml.save(newDays)

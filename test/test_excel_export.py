@@ -1,18 +1,17 @@
 import unittest
 from exporter.excel import export
 from os import remove
-from shutil import copyfile
-from test.integration.helper import getDays, sampleFilePath, prepareSampleJson, cleanUpSampleJson
+from test.integration.helper import getDays, sampleFilePath, prepareSampleFile, cleanUpSampleFile
 import io
 from contextlib import redirect_stdout
 class ExcelExportTestCase(unittest.TestCase):
     
     def setUp(self):
-        prepareSampleJson('sample2')
+        prepareSampleFile('sample2')
 
     def tearDown(self):
         remove(sampleFilePath('tmp_sample.xlsx'))
-        cleanUpSampleJson()
+        cleanUpSampleFile()
 
     def testExport(self):
         days = getDays()

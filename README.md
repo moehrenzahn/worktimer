@@ -63,7 +63,7 @@ On macOS, you can configure WorkTimer to send a custom iMessage to someone whene
 
 ## Syncronization (experimental)
 
-To sync your work times between machines, you will need a Git repository to store your json file and add it's path to your config file. If there is a problem with the repository, WorkTimer will output the Git info to the console.
+To sync your work times between machines, you will need a Git repository to store your yaml file and add it's path to your config file. If there is a problem with the repository, WorkTimer will output the Git info to the console.
 
 When using automatic synching, don't start a session on two machines in parallel; and please have a backup in case anything bad happens.
 

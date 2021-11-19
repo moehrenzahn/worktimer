@@ -1,7 +1,6 @@
 from data.days import Days
 import io
 import main
-import json
 import storage
 import importer
 from os import path, remove
@@ -34,11 +33,11 @@ def run(command = None, date = '2021-01-02 8:00', subcommand = None) -> str:
 
     return f.getvalue()
 
-def prepareSampleJson(name = 'sample1'):
-    copyfile(sampleFilePath(name + '.json'), sampleFilePath('tmp_sample.json'))
+def prepareSampleFile(name = 'sample1'):
+    copyfile(sampleFilePath(name + '.yaml'), sampleFilePath('tmp_sample.yaml'))
 
-def cleanUpSampleJson():
-    remove(sampleFilePath('tmp_sample.json'))
+def cleanUpSampleFile():
+    remove(sampleFilePath('tmp_sample.yaml'))
 
 
 def sampleFilePath(name):
@@ -47,7 +46,7 @@ def sampleFilePath(name):
     return  integrationPath + '/' + name
 
 def getDays(file = 'tmp_sample', date = '2021-01-02 8:00') -> Days:
-    path = sampleFilePath(file + '.json')
+    path = sampleFilePath(file + '.yaml')
     with freeze_time(date):
-        json = storage.load(path)
+        json = storage.yaml.load(path)
         return importer.getDays(json)

@@ -1,6 +1,5 @@
 from typing import OrderedDict
 import config
-import json
 from data import Days
 from output import notification
 from math import floor

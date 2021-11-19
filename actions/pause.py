@@ -30,7 +30,7 @@ def pauseStart(days):
         if work.isRunning():
             work.stop = datetime.now().time()
     today.paused = 1
-    storage.save(days)
+    storage.yaml.save(days)
 
 
 def pauseStop(days):
@@ -47,4 +47,4 @@ def pauseStop(days):
                 lastWork.category
         ))
     today.paused = 0
-    storage.save(days)
+    storage.yaml.save(days)

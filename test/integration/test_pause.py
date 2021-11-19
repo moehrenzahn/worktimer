@@ -1,14 +1,14 @@
 import unittest
-from test.integration.helper import run, prepareSampleJson, cleanUpSampleJson
+from test.integration.helper import run, prepareSampleFile, cleanUpSampleFile
 
 
 class IntegrationPauseTestCase(unittest.TestCase):
     
     def setUp(self):
-        prepareSampleJson()
+        prepareSampleFile()
 
     def tearDown(self):
-        cleanUpSampleJson()
+        cleanUpSampleFile()
 
     def test_pause(self):
         # Start pause

@@ -1,21 +1,20 @@
 import importer
 
-
-# Check format of a given json string
-def getDays(json):
-    if not json:
-        # empty json
-        factory = importer.DaysFactory(json)
+# Check format of given data
+def getDays(daysData):
+    if not daysData:
+        # empty daysData
+        factory = importer.DaysFactory(daysData)
     else:
         # could be an array or dict
-        if isinstance(json, list):
-            element = json[0]
-        elif isinstance(json, dict):
-            element = json[next(iter(json))]
+        if isinstance(daysData, list):
+            element = daysData[0]
+        elif isinstance(daysData, dict):
+            element = daysData[next(iter(daysData))]
         if 'start' in element:
-            factory = importer.LegacyDaysFactory(json)
+            factory = importer.LegacyDaysFactory(daysData)
         elif 'work' in element:
-            factory = importer.DaysFactory(json)
+            factory = importer.DaysFactory(daysData)
         else:
-            raise ValueError('Could not determine type of json file')
+            raise ValueError('Could not determine type of log file')
     return factory.create()

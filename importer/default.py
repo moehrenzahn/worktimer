@@ -4,11 +4,11 @@ from datetime import timedelta
 
 
 class DaysFactory:
-    def __init__(self, json):
-        self.json = json
+    def __init__(self, daysData):
+        self.daysData = daysData
         self.days = []
-        for day in self.json:
-            dayElement = json[day]
+        for day in self.daysData:
+            dayElement = daysData[day]
             if day != dayElement['date']:
                 raise ValueError('Date mismatch at %s' % day)
             newDay = self.processDay(dayElement)

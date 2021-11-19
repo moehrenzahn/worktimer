@@ -1,6 +1,5 @@
-from datetime import datetime, date, time, timedelta
+from datetime import datetime, date, timedelta
 import data
-from data.block.pause import Pause
 from data.block.work import Work
 
 class Day():

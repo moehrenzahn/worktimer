@@ -1,14 +1,14 @@
 import unittest
-from test.integration.helper import run, prepareSampleJson, cleanUpSampleJson
+from test.integration.helper import run, prepareSampleFile, cleanUpSampleFile
 
 
 class IntegrationTimerTestCase(unittest.TestCase):
 
     def setUp(self):
-        prepareSampleJson()
+        prepareSampleFile()
 
     def tearDown(self):
-        cleanUpSampleJson()
+        cleanUpSampleFile()
 
     def test_timer(self):
         # Stop ongoing timer to land at 0:00 overtime

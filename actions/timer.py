@@ -55,7 +55,7 @@ def timerStart(days, category=""):
         days.days.append(today)
     else:
         today.work.append(data.newWork(category))
-    storage.save(days)
+    storage.yaml.save(days)
 
     untilTime = data.formatter.format_time(days.getToday().getEndTime())
     output.notification(
@@ -69,6 +69,6 @@ def timerStop(days):
     for work in today.work:
         if work.isRunning():
             work.stop = datetime.now().time()
-    storage.save(days)
+    storage.yaml.save(days)
     if config.imessage():
         output.message(config.imessage_address(), config.imessage_text())

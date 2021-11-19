@@ -1,14 +1,14 @@
 import unittest
-from test.integration.helper import run, getDays, prepareSampleJson, cleanUpSampleJson
+from test.integration.helper import run, getDays, prepareSampleFile, cleanUpSampleFile
 
 
 class IntegrationTimerTestCase(unittest.TestCase):
 
     def setUp(self):
-        prepareSampleJson()
+        prepareSampleFile()
 
     def tearDown(self):
-        cleanUpSampleJson()
+        cleanUpSampleFile()
 
     def test_default_category(self):
         # Get sample data categories

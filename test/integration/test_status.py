@@ -1,13 +1,13 @@
 import unittest
-from test.integration.helper import run, prepareSampleJson, cleanUpSampleJson
+from test.integration.helper import run, prepareSampleFile, cleanUpSampleFile
 
 class IntegrationStatusTestCase(unittest.TestCase):
 
     def setUp(self):
-        prepareSampleJson()
+        prepareSampleFile()
 
     def tearDown(self):
-        cleanUpSampleJson()
+        cleanUpSampleFile()
 
     def test_timer(self):
         output = run(None, '2021-01-03 8:00')

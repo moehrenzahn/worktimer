@@ -1,15 +1,25 @@
+import os
+import json as jsonlib
 import io
 import config
-import json
 from datetime import date, timedelta, time
 import data
+
+def load(file):
+    # return empty array if file is empty
+    if os.stat(file).st_size == 0:
+        os.remove(file)
+        return []
+    with io.open(file, 'r') as data:
+        jsonData = jsonlib.load(data)
+    return jsonData
 
 def save(days):
     data = {}
     # serialize with date keys
     for day in days.days:
         data[day.date.strftime("%Y-%m-%d")] = day
-    data = json.dumps(
+    data = jsonlib.dumps(
         data,
         sort_keys=True,
         default=lambda o: jsonDefault(o),

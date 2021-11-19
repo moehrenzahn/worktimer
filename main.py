@@ -31,8 +31,8 @@ def main():
             else:
                 commands.append(argument.strip())
         
-        json = storage.load(config.log_path())
-        days = importer.getDays(json)
+        daysData = storage.yaml.load(config.log_path())
+        days = importer.getDays(daysData)
 
         if not commands:
             output.status(days)
@@ -74,7 +74,7 @@ def main():
             print("   Use param 'report' to create a work report spreadsheet")
             print("      'report excel --xlsx_template='template.xlsx'' for Excel")
             print("      'report ods --ods_template='template.ods'' for Open Document")
-            print("   Use param 'import [file]' to import a json log into your existing database")
+            print("   Use param 'import [file]' to import a log into your existing database")
             print("")
             print("Options (see config_default.json) for complete list:")
             print("   --hours_per_day=8")

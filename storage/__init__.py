@@ -1,2 +1,2 @@
-from storage.load import *
-from storage.save import *
+from storage.json import *
+from storage.yaml import *

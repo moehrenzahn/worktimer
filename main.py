@@ -41,6 +41,9 @@ def main():
                 actions.timer(days, commands[1])
             else:
                 actions.timer(days)
+        elif commands[0] == 'update':
+            if len(commands) > 1:
+                actions.change(days, commands[1])
         elif commands[0] == 'pause':
             actions.pause(days)
         elif commands[0] == 'log':
@@ -67,6 +70,7 @@ def main():
             print("")
             print("Usage: run worktimer.py to display current timer stats.")
             print("   Use param 'timer [category]' to start or stop timer")
+            print("   Use param 'update [category]' to change the currently tracked category")
             print("   Use param 'pause' to start or stop pause")
             print("   Use param 'sync' to attempt synchronisation with remote repository")
             print("   Use param 'log' to open the log file in default editor")

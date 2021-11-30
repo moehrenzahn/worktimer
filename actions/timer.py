@@ -30,7 +30,6 @@ def timer(days, category=""):
             actions.syncDown()
         actions.timerStart(days, category)
 
-
 def timerStart(days, category=""):
     if not category:
         category = config.default_category()
@@ -49,7 +48,7 @@ def timerStart(days, category=""):
             else:
                 # Stop the last work block in another category
                 lastWork.stop = datetime.now().time()
-        
+
     if not today:
         today = data.newDay(category)
         days.days.append(today)

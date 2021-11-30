@@ -17,7 +17,7 @@ def __info(days: Days):
         if days.isPause():
             print("Pause: %s" % formatter.format_delta(today.getPausetime()))
         else:
-            print("%s (%s %s)" % (formatter.format_delta(today.getRemainingWork()),
+            print('%s – %s %s' % (formatter.format_delta(today.getRemainingWork()),
                                 formatter.format_category(today.getLastWork().category),
                                 formatter.format_delta(today.getLastWork().getDuration())
             ))
@@ -63,19 +63,25 @@ def __actions(days: Days):
     print(elements.spacer())
     if not days.isPause():
         menuItems = []
-        if days.isTimer():
-            menuTitle = 'Switch Category'
-        else:
-            menuTitle = "Start Category"
         for key, description in config.categories().items():
             menuItems.append(
                 elements.button(
-                    "⏰ %s" % description,
-                    'timer ' + key
+                    description,
+                    'timer %s' % key
+                )
+            )
+        print(elements.menu("🚀 Start Category", menuItems))
+
+        menuItems = []
+        for key, description in config.categories().items():
+            menuItems.append(
+                elements.button(
+                    description,
+                    'update ' + key
                 )
             )
 
-        print(elements.menu(menuTitle, menuItems))
+        print(elements.menu("⚙️ Update Category", menuItems))
         print(elements.spacer())
     print(elements.button('Open Log', 'log'))
     print(elements.menu('Create Report', [

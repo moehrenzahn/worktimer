@@ -8,7 +8,8 @@ def format_delta(td):
         return ''
     if td < timedelta(0):
         return '-' + format_delta(-td)
-    s = td.seconds
+    
+    s = int(td.total_seconds())
     hours, remainder = divmod(s, 3600)
     minutes, seconds = divmod(remainder, 60)
     minutes = str(minutes).zfill(2)

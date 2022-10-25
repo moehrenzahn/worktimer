@@ -1,14 +1,10 @@
 from datetime import datetime, date, timedelta
+from typing import List
 import data
 from data.block.work import Work
 
 class Day():
-    def __init__(self, date, goal, work):
-        """
-        date: date
-        goal: timedelta
-        work: [Work]
-        """
+    def __init__(self, date: date, goal: timedelta, work: List[Work]):
         self.date = date
         self.goal = goal
         self.work = work

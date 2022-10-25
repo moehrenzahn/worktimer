@@ -28,3 +28,13 @@ def format_category(category):
         return config.categories()[category]
     else:
         return category.title().replace('_', ' ')
+
+def format_category_percentages(totalTime: timedelta, categorytimes: dict[str, timedelta]):
+    result = ""
+    for category, worked in categorytimes.items():
+            result += format_category(category) + ": "
+            result += format_percentage(totalTime, worked) + '\n'
+    return result
+
+def format_percentage(full, partial):
+    return str(round((partial / full) * 100, 1)) + "%"

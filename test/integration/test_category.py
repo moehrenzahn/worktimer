@@ -56,7 +56,7 @@ class IntegrationTimerTestCase(unittest.TestCase):
     def test_pointless_category_switch(self):
         # Switch category
         output = run('timer', '2021-01-02 14:00', 'div')
-        self.assertIn('You already have a timer running for Div', output)
+        self.assertIn('You already have a timer running for', output)
         
         # Stop timer
         output = run('timer', '2021-01-02 16:00')

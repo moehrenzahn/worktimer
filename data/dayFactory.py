@@ -8,6 +8,7 @@ def newDay(category=""):
     return data.Today(
         datetime.now().date(),
         timedelta(hours=config.hoursPerDay()),
+        None,
         [data.newWork(category)]
     )
 

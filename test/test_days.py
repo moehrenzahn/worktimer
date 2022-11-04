@@ -35,9 +35,9 @@ class DaysTestCase(unittest.TestCase):
             work1,
             work3
         ]
-        testDay1 = data.Day(date1, goal, workArray1)
-        testDay2 = data.Today(date2, goal, workArray1)
-        testDay3 = data.Today(date2, goal, workArray2)
+        testDay1 = data.Day(date1, goal, None, workArray1)
+        testDay2 = data.Today(date2, goal, None, workArray1)
+        testDay3 = data.Today(date2, goal, None, workArray2)
 
         self.testDays1 = data.Days([testDay1, testDay2])
         self.testDays2 = data.Days([testDay1, testDay3])

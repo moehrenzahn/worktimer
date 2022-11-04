@@ -1,12 +1,13 @@
 from datetime import datetime, date, timedelta
-from typing import List
+from typing import List, Optional
 import data
 from data.block.work import Work
 
 class Day():
-    def __init__(self, date: date, goal: timedelta, work: List[Work]):
+    def __init__(self, date: date, goal: timedelta, comment: Optional[str], work: List[Work]):
         self.date = date
         self.goal = goal
+        self.comment = comment
         self.work = work
 
     def calculatePauses(self):

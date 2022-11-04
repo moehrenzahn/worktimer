@@ -32,9 +32,9 @@ class LegacyDaysFactory:
             raise ValueError('Day without work block found')
 
         if date == datetime.now().date():
-            day = data.Today(date, goal, work)
+            day = data.Today(date, goal, None, work)
         else:
-            day = data.Day(date, goal, work)
+            day = data.Day(date, goal, None, work)
         self.days.append(day)
 
     def initWorkBlocks(self, dayElement):

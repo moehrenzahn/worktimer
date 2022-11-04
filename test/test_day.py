@@ -21,7 +21,7 @@ class DayTestCase(unittest.TestCase):
                 datetime.strptime('17:00', '%H:%M').time()
             )
         ]
-        self.testDay = data.Day(date, goal, workArray)
+        self.testDay = data.Day(date, goal, None, workArray)
 
     def test_overtime(self):
         overtime = self.testDay.getOvertime()
@@ -47,7 +47,7 @@ class DayTestCase(unittest.TestCase):
             data.block.Work('8:00', '', '12:00'),
             data.block.Work('12:30')
         ]
-        runningDay = data.Day(date, goal, workArray)
+        runningDay = data.Day(date, goal, None, workArray)
         self.assertEqual(1, runningDay.isRunning())
         self.assertEqual(0, self.testDay.isRunning())
 

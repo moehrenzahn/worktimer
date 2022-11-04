@@ -22,14 +22,18 @@ class DaysFactory:
         goal = datetime.strptime(dayElement['goal'], "%H:%M")
         # goal describes not a time, but a timedelta
         goal = timedelta(hours=goal.hour, minutes=goal.minute)
+        if 'comment' in dayElement:
+            comment = dayElement['comment']
+        else:
+            comment = None
         work = self.initWorkBlocks(dayElement)
         if date == datetime.now().date():
             if 'paused' in dayElement:
-                day = data.Today(date, goal, work, dayElement['paused'])
+                day = data.Today(date, goal, comment, work, dayElement['paused'])
             else:
-                day = data.Today(date, goal, work)
+                day = data.Today(date, goal, comment, work)
         else:
-            day = data.Day(date, goal, work)
+            day = data.Day(date, goal, comment, work)
         return day
 
     def initWorkBlocks(self, dayElement):

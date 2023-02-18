@@ -84,7 +84,7 @@ def export(days: Days, targetPath: string):
     exportString += newLine + newLine
     exportString += "Total Worked: " + formatter.format_delta(currentTotalWorked) + newLine
     exportString += "Total Overtime: " + formatter.format_delta(currentTotalOvertime) + newLine
-    exportString += formatter.format_category_percentages(currentTotalWorked, currentTotalCategories)
+    exportString += formatter.format_category_total_and_percentages(currentTotalWorked, currentTotalCategories)
 
     exportString += newLine + newLine + newLine
 

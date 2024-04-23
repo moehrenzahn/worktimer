@@ -9,7 +9,7 @@ from data.days import Days
 def export(days: Days, targetPath: string):
     tab = '     '
     separator = ' - '
-    newLine = '\n'
+    NL = '\n'
     exportString = ''
 
     sortedDays = sorted(days.days, key=lambda x: x.date)
@@ -28,23 +28,28 @@ def export(days: Days, targetPath: string):
 
     for day in sortedDays:
         if day.date.strftime("%m") != currentMonth:
-            exportString += newLine
-            exportString += currentYear + "-" + currentMonth + newLine
-            exportString += "Month Worked: " + formatter.format_delta(currentMonthWorked) + newLine
-            exportString += "Month Overtime: " + formatter.format_delta(currentMonthOvertime) + newLine
-            exportString += "Total Worked: " + formatter.format_delta(currentTotalWorked) + newLine
-            exportString += "Total Overtime: " + formatter.format_delta(currentTotalOvertime) + newLine
-            exportString += formatter.format_category_percentages(currentMonthWorked, currentMonthCategories)
+            exportString += NL
+            exportString += "Month " + currentYear + "-" + currentMonth + NL
+            exportString += "-------------" + NL
+            exportString += "Month Worked: " + formatter.format_delta(currentMonthWorked) + NL
+            if currentMonthWorked != currentMonthOvertime:
+                exportString += "Month Overtime: " + formatter.format_delta(currentMonthOvertime) + NL
+            exportString += "Total Worked: " + formatter.format_delta(currentTotalWorked) + NL
+            if currentTotalWorked != currentTotalOvertime:
+                exportString += "Total Overtime: " + formatter.format_delta(currentTotalOvertime) + NL
+            exportString += formatter.format_category_total_and_percentages(currentMonthWorked, currentMonthCategories)
             currentMonthWorked = timedelta(minutes=0)
             currentMonthCategories.clear()
             currentMonthOvertime = timedelta(minutes=0)
         if day.date.strftime("%Y") != currentYear:
-            exportString += newLine
-            exportString += currentYear + " (Year summary)" + newLine
-            exportString += "Year Worked : " + formatter.format_delta(currentYearWorked) + newLine
-            exportString += "Year Overtime : " + formatter.format_delta(currentYearOvertime) + newLine
-            exportString += formatter.format_category_percentages(currentYearWorked, currentYearCategories)
-            exportString += newLine
+            exportString += NL
+            exportString += "Year " + currentYear + NL
+            exportString += "=========" + NL
+            exportString += "Year Worked : " + formatter.format_delta(currentYearWorked) + NL
+            if currentYearWorked != currentYearOvertime:
+                exportString += "Year Overtime : " + formatter.format_delta(currentYearOvertime) + NL
+            exportString += formatter.format_category_total_and_percentages(currentYearWorked, currentYearCategories)
+            exportString += NL
             currentYearCategories.clear()
             currentYearWorked = timedelta(minutes=0)
             currentYearOvertime = timedelta(minutes=0)
@@ -77,16 +82,31 @@ def export(days: Days, targetPath: string):
         currentMonth = day.date.strftime("%m")
         currentYear = day.date.strftime("%Y")
 
-    exportString += newLine + currentYear + "-" + currentMonth + " (ONGOING)" + newLine
-    exportString += "Month Worked: " + formatter.format_delta(currentMonthWorked) + newLine
-    exportString += "Month Overtime : " + formatter.format_delta(currentMonthOvertime) + newLine
-    exportString += formatter.format_category_percentages(currentMonthWorked, currentMonthCategories)
-    exportString += newLine + newLine
-    exportString += "Total Worked: " + formatter.format_delta(currentTotalWorked) + newLine
-    exportString += "Total Overtime: " + formatter.format_delta(currentTotalOvertime) + newLine
+    exportString += NL + "Month " + currentYear + "-" + currentMonth + " (ONGOING)" + NL
+    exportString += "-----------------------" + NL
+    exportString += "Month Worked: " + formatter.format_delta(currentMonthWorked) + NL
+    if currentMonthWorked != currentMonthOvertime:
+        exportString += "Month Overtime : " + formatter.format_delta(currentMonthOvertime) + NL
+    exportString += formatter.format_category_total_and_percentages(currentMonthWorked, currentMonthCategories)
+
+    exportString += NL
+
+    exportString += "Year " + currentYear + " (ONGOING)" + NL
+    exportString += "==================" + NL
+    exportString += "Year Worked : " + formatter.format_delta(currentYearWorked) + NL
+    if currentYearOvertime != currentYearWorked:
+        exportString += "Year Overtime : " + formatter.format_delta(currentYearOvertime) + NL
+    exportString += formatter.format_category_total_and_percentages(currentYearWorked, currentYearCategories)
+
+    exportString += NL + NL
+    exportString += "Totals (ONGOING)" + NL
+    exportString += "==================" + NL
+    exportString += "Total Worked: " + formatter.format_delta(currentTotalWorked) + NL
+    if currentTotalOvertime != currentTotalWorked:
+        exportString += "Total Overtime: " + formatter.format_delta(currentTotalOvertime) + NL
     exportString += formatter.format_category_total_and_percentages(currentTotalWorked, currentTotalCategories)
 
-    exportString += newLine + newLine + newLine
+    exportString += NL + NL + "===============" + NL + NL
 
     for day in sortedDays:
         exportString += day.date.strftime("%Y-%m-%d") + tab
@@ -94,8 +114,8 @@ def export(days: Days, targetPath: string):
             exportString += formatter.format_time(work.start)
             if hasattr(work, 'stop'):
                 exportString += separator + formatter.format_time(work.stop)
-            exportString += newLine + tab + tab + tab
-        exportString += newLine
+            exportString += NL + tab + tab + tab
+        exportString += NL
 
     __save(exportString, targetPath)
     subprocess.call(["open", targetPath])

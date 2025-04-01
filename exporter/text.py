@@ -23,7 +23,7 @@ def export(days: Days, targetPath: string):
     currentYearOvertime: timedelta = timedelta(minutes=0)
     currentYearCategories: dict[str, timedelta] = {}
     currentTotalWorked: timedelta = timedelta(minutes=0)
-    currentTotalOvertime: timedelta = timedelta(minutes=0)
+    currentTotalOvertime: timedelta = timedelta(minutes=config.overtime_offset_in_minutes())
     currentTotalCategories: dict[str, timedelta] = {}
 
     for day in sortedDays:

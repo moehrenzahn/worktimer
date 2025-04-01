@@ -43,7 +43,7 @@ def _applyToTemplate(newData, template):
         for category in newData[year]:
             column = _findColumnIndexForCategory(template[year], category)
             if not column:
-                raise ValueError('Could not find Column for category "%s"' % category)
+                raise ValueError('Could not find Column for category \'%s\'' % category)
             for month in newData[year][category]:
                 print('month', month)
                 line = _findLineIndexForMonth(template[year], month)

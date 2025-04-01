@@ -1,7 +1,8 @@
 import importer
+from data.days import Days
 
 # Check format of given data
-def getDays(daysData):
+def getDays(daysData: any) -> Days:
     if not daysData:
         # empty daysData
         factory = importer.DaysFactory(daysData)

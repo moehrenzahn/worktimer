@@ -48,7 +48,7 @@ def _applyToSpreadsheet(newData, spreadsheet):
             for month in newData[year][category]:
                 (row, column) = _findRowAndColumnForCategoryAndMonth(spreadsheet[year], category, month)
                 if not column or not row:
-                    raise ValueError('Could not find column for category "%s" in Excel file' % category)
+                    raise ValueError('Could not find column for category \'%s\' in Excel file' % category)
                 # Write value to cell
                 spreadsheet[year].cell(row=row,column=column).value = newData[year][category][month]
     return spreadsheet

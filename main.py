@@ -6,6 +6,7 @@ import storage
 import actions
 import output
 import importer
+from actions import holidays
 
 
 __version__ = "2.2.0"
@@ -36,6 +37,9 @@ def main():
 
         if not commands:
             output.status(days)
+            bundesland = config.holiday_bundesland()
+            if bundesland:
+                holidays.process(days, bundesland)
         elif commands[0] == 'timer':
             if len(commands) > 1:
                 actions.timer(days, commands[1])

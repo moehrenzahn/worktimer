@@ -17,6 +17,7 @@ def run(command = None, date = '2021-01-02 8:00', subcommand = None) -> str:
         '--log=test/data/tmp_sample',
         '--sync_automatically=false',
         '--default_category=default',
+        '--overtime_offset_in_minutes=0',
         '--notifications=false',
         '--imessage=false',
         '--textbar=false'

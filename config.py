@@ -46,6 +46,9 @@ def imessage_text():
 # TextBar mode (http://richsomerfield.com/apps/textbar/)
 def textbar():
     return _getConfigValue('textbar')
+
+def overtime_offset_in_minutes():
+    return int(_getConfigValue('overtime_offset_in_minutes'))
 def default_category():
     return _getConfigValue('default_category')
 def categories():
@@ -58,6 +61,8 @@ def xlsx_template():
     return _getConfigValue('xlsx_template')
 def ods_template():
     return _getConfigValue('ods_template')
+def holiday_bundesland():
+    return _getConfigValue('holiday_bundesland')
 
 
 def _getConfigValue(s):

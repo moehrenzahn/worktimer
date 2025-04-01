@@ -3,3 +3,4 @@ work.*
 *.pyc
 config.json
 database
+*.xlsx

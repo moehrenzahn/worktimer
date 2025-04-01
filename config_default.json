@@ -13,5 +13,7 @@
     "hours_per_day": 8,
     "categories": {},
     "xlsx_template": null,
-    "ods_template": null
+    "ods_template": null,
+    "holiday_bundesland": null,
+    "overtime_offset_in_minutes": 0
 }

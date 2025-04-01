@@ -1,10 +1,10 @@
 import data
+import config
 from datetime import date
 from datetime import time
 from datetime import datetime
 from datetime import timedelta
 from typing import List
-
 
 class Days:
     def __init__(self, days: List[data.Day]):
@@ -22,7 +22,7 @@ class Days:
         )
 
     def getOvertime(self):
-        overtime = timedelta(minutes=0)
+        overtime = timedelta(minutes=config.overtime_offset_in_minutes())
         for day in self.days:
             overtime += day.getOvertime()
         return overtime

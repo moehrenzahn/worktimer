@@ -24,7 +24,7 @@ cd worktimer
 
 You can start a new timer with `python worktimer.py timer [category]`. Then, monitor your progress with `python worktimer.py`. Use `python worktimer.py pause` to start and stop a break or `python worktimer.py timer` to stop a running timer.
 
-Get a list of all avaliable command line options with `python worktimer.py --help`.
+Get a list of all available command line options with `python worktimer.py --help`.
 
 Sample output:
 
@@ -55,13 +55,13 @@ python3 -m unittest
 
 ## Configuration
 
-Create a new file in the worktimer root directory named `config.json`. In this file you can override any setting found in `config_default.json` by mimicing the default json structure.
+Create a new file in the worktimer root directory named `config.json`. In this file you can override any setting found in `config_default.json` by mimicking the default json structure.
 
 ## iMessage integration
 
-On macOS, you can configure WorkTimer to send a custom iMessage to someone whenever you stop a timer. You could use this feature to nofify your spouse that you'll be home soon. :)
+On macOS, you can configure WorkTimer to send a custom iMessage to someone whenever you stop a timer. You could use this feature to notify your spouse that you'll be home soon. :)
 
-## Syncronization (experimental)
+## Synchronization (experimental)
 
 To sync your work times between machines, you will need a Git repository to store your yaml file and add it's path to your config file. If there is a problem with the repository, WorkTimer will output the Git info to the console.
 
@@ -74,3 +74,7 @@ Create an alias to `WorkTimer.py` in your plugin folder and name it `worktimer.3
 Make sure to set `textbar` to `true` in your `config.json` to make full use of xBar.
 
 *Copyright 2017-2021 Max Melzer. Published under MIT License. See `LICENSE` file for details.*
+
+## Credits
+
+**berechnung_feiertage.py** von Stephan John und David (Pax90): https://github.com/Pax90/berechnung_feiertage/blob/master/berechnung_feiertage.py

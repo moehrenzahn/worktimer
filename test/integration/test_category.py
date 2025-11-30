@@ -26,7 +26,7 @@ class IntegrationTimerTestCase(unittest.TestCase):
 
         # Start timer on next day
         output = run('timer', '2021-01-03 8:00')
-        self.assertIn('timer started for Default', output)
+        self.assertIn('timer started for \'Default\'', output)
 
         # Stop timer
         output = run('timer', '2021-01-03 17:00')
@@ -38,11 +38,11 @@ class IntegrationTimerTestCase(unittest.TestCase):
     def test_switch_category(self):
         # Switch category
         output = run('timer', '2021-01-02 14:00', 'switched')
-        self.assertIn('timer started for Switched', output)
+        self.assertIn('timer started for \'Switched\'', output)
         
         # Switch category again
         output = run('timer', '2021-01-02 15:00', 'another_switch')
-        self.assertIn('timer started for Another Switch', output)
+        self.assertIn('timer started for \'Another Switch\'', output)
         
         # Stop timer
         output = run('timer', '2021-01-02 16:00')
@@ -80,6 +80,18 @@ class IntegrationTimerTestCase(unittest.TestCase):
         # New work block should inherit category from before break 
         self.assertEqual(lastDay.work[0].category, 'div')
         self.assertEqual(lastDay.work[1].category, 'div')
+
+    def test_update_category(self):
+        # Update Summary
+        output = run('update', '2021-01-02 14:10', 'other')
+        self.assertIn('Category updated: Work category retroactively changed to Other', output)
+
+        # Stop timer
+        output = run('timer', '2021-01-02 16:00')
+        self.assertIn('timer stopped', output)
+
+        lastDay = getDays().days[-1]
+        self.assertEqual(lastDay.work[0].category, 'other')
 
 
 if __name__ == '__main__':

@@ -15,12 +15,12 @@ class DaysTestCase(unittest.TestCase):
         date2 = datetime.strptime(self.todayDateStr, '%Y-%m-%d').date()
         work1 = data.block.Work(
             datetime.strptime('08:00', '%H:%M').time(),
-            '',
+            '', '',
             datetime.strptime('12:00', '%H:%M').time()
         )
         work2 = data.block.Work(
             datetime.strptime('12:30', '%H:%M').time(),
-            '',
+            '', '',
             datetime.strptime('17:00', '%H:%M').time()
         )
         work3 = data.block.Work(

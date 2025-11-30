@@ -4,17 +4,18 @@ import data
 import config
 
 
-def newDay(category=""):
+def newDay(category="", summary = ""):
     return data.Today(
         datetime.now().date(),
         timedelta(hours=config.hoursPerDay()),
         None,
-        [data.newWork(category)]
+        [data.newWork(category, summary)]
     )
 
 
-def newWork(category=""):
+def newWork(category="", summary = ""):
     return data.block.Work(
         datetime.now().time(),
-        category
+        category,
+        summary
     )

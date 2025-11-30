@@ -43,9 +43,10 @@ class DaysFactory:
         for item in dayElement['work']:
             start = datetime.strptime(item['start'], "%H:%M").time()
             category = item['category'] if ('category' in item) else ''
+            summary = item['summary'] if ('summary' in item) else ''
             if 'stop' in item:
                 stop = datetime.strptime(item['stop'], "%H:%M").time()
-                workBlocks.append(data.block.Work(start, category, stop))
+                workBlocks.append(data.block.Work(start, category, summary, stop))
             else:
-                workBlocks.append(data.block.Work(start, category))
+                workBlocks.append(data.block.Work(start, category, summary))
         return workBlocks

@@ -6,7 +6,7 @@ import config
 from datetime import datetime
 
 
-def timer(days, category=""):
+def timer(days, category="", summary = ""):
     if days.isPause():
         output.notification(
             "Timer is Paused",
@@ -28,9 +28,9 @@ def timer(days, category=""):
     else:
         if config.autoSync():
             actions.syncDown()
-        actions.timerStart(days, category)
+        actions.timerStart(days, category, summary)
 
-def timerStart(days, category=""):
+def timerStart(days, category="", summary = ""):
     if not category:
         category = config.default_category()
     
@@ -39,7 +39,7 @@ def timerStart(days, category=""):
         lastWork = today.getLastWork()
         if lastWork.isRunning():
             # A timer is running
-            if lastWork.category == category:
+            if lastWork.category == category and (lastWork.summary == summary or not summary):
                 output.notification(
                     "Work timer running",
                     "You already have a timer running for %s." % output.formatter.format_category(category)
@@ -50,15 +50,18 @@ def timerStart(days, category=""):
                 lastWork.stop = datetime.now().time()
 
     if not today:
-        today = data.newDay(category)
+        today = data.newDay(category, summary)
         days.days.append(today)
     else:
-        today.work.append(data.newWork(category))
+        today.work.append(data.newWork(category, summary))
     storage.yaml.save(days)
 
     untilTime = data.formatter.format_time(days.getToday().getEndTime())
+    descr = output.formatter.format_category(category)
+    if summary:
+        descr = "%s: %s" % (descr, summary)
     output.notification(
-        "Work timer started for %s" % output.formatter.format_category(category),
+        "Work timer started for '%s'" % descr,
         "You will have to work until %s" % untilTime
     )
 

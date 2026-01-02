@@ -11,7 +11,7 @@ from contextlib import redirect_stdout
 
 
 # Run command (on simulated date) and return standard output
-def run(command = None, date = '2021-01-02 8:00', subcommand = None) -> str:
+def run(command = None, date = '2021-01-02 8:00', subcommand = None, subsubcommand = None) -> str:
     testargs = [
         'WorkTimer.py',
         '--log=test/data/tmp_sample',
@@ -24,8 +24,10 @@ def run(command = None, date = '2021-01-02 8:00', subcommand = None) -> str:
     ]
     if command:
         testargs.insert(1, command)
-        if subcommand:
+        if subcommand is not None:
             testargs.insert(2, subcommand)
+            if subsubcommand is not None:
+                testargs.insert(3, subsubcommand)
 
 
     f = io.StringIO()

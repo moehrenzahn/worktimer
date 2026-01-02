@@ -42,12 +42,12 @@ def main():
                 holidays.process(days, bundesland)
         elif commands[0] == 'timer':
             if len(commands) > 1:
-                actions.timer(days, commands[1])
+                actions.timer(days, commands[1], "" if len(commands) == 2 else commands[2])
             else:
                 actions.timer(days)
         elif commands[0] == 'update':
             if len(commands) > 1:
-                actions.change(days, commands[1])
+                actions.change(days, commands[1], "" if len(commands) == 2 else commands[2])
         elif commands[0] == 'pause':
             actions.pause(days)
         elif commands[0] == 'log':
@@ -73,8 +73,8 @@ def main():
             print("WorkTimer " + __version__ + " by Max Melzer (moehrenzahn.de)")
             print("")
             print("Usage: run worktimer.py to display current timer stats.")
-            print("   Use param 'timer [category]' to start or stop timer")
-            print("   Use param 'update [category]' to change the currently tracked category")
+            print("   Use param 'timer [category] [summary]' to start or stop timer")
+            print("   Use param 'update [category] [summary]' to change the currently tracked category/summary")
             print("   Use param 'pause' to start or stop pause")
             print("   Use param 'sync' to attempt synchronisation with remote repository")
             print("   Use param 'log' to open the log file in default editor")

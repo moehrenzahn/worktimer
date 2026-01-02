@@ -2,7 +2,7 @@ from datetime import datetime, date, timedelta
 
 
 class Block:
-    def __init__(self, start, category="", stop=0):
+    def __init__(self, start, category="", summary = "", stop=0):
         """
         start: time
         category: string (optional)
@@ -10,6 +10,7 @@ class Block:
         """
         self.start = start
         self.category = category
+        self.summary = summary
         if stop:
             self.stop = stop
 

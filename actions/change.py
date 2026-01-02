@@ -1,5 +1,10 @@
+import config
+from data import formatter
+from output.ask import ask
 import storage
 import output
+import sys
+import subprocess
 
 def change(days, category, summary = ""):
     today = days.getToday()
@@ -18,6 +23,17 @@ def change(days, category, summary = ""):
 
             updatedSummary = False
             if summary:
+                if summary == "ASK" and config.textbar():
+                    try:
+                        summary = ask(title="Update Task",
+                                      message=f"Update task summary ({formatter.format_category(lastWork.category)})", 
+                                      default=lastWork.summary)
+                    except subprocess.CalledProcessError:
+                        output.notification(
+                            "Nothing updated",
+                            "Cancelled by user"
+                        )
+                        return
                 updatedSummary = summary != lastWork.summary
                 lastWork.summary = summary
 

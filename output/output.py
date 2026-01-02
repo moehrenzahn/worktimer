@@ -17,8 +17,9 @@ def __info(days: Days):
         if days.isPause():
             print("Pause: %s" % formatter.format_delta(today.getPausetime()))
         else:
-            print('%s – %s %s' % (formatter.format_delta(today.getRemainingWork()),
+            print('%s – %s %s %s' % (formatter.format_delta(today.getRemainingWork()),
                                 formatter.format_category(today.getLastWork().category),
+                                today.getLastWork().summary,
                                 formatter.format_delta(today.getLastWork().getDuration())
             ))
     else:
@@ -32,9 +33,10 @@ def __info(days: Days):
             print(elements.menu(
                 "Worked %s" % formatter.format_delta(today.getCurrentWork()),
                 map(
-                    lambda x: "%s %s" % (
+                    lambda x: "%s %s: %s" % (
                         formatter.format_delta(x.getDuration()),
-                        formatter.format_category(x.category)
+                        formatter.format_category(x.category),
+                        x.summary if x.summary else "No summary"
                     ),
                     today.work
                 )
@@ -81,6 +83,7 @@ def __actions(days: Days):
                 )
             )
 
+        print(elements.button("💬 Update Summary", 'update %s ASK' % days.getToday().getLastCategory()))
         print(elements.menu("⚙️ Update Category", menuItems))
         print(elements.spacer())
     print(elements.button('Open Log', 'log'))

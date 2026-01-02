@@ -24,7 +24,7 @@ def save(days):
     yamllib.add_representer(date, lambda self, value: self.represent_str(value.strftime("%Y-%m-%d")))
     yamllib.add_representer(time, lambda self, value: self.represent_str('{d.hour}:{d.minute:02}'.format(d=value)))
     yamllib.add_representer(timedelta, lambda self, value: self.represent_str(data.format_delta(value)))
-    yamllib.add_multi_representer(data.block.Block, lambda self, value: self.represent_dict(value.__dict__))
+    yamllib.add_multi_representer(data.block.Block, lambda self, value: self.represent_dict(_filter_empty(value.__dict__)))
     yamllib.add_multi_representer(data.day.Day, lambda self, value: self.represent_dict(_filter_empty(value.__dict__)))
     
     
@@ -42,5 +42,5 @@ def _filter_empty(dict: dict):
     return {
       k:v
       for k, v in dict.items()
-      if v is not None
+      if v is not None and v is not ""
    }

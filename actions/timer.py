@@ -1,3 +1,6 @@
+import subprocess
+from data import formatter
+from output.ask import ask
 import storage
 import data
 import actions
@@ -34,6 +37,13 @@ def timerStart(days, category="", summary = ""):
     if not category:
         category = config.default_category()
     
+    if not summary:
+        try:
+            summary = ask(title="New Task",
+                            message=f"Enter task summary ({formatter.format_category(category)})")
+        except subprocess.CalledProcessError:
+            return None 
+
     today = days.getToday()
     if today:
         lastWork = today.getLastWork()

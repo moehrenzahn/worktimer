@@ -82,9 +82,9 @@ def __actions(days: Days):
                     'update ' + key
                 )
             )
-
-        print(elements.button("💬 Update Summary", 'update %s ASK' % days.getToday().getLastCategory()))
-        print(elements.menu("⚙️ Update Category", menuItems))
+        if days.getToday():
+            print(elements.button("💬 Update Summary", 'update %s ASK' % days.getToday().getLastCategory()))
+            print(elements.menu("⚙️ Update Category", menuItems))
         print(elements.spacer())
     print(elements.button('Open Log', 'log'))
     print(elements.menu('Create Report', [

@@ -37,12 +37,21 @@ def timerStart(days, category="", summary = ""):
     if not category:
         category = config.default_category()
     
-    if not summary:
+    if not summary and config.textbar():
         try:
+            message = f"Enter task summary for {formatter.format_category(category)}."
+            recentlyUsed = days.getRecentSummaries(category=category)
+            if recentlyUsed:
+                message += "\n\nRecently used:\n- " + '\n- '.join(recentlyUsed)
             summary = ask(title="New Task",
-                            message=f"Enter task summary ({formatter.format_category(category)})")
+                          message=message,
+                          default=recentlyUsed[-1] if recentlyUsed else "")
         except subprocess.CalledProcessError:
-            return None 
+            output.notification(
+                "No timer started",
+                "Cancelled by user"
+            )
+            return 
 
     today = days.getToday()
     if today:

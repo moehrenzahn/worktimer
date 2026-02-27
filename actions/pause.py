@@ -44,7 +44,8 @@ def pauseStop(days):
         today.work.append(
             data.block.Work(
                 now,
-                lastWork.category
+                lastWork.category, # continue with previous category
+                lastWork.summary # continue with previous summary
         ))
     today.paused = 0
     storage.yaml.save(days)

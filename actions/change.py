@@ -25,8 +25,12 @@ def change(days, category, summary = ""):
             if summary:
                 if summary == "ASK" and config.textbar():
                     try:
+                        message = f"Update task summary for {formatter.format_category(lastWork.category)}."
+                        recentlyUsed = days.getRecentSummaries(category=lastWork.category)
+                        if recentlyUsed:
+                            message += "\n\nRecently used:\n- " + '\n- '.join(recentlyUsed)
                         summary = ask(title="Update Task",
-                                      message=f"Update task summary ({formatter.format_category(lastWork.category)})", 
+                                      message=message, 
                                       default=lastWork.summary)
                     except subprocess.CalledProcessError:
                         output.notification(
@@ -36,7 +40,9 @@ def change(days, category, summary = ""):
                         return
                 updatedSummary = summary != lastWork.summary
                 lastWork.summary = summary
-
+            if updatedCategory and not updatedSummary:
+                # When just changing category, discard the previous summary
+                lastWork.summary = None 
             if updatedCategory:
                 storage.yaml.save(days)
                 if updatedSummary:

@@ -38,6 +38,18 @@ class Days:
         else:
             return 0
 
+    def getRecentSummaries(self, limit: int = 5, category: str = "") -> list[str]:
+        summaries = []
+        for day in self.days:
+            for task in day.work:
+                if category and task.category != category:
+                    continue
+                if not task.summary or task.summary in summaries:
+                    continue
+                summaries.append(task.summary)
+                if len(summaries) >= limit: break
+        return summaries
+
     def isPause(self):
         today = self.getToday()
         if today:

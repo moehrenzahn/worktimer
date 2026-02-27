@@ -74,17 +74,29 @@ def __actions(days: Days):
             )
         print(elements.menu("🚀 Start Category", menuItems))
 
-        menuItems = []
-        for key, description in config.categories().items():
-            menuItems.append(
-                elements.button(
-                    description,
-                    'update ' + key
-                )
-            )
         if days.getToday():
-            print(elements.button("💬 Update Summary", 'update %s ASK' % days.getToday().getLastCategory()))
+
+            menuItems = []
+            for key, description in config.categories().items():
+                menuItems.append(
+                    elements.button(
+                        description,
+                        'update ' + key
+                    )
+                )
             print(elements.menu("⚙️ Update Category", menuItems))
+            
+            # Collect recently used summaries for the current category
+            menuItems = []
+            for summary in days.getRecentSummaries(category=days.getToday().getLastCategory()):
+                menuItems.append(
+                    elements.button("\""+summary+"\"", 'update %s %s' % (days.getToday().getLastCategory(), summary))
+                ) 
+            menuItems.append(
+                elements.button("New …", 'update %s ASK' % days.getToday().getLastCategory())
+            )
+            print(elements.menu("💬 Update Summary", menuItems))
+            
         print(elements.spacer())
     print(elements.button('Open Log', 'log'))
     print(elements.menu('Create Report', [

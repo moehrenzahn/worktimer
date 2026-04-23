@@ -1,0 +1,827 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.WorkTimerBar-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/sources",
+      "importPath" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Logic/TimerController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/AppConfig.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkBlock.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkDay.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Storage/ConfigLoader.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Storage/YAMLCoder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Support/FileWatcher.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Support/NotificationManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarTitle.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarViewModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/WorkTimerBarApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Modules/Yams.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "WorkTimerBar",
+      "moduleOutputPath" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Modules/WorkTimerBar.swiftmodule",
+      "objects" : [
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/TimerController.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/AppConfig.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkBlock.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkDay.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkStore.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/ConfigLoader.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/YAMLCoder.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/FileWatcher.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/NotificationManager.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarTitle.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarView.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarViewModel.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkTimerBarApp.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-Xcc",
+        "-fmodule-map-file=/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/CYaml/include/module.modulemap",
+        "-Xcc",
+        "-I",
+        "-Xcc",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/CYaml/include",
+        "-module-cache-path",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "WorkTimerBar_main",
+        "-swift-version",
+        "5",
+        "-Xfrontend",
+        "-experimental-lazy-typecheck",
+        "-Xfrontend",
+        "-experimental-skip-all-function-bodies",
+        "-Xfrontend",
+        "-experimental-allow-module-with-compiler-errors",
+        "-Xfrontend",
+        "-empty-abi-descriptor",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "worktimerbar"
+      ],
+      "outputFileMapPath" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Modules/WorkTimerBar.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : true,
+      "sources" : [
+        "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Logic/TimerController.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/AppConfig.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkBlock.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkDay.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkStore.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Storage/ConfigLoader.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Storage/YAMLCoder.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Support/FileWatcher.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Support/NotificationManager.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarTitle.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarView.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarViewModel.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/WorkTimerBarApp.swift"
+      ],
+      "tempsPath" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.Yams-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/sources",
+      "importPath" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/AliasDereferencingStrategy.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Anchor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Constructor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Decoder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Emitter.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Encoder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Mark.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.Alias.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.Mapping.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.Scalar.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.Sequence.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Parser.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/RedundancyAliasingStrategy.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Representer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Resolver.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/String+Yams.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Tag.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/YamlAnchorProviding.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/YamlError.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/YamlTagProviding.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/CYaml/include/CYaml.h"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/CYaml/include/yaml.h"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/CYaml/src/yaml_private.h"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "Yams",
+      "moduleOutputPath" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Modules/Yams.swiftmodule",
+      "objects" : [
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/AliasDereferencingStrategy.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/Anchor.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/Constructor.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/Decoder.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/Emitter.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/Encoder.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/Mark.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/Node.Alias.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/Node.Mapping.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/Node.Scalar.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/Node.Sequence.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/Node.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/Parser.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/RedundancyAliasingStrategy.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/Representer.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/Resolver.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/String+Yams.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/Tag.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/YamlAnchorProviding.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/YamlError.swift.o",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/YamlTagProviding.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx10.13",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-Onone",
+        "-enable-testing",
+        "-j10",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-Xcc",
+        "-fmodule-map-file=/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/CYaml/include/module.modulemap",
+        "-Xcc",
+        "-I",
+        "-Xcc",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/CYaml/include",
+        "-module-cache-path",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/include/Yams-Swift.h",
+        "-swift-version",
+        "5",
+        "-Xcc",
+        "-DYAML_DECLARE_STATIC",
+        "-Xfrontend",
+        "-experimental-lazy-typecheck",
+        "-Xfrontend",
+        "-experimental-skip-all-function-bodies",
+        "-Xfrontend",
+        "-experimental-allow-module-with-compiler-errors",
+        "-Xfrontend",
+        "-empty-abi-descriptor",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-suppress-warnings"
+      ],
+      "outputFileMapPath" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Modules/Yams.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : true,
+      "sources" : [
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/AliasDereferencingStrategy.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Anchor.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Constructor.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Decoder.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Emitter.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Encoder.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Mark.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.Alias.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.Mapping.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.Scalar.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.Sequence.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Parser.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/RedundancyAliasingStrategy.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Representer.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Resolver.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/String+Yams.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Tag.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/YamlAnchorProviding.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/YamlError.swift",
+        "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/YamlTagProviding.swift"
+      ],
+      "tempsPath" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "WorkTimerBar" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "WorkTimerBar",
+      "-package-name",
+      "worktimerbar",
+      "-c",
+      "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Logic/TimerController.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/AppConfig.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkBlock.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkDay.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkStore.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Storage/ConfigLoader.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Storage/YAMLCoder.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Support/FileWatcher.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Support/NotificationManager.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarTitle.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarView.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarViewModel.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/WorkTimerBarApp.swift",
+      "-I",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-Xcc",
+      "-fmodule-map-file=/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/CYaml/include/module.modulemap",
+      "-Xcc",
+      "-I",
+      "-Xcc",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/CYaml/include",
+      "-module-cache-path",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "WorkTimerBar_main",
+      "-swift-version",
+      "5",
+      "-Xfrontend",
+      "-experimental-lazy-typecheck",
+      "-Xfrontend",
+      "-experimental-skip-all-function-bodies",
+      "-Xfrontend",
+      "-experimental-allow-module-with-compiler-errors",
+      "-Xfrontend",
+      "-empty-abi-descriptor",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "worktimerbar",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "Yams" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "Yams",
+      "-c",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/AliasDereferencingStrategy.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Anchor.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Constructor.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Decoder.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Emitter.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Encoder.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Mark.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.Alias.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.Mapping.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.Scalar.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.Sequence.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Parser.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/RedundancyAliasingStrategy.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Representer.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Resolver.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/String+Yams.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Tag.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/YamlAnchorProviding.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/YamlError.swift",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/YamlTagProviding.swift",
+      "-I",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx10.13",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-Onone",
+      "-enable-testing",
+      "-j10",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-Xcc",
+      "-fmodule-map-file=/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/CYaml/include/module.modulemap",
+      "-Xcc",
+      "-I",
+      "-Xcc",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/CYaml/include",
+      "-module-cache-path",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/include/Yams-Swift.h",
+      "-swift-version",
+      "5",
+      "-Xcc",
+      "-DYAML_DECLARE_STATIC",
+      "-Xfrontend",
+      "-experimental-lazy-typecheck",
+      "-Xfrontend",
+      "-experimental-skip-all-function-bodies",
+      "-Xfrontend",
+      "-experimental-allow-module-with-compiler-errors",
+      "-Xfrontend",
+      "-empty-abi-descriptor",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-suppress-warnings",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "CYaml" : [
+
+    ],
+    "WorkTimerBar" : [
+      "Yams",
+      "CYaml"
+    ],
+    "Yams" : [
+      "CYaml"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Logic/TimerController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/AppConfig.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkBlock.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkDay.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkStore.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Storage/ConfigLoader.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Storage/YAMLCoder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Support/FileWatcher.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Support/NotificationManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarTitle.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarViewModel.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/WorkTimerBarApp.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/sources"
+    },
+    "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/AliasDereferencingStrategy.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Anchor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Constructor.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Decoder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Emitter.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Encoder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Mark.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.Alias.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.Mapping.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.Scalar.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.Sequence.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Node.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Parser.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/RedundancyAliasingStrategy.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Representer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Resolver.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/String+Yams.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/Tag.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/YamlAnchorProviding.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/YamlError.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/checkouts/Yams/Sources/Yams/YamlTagProviding.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/Yams.build/sources"
+    },
+    "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

@@ -28,10 +28,7 @@ class DaysFactory:
             comment = None
         work = self.initWorkBlocks(dayElement)
         if date == datetime.now().date():
-            if 'paused' in dayElement:
-                day = data.Today(date, goal, comment, work, dayElement['paused'])
-            else:
-                day = data.Today(date, goal, comment, work)
+            day = data.Today(date, goal, comment, work, dayElement.get('paused', 0))
         else:
             day = data.Day(date, goal, comment, work)
         return day
@@ -40,7 +37,7 @@ class DaysFactory:
         workBlocks = []
         if 'work' not in dayElement:
             raise ValueError('Day without work block found')
-        for item in dayElement['work']:
+        for item in (dayElement['work'] or []):
             start = datetime.strptime(item['start'], "%H:%M").time()
             category = item['category'] if ('category' in item) else ''
             summary = item['summary'] if ('summary' in item) else ''

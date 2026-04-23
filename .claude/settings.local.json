@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat /Users/mme/dev/worktimer/data/block/*.py)"
+    ]
+  }
+}

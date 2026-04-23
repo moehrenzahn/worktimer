@@ -1,0 +1,96 @@
+{
+  "": {
+    "swift-dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/master.swiftdeps"
+  },
+  "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Logic/TimerController.swift": {
+    "dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/TimerController.d",
+    "object": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/TimerController.swift.o",
+    "swiftmodule": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/TimerController~partial.swiftmodule",
+    "swift-dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/TimerController.swiftdeps",
+    "diagnostics": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/TimerController.dia"
+  },
+  "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/AppConfig.swift": {
+    "dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/AppConfig.d",
+    "object": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/AppConfig.swift.o",
+    "swiftmodule": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/AppConfig~partial.swiftmodule",
+    "swift-dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/AppConfig.swiftdeps",
+    "diagnostics": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/AppConfig.dia"
+  },
+  "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkBlock.swift": {
+    "dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkBlock.d",
+    "object": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkBlock.swift.o",
+    "swiftmodule": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkBlock~partial.swiftmodule",
+    "swift-dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkBlock.swiftdeps",
+    "diagnostics": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkBlock.dia"
+  },
+  "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkDay.swift": {
+    "dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkDay.d",
+    "object": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkDay.swift.o",
+    "swiftmodule": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkDay~partial.swiftmodule",
+    "swift-dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkDay.swiftdeps",
+    "diagnostics": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkDay.dia"
+  },
+  "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkStore.swift": {
+    "dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkStore.d",
+    "object": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkStore.swift.o",
+    "swiftmodule": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkStore.swiftdeps",
+    "diagnostics": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkStore.dia"
+  },
+  "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Storage/ConfigLoader.swift": {
+    "dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/ConfigLoader.d",
+    "object": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/ConfigLoader.swift.o",
+    "swiftmodule": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/ConfigLoader~partial.swiftmodule",
+    "swift-dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/ConfigLoader.swiftdeps",
+    "diagnostics": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/ConfigLoader.dia"
+  },
+  "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Storage/YAMLCoder.swift": {
+    "dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/YAMLCoder.d",
+    "object": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/YAMLCoder.swift.o",
+    "swiftmodule": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/YAMLCoder~partial.swiftmodule",
+    "swift-dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/YAMLCoder.swiftdeps",
+    "diagnostics": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/YAMLCoder.dia"
+  },
+  "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Support/FileWatcher.swift": {
+    "dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/FileWatcher.d",
+    "object": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/FileWatcher.swift.o",
+    "swiftmodule": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/FileWatcher~partial.swiftmodule",
+    "swift-dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/FileWatcher.swiftdeps",
+    "diagnostics": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/FileWatcher.dia"
+  },
+  "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Support/NotificationManager.swift": {
+    "dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/NotificationManager.d",
+    "object": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/NotificationManager.swift.o",
+    "swiftmodule": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/NotificationManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/NotificationManager.swiftdeps",
+    "diagnostics": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/NotificationManager.dia"
+  },
+  "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarTitle.swift": {
+    "dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarTitle.d",
+    "object": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarTitle.swift.o",
+    "swiftmodule": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarTitle~partial.swiftmodule",
+    "swift-dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarTitle.swiftdeps",
+    "diagnostics": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarTitle.dia"
+  },
+  "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarView.swift": {
+    "dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarView.d",
+    "object": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarView.swift.o",
+    "swiftmodule": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarView~partial.swiftmodule",
+    "swift-dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarView.swiftdeps",
+    "diagnostics": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarView.dia"
+  },
+  "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarViewModel.swift": {
+    "dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarViewModel.d",
+    "object": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarViewModel.swift.o",
+    "swiftmodule": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarViewModel~partial.swiftmodule",
+    "swift-dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarViewModel.swiftdeps",
+    "diagnostics": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/MenuBarViewModel.dia"
+  },
+  "/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/WorkTimerBarApp.swift": {
+    "dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkTimerBarApp.d",
+    "object": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkTimerBarApp.swift.o",
+    "swiftmodule": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkTimerBarApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkTimerBarApp.swiftdeps",
+    "diagnostics": "/Users/mme/dev/worktimer/WorkTimerBar/.build/index-build/arm64-apple-macosx/debug/WorkTimerBar.build/WorkTimerBarApp.dia"
+  }
+}

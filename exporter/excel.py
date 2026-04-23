@@ -2,6 +2,7 @@ import importlib
 from typing import OrderedDict
 from data import Days
 from math import floor
+import config
 
 def export(days: Days, templateFile: str, targetFile: str) -> bool:
     try:
@@ -17,13 +18,14 @@ def export(days: Days, templateFile: str, targetFile: str) -> bool:
     updatedSpreadsheet.save(targetFile)
 
 def _collectNewDurationData(days: Days):
+    export_map = config._getConfigValue("categories_export_map") or {}
     newData = OrderedDict({})
     sortedDays = sorted(days.days, key=lambda x: x.date)
     for day in sortedDays:
         year = str(day.date.year)
         month = str(day.date.month)
         for work in day.work:
-            category = work.category
+            category = export_map.get(work.category, work.category)
             duration = floor(work.getDuration().total_seconds() / 60)
             if not year in newData:
                 newData[year] = {}

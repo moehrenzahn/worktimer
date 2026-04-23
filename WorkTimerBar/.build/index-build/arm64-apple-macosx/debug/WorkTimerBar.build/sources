@@ -1,0 +1,13 @@
+/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Logic/TimerController.swift
+/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/AppConfig.swift
+/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkBlock.swift
+/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkDay.swift
+/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Model/WorkStore.swift
+/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Storage/ConfigLoader.swift
+/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Storage/YAMLCoder.swift
+/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Support/FileWatcher.swift
+/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/Support/NotificationManager.swift
+/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarTitle.swift
+/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarView.swift
+/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/UI/MenuBarViewModel.swift
+/Users/mme/dev/worktimer/WorkTimerBar/Sources/WorkTimerBar/WorkTimerBarApp.swift
